@@ -3,8 +3,12 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+/* NAVBAR */
+
 .navbar-brand{
     font-size: 2rem;
+    font-family: 'Lobster', cursive;
     color: black;
 }
 .navbar-brand:hover{
@@ -14,6 +18,7 @@
     margin-right: 10px;
     margin-left: 10px;
     color: black;
+    font-family: 'Rubik', sans-serif;
     text-transform: uppercase;
 }
 .nav-link:hover{
@@ -25,6 +30,7 @@
     border-radius: 60px;
     outline: none;
     margin-right: -35px;
+    font-family: 'Rubik', sans-serif;
     border: 2px solid rgb(248, 26, 92);
 }
 .btn0{
@@ -37,17 +43,22 @@
     border-radius: 60px;
     font-weight: 700;
 }
+
+
+/* SECCION MAIN */
+
+
+.main h1{
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+}
 .main{
     background: url(../img/menu.jpg);
     background-size: cover;
     height: 100vh;
     background-position: 50% 50%;
     width: 100%;
-}
-.main h1{
-    font-size: 4rem;
-    font-weight: 700;
-    color: white;
 }
 .btn1{
     height: 45px;
@@ -72,6 +83,9 @@ h1 {
 -moz-box-shadow: -3px -2px 25px -5px rgba(0,0,0,0.75);
 transition:1s;
 }
+
+/* ACERCA  */
+
 .acerca{
     background: Linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(../img/plato.jpg)no-repeat;
     background-size: cover;
@@ -81,6 +95,9 @@ transition:1s;
 .acerca h1{
     font-family: 'Lobster', cursive;
 }
+
+/* FOOTER */
+
 .footer{
     background-color: black;
     color: white;
@@ -115,6 +132,9 @@ transition:1s;
     padding-right: 5px;
 }
 
+
+/* CARRUSEL DE IMAGENES */
+
 .carousel-item {
     height: 900px;
 }
@@ -134,4 +154,29 @@ transition:1s;
 
 .carousel-item p {
     font-size: 2rem;
+}
+
+.carousel-caption h5 {
+    font-weight: bold;
+    font-size: 1.2em; 
+}
+
+.carousel-caption p {
+    font-size: 1em; 
+}
+@media (min-width: 576px) { 
+  .carousel-caption h5 {font-size: 3rem;}
+  .carousel-caption p {font-size: 1.1em;}  
+}
+@media (min-width: 768px) {
+  .carousel-caption h5 { font-size: 3rem;}
+  .carousel-caption p {font-size: 1.6em;}  
+}
+@media (min-width: 992px) { 
+  .carousel-caption h5 { font-size: 4rem;}
+  .carousel-caption p {font-size: 1.8em;}  
+}
+@media (min-width: 1200px) { 
+  .carousel-caption h5 { font-size: 5rem;}
+  .carousel-caption p {font-size: 2rem;}  
 }
