@@ -27,30 +27,18 @@
     <!-- NAVBAR -->
     <nav class="fixed-top navbar-expand-lg bg-red-600">
       <div class="container-fluid">
-        <section class="pt-1 pb-1">
+        <section class="pt-3 pb-3">
           <div class="row">
-            <div class="d-flex col-lg-4 col-md-12 mb-md-0">
-              <ul class="navbar-nav">
-                <li class="nav-item active" type="button">
-                  <a
-                    class="
-                      nav-link
-                      d-flex
-                      align-items-center
-                      justify-content-center
-                    "
-                    href="index.html"
-                  >
-                    <img
-                      src="./img/logo@2x.png"
-                      class="img-logo"
-                      alt="logo del restaurante"
-                    />
-                  </a>
-                </li>
-              </ul>
+            <div class="col-lg-4 col-md-6 mb-md-0" style="text-align: center">
+              <a href="index.html">
+                <img
+                  src="./img/logo@2x.png"
+                  class="img-logo"
+                  alt="logo del restaurante"
+                />
+              </a>
             </div>
-            <div class="col-lg-8 col-md-12 mb-md-0 div-item">
+            <div class="col-lg-8 col-md-6 mb-md-0 div-item">
               <button
                 class="navbar-toggler"
                 type="button"
@@ -65,11 +53,11 @@
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto justify-content-end mb-lg-0">
-                  <li
-                    class="d-flex align-items-start nav-item active"
-                    type="button"
-                  >
-                    <a class="nav-link" href="index.html">
+                  <li class="nav-item active" type="button">
+                    <a
+                      class="nav-link justify-content-center"
+                      href="index.html"
+                    >
                       <p>
                         <i
                           class="fas fa-home svg-home"
@@ -80,28 +68,16 @@
                     </a>
                   </li>
 
-                  <li
-                    class="d-flex align-items-start nav-item active bg-blue"
-                    type="button"
-                  >
-                    <a class="nav-link" href="nosotros.html">QUIENES SOMOS</a>
+                  <li class="nav-item active bg-blue" type="button">
+                    <a class="nav-link" href="#">QUIENES SOMOS</a>
                   </li>
-                  <li
-                    class="d-flex align-items-start nav-item active"
-                    type="button"
-                  >
-                    <a class="nav-link" href="#!">MENU</a>
+                  <li class="nav-item active" type="button">
+                    <a class="nav-link" href="#">MENU</a>
                   </li>
-                  <li
-                    class="d-flex align-items-start nav-item active"
-                    type="button"
-                  >
+                  <li class="nav-item active" type="button">
                     <a class="nav-link" href="#">SERVICIOS</a>
                   </li>
-                  <li
-                    class="d-flex align-items-start nav-item active"
-                    type="button"
-                  >
+                  <li class="nav-item active" type="button">
                     <a class="nav-link" href="#">CONTACTENOS</a>
                   </li>
                 </ul>
@@ -111,19 +87,18 @@
         </section>
 
         <div class="d-flex justify-content-end">
-          <section class="d-flex flex-column bg-red-800 redes-sociales">
+          <section class="d-flex flex-column redes-sociales bg-red-800">
             <!-- Facebook -->
             <a
-              class="d-flex justify-content-center btn btn-outline-light btn-floating a-width mt-2"
+              class="btn btn-outline-light btn-floating mt-2"
               href="#!"
               role="button"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
+              ><i class="fab fa-facebook-f"></i
+            ></a>
 
             <!-- Twitter -->
             <a
-              class="d-flex justify-content-center btn btn-outline-light btn-floating a-width mt-3"
+              class="btn btn-outline-light btn-floating mt-2"
               href="#!"
               role="button"
               ><i class="fab fa-twitter"></i
@@ -131,7 +106,7 @@
 
             <!-- Youtube -->
             <a
-              class="d-flex justify-content-center btn btn-outline-light btn-floating a-width mt-3 mb-2"
+              class="btn btn-outline-light btn-floating mt-2 mb-2"
               href="#!"
               role="button"
             >
@@ -144,7 +119,7 @@
 
     <!--NUESTRA HISTORIA-->
 
-    <section class="py-5 container">
+    <section class="py-5 container" style="margin-top: 7rem">
       <div class="row justify-content-around">
         <div class="col col-6">
           <img
@@ -243,16 +218,17 @@
     </section>
 
     <!--TESTIMONNIOS-->
+    <!--Carrusel-->
     <div
-      id="carouselExampleDark"
-      class="carousel carousel-dark slide"
-      data-bs-ride="carousel"
-      style="height: 20%"
+      id="carouselDarkVariant"
+      class="carousel slide carousel-dark"
+      data-mdb-ride="carousel"
     >
-      <div class="carousel-indicators">
+      <!-- Indicators -->
+      <div class="carousel-indicators mb-0">
         <button
           type="button"
-          data-bs-target="#carouselExampleDark"
+          data-bs-target="#carouselDarkVariant"
           data-bs-slide-to="0"
           class="active"
           aria-current="true"
@@ -260,44 +236,159 @@
         ></button>
         <button
           type="button"
-          data-bs-target="#carouselExampleDark"
+          data-bs-target="#carouselDarkVariant"
           data-bs-slide-to="1"
           aria-label="Slide 2"
         ></button>
         <button
           type="button"
-          data-bs-target="#carouselExampleDark"
+          data-bs-target="#carouselDarkVariant"
           data-bs-slide-to="2"
           aria-label="Slide 3"
         ></button>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <img src="..." class="d-block w-100" alt="..." />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+
+      <!-- Inner -->
+      <div class="carousel-inner pt-5 pb-5">
+        <!-- Single item -->
+        <div class="carousel-item active">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-8 col-lg-9 col-xl-8">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <img
+                    src="./img/testimonio1@2x.png"
+                    class="
+                      rounded-circle
+                      mb-4 mb-lg-0
+                      shadow-2
+                      border border-warning border-3
+                    "
+                    alt="woman avatar"
+                    width="135"
+                    height="135"
+                  />
+                </div>
+                <div class="flex-grow-1 ms-4 ps-3">
+                  <figure>
+                    <blockquote class="blockquote mb-4">
+                      <p>
+                        <i
+                          class="fas fa-quote-left fa-lg text-warning me-2"
+                        ></i>
+                        <span class="font-italic"
+                          >"Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Pariatur sint nesciunt ad itaque aperiam
+                          expedita officiis incidunt minus facere, molestias
+                          quisquam impedit inventore."</span
+                        >
+                      </p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Random User
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="..." class="d-block w-100" alt="..." />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
+
+        <!-- Single item -->
         <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="..." />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-8 col-lg-9 col-xl-8">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <img
+                    src="./img/testimonio1@2x.png"
+                    class="
+                      rounded-circle
+                      mb-4 mb-lg-0
+                      shadow-2
+                      border border-warning border-3
+                    "
+                    alt="woman avatar"
+                    width="135"
+                    height="135"
+                  />
+                </div>
+                <div class="flex-grow-1 ms-4 ps-3">
+                  <figure>
+                    <blockquote class="blockquote mb-4">
+                      <p>
+                        <i
+                          class="fas fa-quote-left fa-lg text-warning me-2"
+                        ></i>
+                        <span class="font-italic"
+                          >"Sed ut perspiciatis unde omnis iste natus error sit
+                          voluptatem accusantium doloremque laudantium, totam
+                          rem aperiam, eaque ipsa quae ab illo inventore
+                          veritatis."</span
+                        >
+                      </p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Random User
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single item -->
+        <div class="carousel-item">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-8 col-lg-9 col-xl-8">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <img
+                    src="./img/testimonio1@2x.png"
+                    class="
+                      rounded-circle
+                      mb-4 mb-lg-0
+                      shadow-2
+                      border border-warning border-3
+                    "
+                    alt="woman avatar"
+                    width="135"
+                    height="135"
+                  />
+                </div>
+                <div class="flex-grow-1 ms-4 ps-3">
+                  <figure>
+                    <blockquote class="blockquote mb-4">
+                      <p>
+                        <i
+                          class="fas fa-quote-left fa-lg text-warning me-2"
+                        ></i>
+                        <span class="font-italic"
+                          >At vero eos et accusamus et iusto odio dignissimos
+                          qui blanditiis praesentium voluptatum deleniti atque
+                          corrupti quos dolores et quas molestias excepturi sint
+                          amet dolore.</span
+                        >
+                      </p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Random User
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <!-- Inner -->
+
+      <!-- Controls -->
       <button
         class="carousel-control-prev"
         type="button"
-        data-bs-target="#carouselExampleDark"
+        data-bs-target="#carouselDarkVariant"
         data-bs-slide="prev"
       >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -306,13 +397,14 @@
       <button
         class="carousel-control-next"
         type="button"
-        data-bs-target="#carouselExampleDark"
+        data-bs-target="#carouselDarkVariant"
         data-bs-slide="next"
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+    <!-- Carousel wrapper -->
 
     <!-- Footer -->
     <footer class="bg-red-700 text-center text-white" style="margin-top: 20px">
@@ -349,8 +441,10 @@
 
         <!-- Section: Text -->
         <section
-          class="d-flex align-items-start mb-1"
-          style="text-align: justify; padding-left: 50px; padding-right: 50px"
+          class="mb-4 justify-center"
+          style="padding-left: 100px; padding-right: 100px"
+          padding-right:
+          30px
         >
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
@@ -382,7 +476,7 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-5 col-md-9 mb-4 mb-md-10">
+            <div class="col-lg-5 col-md-9 mb-4 mb-md-0">
               <section>
                 <ul
                   class="me-auto text-right"

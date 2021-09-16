@@ -19,38 +19,26 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/estilos.css" />
+    <link rel="stylesheet" href="./css/estilos-carrusel-inicio.css" />
     <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
     <title>GRUPO 10</title>
   </head>
   <body>
-    <!-- NAVBAR -->
-
+    <!-- Header -->
     <nav class="fixed-top navbar-expand-lg bg-red-600">
       <div class="container-fluid">
-        <section class="pt-1 pb-1">
+        <section class="pt-3 pb-3">
           <div class="row">
-            <div class="d-flex col-lg-4 col-md-12 mb-md-0">
-              <ul class="navbar-nav">
-                <li class="nav-item active" type="button">
-                  <a
-                    class="
-                      nav-link
-                      d-flex
-                      align-items-center
-                      justify-content-center
-                    "
-                    href="index.html"
-                  >
-                    <img
-                      src="./img/logo@2x.png"
-                      class="img-logo"
-                      alt="logo del restaurante"
-                    />
-                  </a>
-                </li>
-              </ul>
+            <div class="col-lg-4 col-md-6 mb-md-0" style="text-align: center">
+              <a href="index.html">
+                <img
+                  src="./img/logo@2x.png"
+                  class="img-logo"
+                  alt="logo del restaurante"
+                />
+              </a>
             </div>
-            <div class="col-lg-8 col-md-12 mb-md-0 div-item">
+            <div class="col-lg-8 col-md-6 mb-md-0 div-item">
               <button
                 class="navbar-toggler"
                 type="button"
@@ -65,11 +53,8 @@
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto justify-content-end mb-lg-0">
-                  <li
-                    class="d-flex align-items-start nav-item active"
-                    type="button"
-                  >
-                    <a class="nav-link" href="index.html">
+                  <li class="nav-item active" type="button">
+                    <a class="nav-link justify-content-center" href="#">
                       <p>
                         <i
                           class="fas fa-home svg-home"
@@ -80,28 +65,16 @@
                     </a>
                   </li>
 
-                  <li
-                    class="d-flex align-items-start nav-item active bg-blue"
-                    type="button"
-                  >
+                  <li class="nav-item active bg-blue" type="button">
                     <a class="nav-link" href="nosotros.html">QUIENES SOMOS</a>
                   </li>
-                  <li
-                    class="d-flex align-items-start nav-item active"
-                    type="button"
-                  >
-                    <a class="nav-link" href="#!">MENU</a>
+                  <li class="nav-item active" type="button">
+                    <a class="nav-link" href="#">MENU</a>
                   </li>
-                  <li
-                    class="d-flex align-items-start nav-item active"
-                    type="button"
-                  >
+                  <li class="nav-item active" type="button">
                     <a class="nav-link" href="#">SERVICIOS</a>
                   </li>
-                  <li
-                    class="d-flex align-items-start nav-item active"
-                    type="button"
-                  >
+                  <li class="nav-item active" type="button">
                     <a class="nav-link" href="#">CONTACTENOS</a>
                   </li>
                 </ul>
@@ -111,31 +84,18 @@
         </section>
 
         <div class="d-flex justify-content-end">
-          <section class="d-flex flex-column bg-red-800 redes-sociales">
+          <section class="d-flex flex-column redes-sociales bg-red-800">
             <!-- Facebook -->
             <a
-              class="
-                d-flex
-                justify-content-center
-                btn btn-outline-light btn-floating
-                a-width
-                mt-2
-              "
+              class="btn btn-outline-light btn-floating mt-2"
               href="#!"
               role="button"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
+              ><i class="fab fa-facebook-f"></i
+            ></a>
 
             <!-- Twitter -->
             <a
-              class="
-                d-flex
-                justify-content-center
-                btn btn-outline-light btn-floating
-                a-width
-                mt-3
-              "
+              class="btn btn-outline-light btn-floating mt-2"
               href="#!"
               role="button"
               ><i class="fab fa-twitter"></i
@@ -143,14 +103,7 @@
 
             <!-- Youtube -->
             <a
-              class="
-                d-flex
-                justify-content-center
-                btn btn-outline-light btn-floating
-                a-width
-                mt-3
-                mb-2
-              "
+              class="btn btn-outline-light btn-floating mt-2 mb-2"
               href="#!"
               role="button"
             >
@@ -160,6 +113,7 @@
         </div>
       </div>
     </nav>
+    <!-- Header Fin -->
 
     <!-- CARRUSEL DE IMAGENES -->
 
@@ -423,7 +377,6 @@
     </section>
 
     <!-- FOOTER -->
-
     <footer class="bg-red-700 text-center text-white" style="margin-top: 20px">
       <!-- Grid container -->
       <div class="pb-2">
@@ -458,8 +411,10 @@
 
         <!-- Section: Text -->
         <section
-          class="d-flex align-items-start mb-1"
-          style="text-align: justify; padding-left: 50px; padding-right: 50px"
+          class="mb-4 justify-center"
+          style="padding-left: 100px; padding-right: 100px"
+          padding-right:
+          30px
         >
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
@@ -491,7 +446,7 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-5 col-md-9 mb-4 mb-md-10">
+            <div class="col-lg-5 col-md-9 mb-4 mb-md-0">
               <section>
                 <ul
                   class="me-auto text-right"
