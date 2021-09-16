@@ -204,6 +204,22 @@ p {
   text-align: center;
 }
 
+.fixed-top {
+  transition-timing-function: ease-in;
+  transition-property: initial;
+  transition-duration: 5s;
+}
+.no-fixed-top {
+  position: relative;
+  transition-timing-function: ease-in-out;
+  transition-property: inherit;
+  transition-duration: 5s;
+}
+
+.img-fluid{
+  z-index: -1;
+}
+
 @media (min-width: 0px) {
   .redes-sociales {
     opacity: 0.8;
@@ -230,6 +246,7 @@ p {
     font-size: 1.1em;
   }
   .redes-sociales {
+    z-index: 100 !important;
     opacity: 0.8;
     margin-top: 115px;
     width: 45px;
@@ -259,6 +276,7 @@ p {
     width: 13%;
   }
 }
+
 @media (min-width: 992px) {
   .carousel-caption h5 {
     font-size: 4rem;
