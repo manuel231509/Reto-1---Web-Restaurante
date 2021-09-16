@@ -25,7 +25,7 @@
   </head>
   <body>
     <!-- NAVBAR -->
-    <nav class="fixed-top navbar-expand-lg bg-red-600">
+    <nav id="menu" class="navbar-expand-lg bg-red-600">
       <div class="container-fluid">
         <section class="pt-3 pb-3">
           <div class="row">
@@ -77,8 +77,11 @@
                   <li class="nav-item active" type="button">
                     <a class="nav-link" href="servicios.html">SERVICIOS</a>
                   </li>
-                  <li class="nav-item active" type="button">
-                    <a class="nav-link" href="#">CONTACTENOS</a>
+                  <li
+                    class="d-flex align-items-start nav-item active"
+                    type="button"
+                  >
+                    <a class="nav-link" href="contactenos.html">CONTACTENOS</a>
                   </li>
                 </ul>
               </div>
@@ -90,7 +93,13 @@
           <section class="d-flex flex-column redes-sociales bg-red-800">
             <!-- Facebook -->
             <a
-              class="btn btn-outline-light btn-floating mt-2"
+              class="
+                d-flex
+                justify-content-center
+                btn btn-outline-light btn-floating
+                a-width
+                mt-2
+              "
               href="#!"
               role="button"
               ><i class="fab fa-facebook-f"></i
@@ -98,7 +107,13 @@
 
             <!-- Twitter -->
             <a
-              class="btn btn-outline-light btn-floating mt-2"
+              class="
+                d-flex
+                justify-content-center
+                btn btn-outline-light btn-floating
+                a-width
+                mt-3
+              "
               href="#!"
               role="button"
               ><i class="fab fa-twitter"></i
@@ -106,7 +121,14 @@
 
             <!-- Youtube -->
             <a
-              class="btn btn-outline-light btn-floating mt-2 mb-2"
+              class="
+                d-flex
+                justify-content-center
+                btn btn-outline-light btn-floating
+                a-width
+                mt-3
+                mb-2
+              "
               href="#!"
               role="button"
             >
@@ -557,5 +579,6 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="./js/menu.js"></script>
   </body>
 </html>
