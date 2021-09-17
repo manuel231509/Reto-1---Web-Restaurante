@@ -110,7 +110,11 @@
           </div>
         </section>
 
-        <div class="d-flex justify-content-end" style="z-index: 1">
+        <div
+          id="redes-sociales-flotante"
+          class="d-flex justify-content-end"
+          style="z-index: 1"
+        >
           <section class="d-flex flex-column bg-red-800 redes-sociales">
             <!-- Facebook -->
             <a
@@ -164,12 +168,15 @@
     <!-- Formulario Contactenos -->
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title fs-3">
+        <h5 class="card-title fs-2 mt-4 mb-2">
           <i class="fas fa-circle"></i>
           CONTACTENOS
         </h5>
         <div class="row">
-          <div class="col col-lg-6 col-md-12 mb-md-0 mt-5">
+          <div
+            class="col col-lg-6 col-md-12 mb-md-0 mt-4"
+            style="padding-left: 50px; padding-right: 50px"
+          >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi
               nostrum minima qui repellendus, hic ipsa adipisci rem sapiente
@@ -190,21 +197,31 @@
             </p>
           </div>
 
-          <div class="col-lg-6 col-md-12 mb-md-0 mt-5">
+          <div class="col-lg-6 col-md-12 mb-md-0 mt-4">
             <form
               id="formulario_contactenos"
-              class="row g-3 needs-validation formulario_contactenos"
+              class="row formulario_contactenos d-flex"
               novalidate
             >
-              <div class="col-lg-12 col-md-12">
+              <div class="col-lg-12 col-md-12 d-flex justify-content-center">
                 <!-- Grupo: Servicio -->
                 <div class="formulario__grupo" id="grupo__servicio">
-                  <label for="servicio" class="formulario__label"
+                  <label
+                    for="servicio"
+                    class="d-flex flex-row align-self-center formulario__label"
                     >Seleccione el servicio</label
                   >
-                  <div class="d-flex flex-row formulario__grupo-input">
+                  <div
+                    class="
+                      d-flex
+                      flex-row
+                      formulario__grupo-input
+                      align-self-center
+                      formulario_grupo-select
+                    "
+                  >
                     <select
-                      class="formulario__input"
+                      class="d-flex flex-row formulario__input"
                       name="servicio"
                       id="servicio"
                       required
@@ -339,7 +356,13 @@
                 <!-- Grupo: Mensaje -->
                 <div class="formulario__grupo" id="grupo__mensaje">
                   <label for="mensaje" class="formulario__label">Mensaje</label>
-                  <div class="d-flex flex-row formulario__grupo-input">
+                  <div
+                    class="
+                      d-flex
+                      flex-row
+                      formulario__grupo-input formulario__grupo-textarea
+                    "
+                  >
                     <textarea
                       name="mensaje"
                       id="mensaje"
@@ -412,6 +435,7 @@
     <!-- Footer -->
 
     <footer
+      id="footer"
       class="align-items-baseline bg-red-700 text-center text-white"
       style="margin-top: 20px"
     >
@@ -533,13 +557,14 @@
             <div class="col-lg-5 col-md-12 mb-4 mb-md-0">
               <p class="text-uppercase">UBICACIÓN</p>
               <br />
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis
-              qui necessitatibus assumenda animi! Debitis quae dicta at, tenetur
-              dolore est beatae ex adipisci, laboriosam vel molestias
-              cupiditate! Optio maxime ipsam quod quasi culpa quisquam
-              distinctio magnam voluptatem aut, accusamus adipisci? Labore
-              corrupti quibusdam laborum eos, recusandae facilis mollitia quae
-              ad.
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15907.7370550156!2d-74.071814!3d4.605792!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a1f30307cf%3A0xf863232d4608bc5b!2zQ2wuIDE5ICM3LTMwLCBCb2dvdMOh!5e0!3m2!1ses-419!2sco!4v1631840312165!5m2!1ses-419!2sco"
+                width="100%"
+                height="200"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
             </div>
             <!--Grid column-->
           </div>

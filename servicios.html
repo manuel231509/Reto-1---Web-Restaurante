@@ -24,22 +24,34 @@
     <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
     <title>GRUPO 10</title>
   </head>
-  <body>
+  <body id="body">
     <!-- NAVBAR -->
-    <nav class="fixed-top navbar-expand-lg bg-red-600">
+    <nav id="menu" class="navbar-expand-lg bg-red-600">
       <div class="container-fluid">
-        <section class="pt-3 pb-3">
+        <section class="pt-1 pb-1">
           <div class="row">
-            <div class="col-lg-4 col-md-6 mb-md-0" style="text-align: center">
-              <a href="index.html">
-                <img
-                  src="./img/logo@2x.png"
-                  class="img-logo"
-                  alt="logo del restaurante"
-                />
-              </a>
+            <div class="d-flex col-lg-4 col-md-12 mb-md-0">
+              <ul class="navbar-nav">
+                <li class="nav-item active" type="button">
+                  <a
+                    class="
+                      nav-link
+                      d-flex
+                      align-items-center
+                      justify-content-center
+                    "
+                    href="index.html"
+                  >
+                    <img
+                      src="./img/logo@2x.png"
+                      class="img-logo"
+                      alt="logo del restaurante"
+                    />
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div class="col-lg-8 col-md-6 mb-md-0 div-item">
+            <div class="col-lg-8 col-md-12 mb-md-0 div-item">
               <button
                 class="navbar-toggler"
                 type="button"
@@ -54,11 +66,11 @@
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto justify-content-end mb-lg-0">
-                  <li class="nav-item active" type="button">
-                    <a
-                      class="nav-link justify-content-center"
-                      href="index.html"
-                    >
+                  <li
+                    class="d-flex align-items-start nav-item active"
+                    type="button"
+                  >
+                    <a class="nav-link" href="index.html">
                       <p>
                         <i
                           class="fas fa-home svg-home"
@@ -69,16 +81,28 @@
                     </a>
                   </li>
 
-                  <li class="nav-item active bg-blue" type="button">
+                  <li
+                    class="d-flex align-items-start nav-item active bg-blue"
+                    type="button"
+                  >
                     <a class="nav-link" href="nosotros.html">QUIENES SOMOS</a>
                   </li>
-                  <li class="nav-item active" type="button">
-                    <a class="nav-link" href="#">MENU</a>
+                  <li
+                    class="d-flex align-items-start nav-item active"
+                    type="button"
+                  >
+                    <a class="nav-link" href="#!">MENU</a>
                   </li>
-                  <li class="nav-item active" type="button">
+                  <li
+                    class="d-flex align-items-start nav-item active"
+                    type="button"
+                  >
                     <a class="nav-link" href="servicios.html">SERVICIOS</a>
                   </li>
-                  <li class="nav-item active" type="button">
+                  <li
+                    class="d-flex align-items-start nav-item active"
+                    type="button"
+                  >
                     <a class="nav-link" href="contactenos.html">CONTACTENOS</a>
                   </li>
                 </ul>
@@ -87,7 +111,11 @@
           </div>
         </section>
 
-        <div class="d-flex justify-content-end" style="z-index: 1">
+        <div
+          id="redes-sociales-flotante"
+          class="d-flex justify-content-end"
+          style="z-index: 1"
+        >
           <section class="d-flex flex-column bg-red-800 redes-sociales">
             <!-- Facebook -->
             <a
@@ -139,7 +167,7 @@
     </nav>
 
     <!--SERVICIOS-->
-    <main class="container py-5" style="margin-top: 7rem">
+    <main class="container py-5">
       <h1
         class="my-4"
         style="
@@ -150,8 +178,8 @@
       >
         Servicios
       </h1>
-      <class class="row my-5">
-        <class class="col">
+      <div class="row my-5">
+        <div class="d-flex flex-column col-lg-6 col-md-12 col-sm-12 col-xs-12">
           <p class="fs-5" style="text-align: justify">
             Duis non dui eget neque mattis ornare. In tempor neque eget tempus
             venenatis. Suspendisse mauris tortor, condimentum eu arcu in, rutrum
@@ -165,8 +193,8 @@
             erat. Sed a ipsum quam. Quisque non felis sed eros convallis tempor
             quis id libero. Nunc ac iaculis nibh, vitae ultrices turpis.
           </p>
-        </class>
-        <class class="col">
+        </div>
+        <div class="d-flex flex-column col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-md-2 mt-sm-2 mt-xs-5">
           <p class="fs-5" style="text-align: justify">
             Maecenas hendrerit ut ligula eu vehicula. In dictum tortor in mauris
             lobortis, et aliquet augue laoreet. Nulla ullamcorper egestas urna
@@ -178,11 +206,11 @@
             dignissim vitae interdum et, scelerisque sit amet eros. Sed feugiat
             diam eu nibh molestie, ac vulputate orci placerat.
           </p>
-        </class>
-      </class>
+        </div>
+      </div>
 
       <div class="row">
-        <div class="col p-4">
+        <div class="col-lg-6 col-md-12 p-4">
           <div class="card">
             <img
               src="./img/cumpleanos.svg"
@@ -202,7 +230,7 @@
                 nulla libero molestie quam, sed mollis erat ante vel ante.
               </p>
               <a
-                href="#"
+                href="contactenos.html"
                 class="btn btn-lg boton-contacto"
                 style="background-color: rgb(255, 217, 0)"
                 ><span>¿Dudas? ¡Contáctanos!</span></a
@@ -210,7 +238,7 @@
             </div>
           </div>
         </div>
-        <div class="col p-4">
+        <div class="col-lg-6 col-md-12 p-4">
           <div class="card">
             <img
               src="./img/aniversario.svg"
@@ -230,7 +258,7 @@
                 nulla libero molestie quam, sed mollis erat ante vel ante.
               </p>
               <a
-                href="#"
+                href="contactenos.html"
                 class="btn btn-lg boton-contacto"
                 style="background-color: #f9ca26"
                 ><span>¿Dudas? ¡Contáctanos!</span></a
@@ -239,8 +267,9 @@
           </div>
         </div>
       </div>
+
       <div class="row">
-        <div class="col p-4">
+        <div class="col-lg-6 col-md-12 p-4">
           <div class="card">
             <img
               src="./img/fiesta-infantil.svg"
@@ -260,7 +289,7 @@
                 nulla libero molestie quam, sed mollis erat ante vel ante.
               </p>
               <a
-                href="#"
+                href="contactenos.html"
                 class="btn btn-lg boton-contacto"
                 style="background-color: #f9ca26"
                 ><span>¿Dudas? ¡Contáctanos!</span></a
@@ -268,7 +297,7 @@
             </div>
           </div>
         </div>
-        <div class="col p-4">
+        <div class="col-lg-6 col-md-12 p-4">
           <div class="card" style="width: 100%">
             <img
               src="./img/propuesta-declaracion.svg"
@@ -288,7 +317,7 @@
                 nulla libero molestie quam, sed mollis erat ante vel ante.
               </p>
               <a
-                href="#"
+                href="contactenos.html"
                 class="btn btn-lg boton-contacto"
                 style="background-color: #f9ca26"
                 ><span>¿Dudas? ¡Contáctanos!</span></a
@@ -297,8 +326,9 @@
           </div>
         </div>
       </div>
+
       <div class="row">
-        <div class="col p-4">
+        <div class="col-lg-6 col-md-12 p-4">
           <div class="card">
             <img
               src="./img/despedidas.svg"
@@ -318,7 +348,7 @@
                 nulla libero molestie quam, sed mollis erat ante vel ante.
               </p>
               <a
-                href="#"
+                href="contactenos.html"
                 class="btn btn-lg boton-contacto"
                 style="background-color: #f9ca26"
                 ><span>¿Dudas? ¡Contáctanos!</span></a
@@ -326,7 +356,7 @@
             </div>
           </div>
         </div>
-        <div class="col p-4">
+        <div class="col-lg-6 col-md-12 p-4">
           <div class="card">
             <img
               src="./img/cena-amigos.svg"
@@ -346,7 +376,7 @@
                 nulla libero molestie quam, sed mollis erat ante vel ante.
               </p>
               <a
-                href="#"
+                href="contactenos.html"
                 class="btn btn-lg boton-contacto"
                 style="background-color: #f9ca26"
                 ><span>¿Dudas? ¡Contáctanos!</span></a
@@ -359,6 +389,7 @@
 
     <!-- Footer -->
     <footer
+      id="footer"
       class="align-items-baseline bg-red-700 text-center text-white"
       style="margin-top: 20px"
     >
@@ -480,13 +511,14 @@
             <div class="col-lg-5 col-md-12 mb-4 mb-md-0">
               <p class="text-uppercase">UBICACIÓN</p>
               <br />
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis
-              qui necessitatibus assumenda animi! Debitis quae dicta at, tenetur
-              dolore est beatae ex adipisci, laboriosam vel molestias
-              cupiditate! Optio maxime ipsam quod quasi culpa quisquam
-              distinctio magnam voluptatem aut, accusamus adipisci? Labore
-              corrupti quibusdam laborum eos, recusandae facilis mollitia quae
-              ad.
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15907.7370550156!2d-74.071814!3d4.605792!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a1f30307cf%3A0xf863232d4608bc5b!2zQ2wuIDE5ICM3LTMwLCBCb2dvdMOh!5e0!3m2!1ses-419!2sco!4v1631840312165!5m2!1ses-419!2sco"
+                width="100%"
+                height="200"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
             </div>
             <!--Grid column-->
           </div>
@@ -509,5 +541,6 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="./js/menu.js"></script>
   </body>
 </html>

@@ -23,7 +23,7 @@
     <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
     <title>GRUPO 10</title>
   </head>
-  <body>
+  <body id="body">
     <!-- NAVBAR -->
 
     <nav id="menu" class="navbar-expand-lg bg-red-600">
@@ -111,7 +111,11 @@
           </div>
         </section>
 
-        <div class="d-flex justify-content-end" style="z-index: 1">
+        <div
+          id="redes-sociales-flotante"
+          class="d-flex justify-content-end"
+          style="z-index: 1"
+        >
           <section class="d-flex flex-column bg-red-800 redes-sociales">
             <!-- Facebook -->
             <a
@@ -426,6 +430,7 @@
 
     <!-- FOOTER -->
     <footer
+      id="footer"
       class="align-items-baseline bg-red-700 text-center text-white"
       style="margin-top: 20px"
     >
@@ -547,13 +552,14 @@
             <div class="col-lg-5 col-md-12 mb-4 mb-md-0">
               <p class="text-uppercase">UBICACIÓN</p>
               <br />
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis
-              qui necessitatibus assumenda animi! Debitis quae dicta at, tenetur
-              dolore est beatae ex adipisci, laboriosam vel molestias
-              cupiditate! Optio maxime ipsam quod quasi culpa quisquam
-              distinctio magnam voluptatem aut, accusamus adipisci? Labore
-              corrupti quibusdam laborum eos, recusandae facilis mollitia quae
-              ad.
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15907.7370550156!2d-74.071814!3d4.605792!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a1f30307cf%3A0xf863232d4608bc5b!2zQ2wuIDE5ICM3LTMwLCBCb2dvdMOh!5e0!3m2!1ses-419!2sco!4v1631840312165!5m2!1ses-419!2sco"
+                width="100%"
+                height="200"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
             </div>
             <!--Grid column-->
           </div>

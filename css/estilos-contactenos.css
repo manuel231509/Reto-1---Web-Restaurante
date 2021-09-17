@@ -7,7 +7,8 @@
   margin: 20px;
 }
 .card-body {
-  padding: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .col {
   text-align: justify;
@@ -15,11 +16,6 @@
 .fas {
   font-size: 25px;
   margin-right: 10px;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  background: #e5e5e5;
 }
 
 main {
@@ -31,6 +27,7 @@ main {
 
 .formulario_contactenos {
   display: grid;
+  background: #f3f2f2;
 }
 
 .formulario__label {
@@ -40,55 +37,80 @@ main {
   cursor: pointer;
 }
 
-
 .formulario__textarea {
   resize: none;
   width: 100%;
   background: #fff;
   border: 3px solid transparent;
   border-radius: 3px;
+  border: 1px solid;
   line-height: 20px;
   padding: 15px 40px 15px 20px;
   transition: 0.3s ease all;
+  position: relative;
+  left: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .formulario__input {
-  width: 100%;
+  width: 100% !important;
   background: #fff;
   border: 3px solid transparent;
   border-radius: 3px;
+  border: 1px solid;
   height: 55px;
   line-height: 45px;
-  padding: 0 40px 0 20px;
   transition: 0.3s ease all;
+  padding: 15px 40px 15px 20px;
+  position: relative;
+  left: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.formulario__grupo {
+  width: 100%;
 }
 
 .formulario__input:focus,
 .formulario__textarea:focus {
-  border: 3px solid #0075ff;
   outline: none;
   box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
 }
 
-.formulario__input-error, .formulario__input-error1 {
+.formulario__input-error,
+.formulario__input-error1 {
   font-size: 15px;
   margin-bottom: 0;
+  margin-top: -15px;
+  margin-left: 11px;
   padding: 5px;
   display: none;
 }
 
-.formulario__input-error-activo, .formulario__input-error1-activo {
+.formulario__input-error-activo,
+.formulario__input-error1-activo {
   display: block;
 }
 
 .formulario__validacion-estado {
   display: flex;
   position: relative;
-  right: 40px;
-  /*bottom: 20px;*/
+  right: 20px;
+  bottom: 4px;
   z-index: 100;
   font-size: 20px;
   opacity: 0;
+}
+
+.formulario__grupo-textarea > .formulario__validacion-estado {
+  right: 24px;
+  bottom: 5px;
+}
+.formulario_grupo-select > .formulario__validacion-estado {
+  right: 30px;
+  bottom: 4px;
 }
 
 .formulario__checkbox {
@@ -101,6 +123,10 @@ main {
   padding: 0 15px;
   border-radius: 3px;
   width: 95%;
+  position: relative;
+  left: 15px;
+  margin-top: 10px;
+  margin-bottom: -15px;
   display: none;
 }
 
@@ -112,10 +138,9 @@ main {
   margin: 0;
 }
 
-
 .formulario__btn {
   height: 45px;
-  width: 95%;
+  width: 100%;
   background: #000;
   color: #fff;
   font-weight: bold;
@@ -123,6 +148,10 @@ main {
   border-radius: 3px;
   cursor: pointer;
   transition: 0.1s ease all;
+}
+
+.formulario__grupo-btn-enviar {
+  padding: 20px;
 }
 
 .formulario__btn:hover {
