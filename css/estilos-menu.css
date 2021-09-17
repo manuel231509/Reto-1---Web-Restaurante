@@ -1,0 +1,34 @@
+.card-principal {
+  margin: 0%;
+  padding: 0%;
+  max-width: 100%;
+  z-index: -2;
+}
+.card{
+  background-color: inherit;
+}
+
+.card-principal > .card {
+  margin: 20px;
+  border-radius: 2px;
+  box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card-hijo > .card:hover {
+  margin: 20px;
+  border-radius: 2px;
+  box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.75);
+}
+
+.card-principal > .card > .card-body {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#redes-sociales-flotante {
+  z-index: -100;
+}
