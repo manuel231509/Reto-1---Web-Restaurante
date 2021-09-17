@@ -4,26 +4,16 @@
   box-sizing: border-box;
 }
 
-/* NAVBAR */
+.bg-red-600 {
+  background-color: #b02a37;
+}
+.bg-red-700 {
+  background-color: #842029;
+}
+.bg-red-800 {
+  background-color: #58151c;
+}
 
-.navbar-brand {
-  font-size: 2rem;
-  font-family: "Lobster", cursive;
-  color: black;
-}
-.navbar-brand:hover {
-  color: black;
-}
-.nav-link {
-  margin-right: 10px;
-  margin-left: 10px;
-  color: black;
-  font-family: "Rubik", sans-serif;
-  text-transform: uppercase;
-}
-.nav-link:hover {
-  color: black;
-}
 .search {
   height: 40px;
   width: 80%;
@@ -75,6 +65,7 @@
 h1 {
   font-weight: 700;
 }
+
 .card:hover {
   box-shadow: -3px -2px 25px -5px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -3px -2px 25px -5px rgba(0, 0, 0, 0.75);
@@ -95,12 +86,10 @@ h1 {
   font-family: "Lobster", cursive;
 }
 
-/* FOOTER */
-
-.footer {
-  background-color: black;
-  color: white;
+.fas {
+  font-size: 1.5rem;
 }
+
 .btn2 {
   height: 46px;
   width: 100px;
@@ -109,37 +98,12 @@ h1 {
   border: 2px solid white;
   font-weight: 600;
 }
-.footer input {
-  height: 45px;
-  width: 55%;
-  border: 2px solid white;
-  outline: none;
-  background: black;
-  color: white;
-  margin-top: 20px;
-  font-weight: 600;
-}
-.footer p {
-  margin: 0;
-}
-.fas {
-  font-size: 2.5rem;
-}
-.fab {
+
+/*.fab {
   font-size: 2.5rem;
   cursor: pointer;
   padding-right: 5px;
-}
-
-.bg-red-600 {
-  background-color: #b02a37;
-}
-.bg-red-700 {
-  background-color: #842029;
-}
-.bg-red-800 {
-  background-color: #58151c;
-}
+}*/
 
 .img-logo {
   width: 25%;
@@ -178,16 +142,7 @@ h1 {
   padding: 20px;
   margin-bottom: -5px;
 }
-/*.nav-link:hover {
-  background-color: #ae434d;
-}*/
-/*.nav-link:focus {
-  background-color: #e35d6a;
-}*/
-/*.nav-link:hover,
-.nav-link:focus {
-  font-size: 18px;
-}*/
+
 .svg-home {
   margin-right: 8px;
 }
@@ -268,12 +223,6 @@ p {
 }
 
 @media (min-width: 576px) {
-  .carousel-caption h5 {
-    font-size: 3rem;
-  }
-  .carousel-caption p {
-    font-size: 1.1em;
-  }
   .redes-sociales {
     z-index: 100 !important;
     opacity: 0.8;
@@ -292,12 +241,6 @@ p {
   }
 }
 @media (min-width: 768px) {
-  .carousel-caption h5 {
-    font-size: 3rem;
-  }
-  .carousel-caption p {
-    font-size: 1.6em;
-  }
   .redes-sociales {
     margin-top: 100px;
   }
@@ -307,12 +250,6 @@ p {
 }
 
 @media (min-width: 992px) {
-  .carousel-caption h5 {
-    font-size: 4rem;
-  }
-  .carousel-caption p {
-    font-size: 1.8em;
-  }
   .redes-sociales {
     margin-top: 125px;
   }
@@ -321,12 +258,6 @@ p {
   }
 }
 @media (min-width: 1200px) {
-  .carousel-caption h5 {
-    font-size: 5rem;
-  }
-  .carousel-caption p {
-    font-size: 2rem;
-  }
   .redes-sociales {
     margin-top: 110px;
   }

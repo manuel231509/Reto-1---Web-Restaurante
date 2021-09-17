@@ -22,3 +22,17 @@
   opacity: 1;
   right: 0;
 }
+
+.img-fluid {
+  z-index: 1;
+}
+
+.card img {
+  width: 30rem !important;
+  height: 30rem !important;
+}
+
+.card{
+  height: 900px;
+}
+
