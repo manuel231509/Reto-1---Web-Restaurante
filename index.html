@@ -19,13 +19,14 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/estilos.css" />
+    <link rel="stylesheet" href="./css/estilos-carrusel-inicio.css" />
     <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
     <title>GRUPO 10</title>
   </head>
-  <body>
+  <body id="body">
     <!-- NAVBAR -->
 
-    <nav class="fixed-top navbar-expand-lg bg-red-600">
+    <nav id="menu" class="navbar-expand-lg bg-red-600">
       <div class="container-fluid">
         <section class="pt-1 pb-1">
           <div class="row">
@@ -90,19 +91,19 @@
                     class="d-flex align-items-start nav-item active"
                     type="button"
                   >
-                    <a class="nav-link" href="#!">MENU</a>
+                    <a class="nav-link" href="menu.html">MENU</a>
                   </li>
                   <li
                     class="d-flex align-items-start nav-item active"
                     type="button"
                   >
-                    <a class="nav-link" href="#">SERVICIOS</a>
+                    <a class="nav-link" href="servicios.html">SERVICIOS</a>
                   </li>
                   <li
                     class="d-flex align-items-start nav-item active"
                     type="button"
                   >
-                    <a class="nav-link" href="#">CONTACTENOS</a>
+                    <a class="nav-link" href="contactenos.html">CONTACTENOS</a>
                   </li>
                 </ul>
               </div>
@@ -110,7 +111,11 @@
           </div>
         </section>
 
-        <div class="d-flex justify-content-end">
+        <div
+          id="redes-sociales-flotante"
+          class="d-flex justify-content-end"
+          style="z-index: 1"
+        >
           <section class="d-flex flex-column bg-red-800 redes-sociales">
             <!-- Facebook -->
             <a
@@ -160,6 +165,7 @@
         </div>
       </div>
     </nav>
+    <!-- Header Fin -->
 
     <!-- CARRUSEL DE IMAGENES -->
 
@@ -193,7 +199,7 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="/img/1.jpg" class="d-block w-100 img-fluid" alt="..." />
+            <img src="./img/1.jpg" class="d-block w-100 img-fluid" alt="..." />
             <div class="carousel-caption d-md-block">
               <h5>Las Mejores Pizzas Para Degustar</h5>
               <p>
@@ -203,7 +209,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img src="/img/2.jpg" class="d-block w-100 img-fluid" alt="..." />
+            <img src="./img/2.jpg" class="d-block w-100 img-fluid" alt="..." />
             <div class="carousel-caption d-none d-md-block">
               <h5>Second slide label</h5>
               <p>
@@ -212,7 +218,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img src="/img/3.jpg" class="d-block w-100 img-fluid" alt="..." />
+            <img src="./img/3.jpg" class="d-block w-100 img-fluid" alt="..." />
             <div class="carousel-caption d-none d-md-block">
               <h5>Third slide label</h5>
               <p>
@@ -423,8 +429,11 @@
     </section>
 
     <!-- FOOTER -->
-
-    <footer class="bg-red-700 text-center text-white" style="margin-top: 20px">
+    <footer
+      id="footer"
+      class="align-items-baseline bg-red-700 text-center text-white"
+      style="margin-top: 20px"
+    >
       <!-- Grid container -->
       <div class="pb-2">
         <!-- Section: Social media -->
@@ -503,7 +512,7 @@
                     style="display: inline-block"
                     ;
                   >
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="mapa.html">
                       <p>MAPA DEL SITIO</p>
                     </a>
                   </li>
@@ -512,7 +521,7 @@
                     type="button"
                     style="display: inline-block"
                   >
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="contactenos.html">
                       <p>CONTACTENOS</p>
                     </a>
                   </li>
@@ -542,9 +551,15 @@
             <!--Grid column-->
             <div class="col-lg-5 col-md-12 mb-4 mb-md-0">
               <p class="text-uppercase">UBICACIÓN</p>
-              <br/> 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9342344323386!2d-74.07400248551748!3d4.605797243756272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a1f30307cf%3A0xf863232d4608bc5b!2zQ2wuIDE5ICM3LTMwLCBCb2dvdMOh!5e0!3m2!1ses-419!2sco!4v1631813671036!5m2!1ses-419!2sco" 
-              width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              <br />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15907.7370550156!2d-74.071814!3d4.605792!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a1f30307cf%3A0xf863232d4608bc5b!2zQ2wuIDE5ICM3LTMwLCBCb2dvdMOh!5e0!3m2!1ses-419!2sco!4v1631840312165!5m2!1ses-419!2sco"
+                width="100%"
+                height="200"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
             </div>
             <!--Grid column-->
           </div>
@@ -566,5 +581,7 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
+
+    <script type="text/javascript" src="./js/menu.js"></script>
   </body>
 </html>
