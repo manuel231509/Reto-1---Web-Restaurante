@@ -4,7 +4,7 @@
   max-width: 100%;
   z-index: -2;
 }
-.card{
+.card {
   background-color: inherit;
 }
 
@@ -31,4 +31,117 @@
 
 #redes-sociales-flotante {
   z-index: -100;
+}
+
+.modal-footer {
+  height: 65px;
+  margin: 0% !important;
+  flex-wrap: inherit;
+  padding: 0% !important;
+  justify-content: inherit;
+}
+.modal-footer > .row {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-footer > a {
+  margin-right: 25px;
+}
+.modal-footer > .row > .div-precio,
+.modal-footer > .row > .div-contactanos {
+  display: flex;
+  align-items: center;
+}
+.modal-footer > .row > .div-contactanos {
+  justify-content: flex-end;
+}
+.modal-footer > .row > .div-precio > p {
+  /*background-color: indianred;*/
+  font-size: 30px;
+  font-family: Georgia, "Times New Roman", Times, monospace;
+  font-weight: bold;
+  align-items: center;
+}
+.card-body-carrito {
+  text-align: center;
+  justify-content: center;
+  
+  width: 100%;
+}
+
+.card-body-carrito > .row > .col-cantidad > p {
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.card-body-carrito > .row > .col-minus-input-plus > .row > .col-minus,
+.card-body-carrito > .row > .col-minus-input-plus > .row > .col-plus {
+  padding: 0%;
+  width: 17%;
+}
+
+.card-body-carrito > .row > .col-minus-input-plus > .row {
+  justify-content: center;
+}
+
+.card-body-carrito > .row > .col-minus-input-plus > .row > .col-input {
+  margin: 0%;
+  padding: 0%;
+  width: 60px;
+}
+
+.card-body-carrito
+  > .row
+  > .col-minus-input-plus
+  > .row
+  > .col-minus
+  > button
+  > .fas,
+.card-body-carrito
+  > .row
+  > .col-minus-input-plus
+  > .row
+  > .col-plus
+  > button
+  > .fas {
+  font-size: 15px;
+}
+
+.card-body-carrito
+  > .row
+  > .col-minus-input-plus
+  > .row
+  > .col-input
+  > .input-cantidad {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+.div-agregar-carrito{
+  display: flex;
+  justify-content: center;
+
+}
+.div-agregar-carrito > .btn-agregar-carrito{
+  background-color: #58151C;
+  color: whitesmoke;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.div-agregar-carrito > .btn-agregar-carrito > .fas{
+  display: inline;
+}
+
+.div-agregar-carrito > .btn-agregar-carrito > p{
+  margin: 0%;
+  padding: 0%;
+  margin-left: 15px;
+  display: inline-block;
+  text-align: center;
 }

@@ -1,648 +1,1058 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./css/estilos.css" />
-    <link rel="stylesheet" href="./css/estilos-menu.css" />
-    <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
-    <title>GRUPO 10</title>
-  </head>
-  <body id="body">
-    <!-- NAVBAR -->
+		<!-- Bootstrap CSS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="./css/estilos.css" />
+		<link rel="stylesheet" href="./css/estilos-menu.css" />
+		<script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
+		<title>GRUPO 10</title>
+	</head>
+	<body id="body">
+		<!-- NAVBAR -->
 
-    <nav id="menu" class="navbar-expand-lg bg-red-600">
-      <div class="container-fluid">
-        <section class="pt-1 pb-1">
-          <div class="row">
-            <div class="d-flex col-lg-4 col-md-12 mb-md-0">
-              <ul class="navbar-nav">
-                <li class="nav-item active" type="button">
-                  <a
-                    class="
-                      nav-link
-                      d-flex
-                      align-items-center
-                      justify-content-center
-                    "
-                    href="index.html"
-                  >
-                    <img
-                      src="./img/logo@2x.png"
-                      class="img-logo"
-                      alt="logo del restaurante"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-8 col-md-12 mb-md-0 div-item">
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <i class="fas fa-bars"></i>
-              </button>
+		<nav id="menu" class="navbar-expand-lg bg-red-600">
+			<div class="container-fluid">
+				<section class="pt-1 pb-1">
+					<div class="row">
+						<div class="d-flex col-lg-4 col-md-12 mb-md-0">
+							<ul class="navbar-nav">
+								<li class="nav-item active" type="button">
+									<a
+										class="
+											nav-link
+											d-flex
+											align-items-center
+											justify-content-center
+										"
+										href="index.html"
+									>
+										<img
+											src="./img/logo@2x.png"
+											class="img-logo"
+											alt="logo del restaurante"
+										/>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-lg-8 col-md-12 mb-md-0 div-item">
+							<button
+								class="navbar-toggler"
+								type="button"
+								data-bs-toggle="collapse"
+								data-bs-target="#navbarSupportedContent"
+								aria-controls="navbarSupportedContent"
+								aria-expanded="false"
+								aria-label="Toggle navigation"
+							>
+								<i class="fas fa-bars"></i>
+							</button>
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto justify-content-end mb-lg-0">
-                  <li
-                    class="d-flex align-items-start nav-item active"
-                    type="button"
-                  >
-                    <a class="nav-link" href="index.html">
-                      <p>
-                        <i
-                          class="fas fa-home svg-home"
-                          style="font-size: 20px; margin-right: 10px"
-                        ></i
-                        >INICIO
-                      </p>
-                    </a>
-                  </li>
+							<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul class="navbar-nav me-auto justify-content-end mb-lg-0">
+									<li
+										class="d-flex align-items-start nav-item active"
+										type="button"
+									>
+										<a class="nav-link" href="index.html">
+											<p>
+												<i
+													class="fas fa-home svg-home"
+													style="font-size: 20px; margin-right: 10px"
+												></i
+												>INICIO
+											</p>
+										</a>
+									</li>
 
-                  <li
-                    class="d-flex align-items-start nav-item active bg-blue"
-                    type="button"
-                  >
-                    <a class="nav-link" href="nosotros.html">QUIENES SOMOS</a>
-                  </li>
-                  <li
-                    class="d-flex align-items-start nav-item active"
-                    type="button"
-                  >
-                    <a class="nav-link" href="menu.html">MENU</a>
-                  </li>
-                  <li
-                    class="d-flex align-items-start nav-item active"
-                    type="button"
-                  >
-                    <a class="nav-link" href="servicios.html">SERVICIOS</a>
-                  </li>
-                  <li
-                    class="d-flex align-items-start nav-item active"
-                    type="button"
-                  >
-                    <a class="nav-link" href="contactenos.html">CONTACTENOS</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+									<li
+										class="d-flex align-items-start nav-item active bg-blue"
+										type="button"
+									>
+										<a class="nav-link" href="nosotros.html">QUIENES SOMOS</a>
+									</li>
+									<li
+										class="d-flex align-items-start nav-item active"
+										type="button"
+									>
+										<a class="nav-link" href="menu.html">MENU</a>
+									</li>
+									<li
+										class="d-flex align-items-start nav-item active"
+										type="button"
+									>
+										<a class="nav-link" href="servicios.html">SERVICIOS</a>
+									</li>
+									<li
+										class="d-flex align-items-start nav-item active"
+										type="button"
+									>
+										<a class="nav-link" href="contactenos.html">CONTACTENOS</a>
+									</li>
+									<li
+										class="d-flex align-items-start nav-item active"
+										type="button"
+									>
+										<a class="nav-link" href="carrito.html">
+											<i class="fas fa-shopping-cart icon-carrito"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
 
-        <div id="redes-sociales-flotante" class="d-flex justify-content-end">
-          <section class="d-flex flex-column bg-red-800 redes-sociales">
-            <!-- Facebook -->
-            <a
-              class="
-                d-flex
-                justify-content-center
-                btn btn-outline-light btn-floating
-                a-width
-                mt-2
-              "
-              href="#!"
-              role="button"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
+				<div id="redes-sociales-flotante" class="d-flex justify-content-end">
+					<section class="d-flex flex-column bg-red-800 redes-sociales">
+						<!-- Facebook -->
+						<a
+							class="
+								d-flex
+								justify-content-center
+								btn btn-outline-light btn-floating
+								a-width
+								mt-2
+							"
+							href="#!"
+							role="button"
+						>
+							<i class="fab fa-facebook-f"></i>
+						</a>
 
-            <!-- Twitter -->
-            <a
-              class="
-                d-flex
-                justify-content-center
-                btn btn-outline-light btn-floating
-                a-width
-                mt-3
-              "
-              href="#!"
-              role="button"
-              ><i class="fab fa-twitter"></i
-            ></a>
+						<!-- Twitter -->
+						<a
+							class="
+								d-flex
+								justify-content-center
+								btn btn-outline-light btn-floating
+								a-width
+								mt-3
+							"
+							href="#!"
+							role="button"
+							><i class="fab fa-twitter"></i
+						></a>
 
-            <!-- Youtube -->
-            <a
-              class="
-                d-flex
-                justify-content-center
-                btn btn-outline-light btn-floating
-                a-width
-                mt-3
-                mb-2
-              "
-              href="#!"
-              role="button"
-            >
-              <i class="fab fa-youtube"></i>
-            </a>
-          </section>
-        </div>
-      </div>
-    </nav>
-    <!-- Header Fin -->
+						<!-- Youtube -->
+						<a
+							class="
+								d-flex
+								justify-content-center
+								btn btn-outline-light btn-floating
+								a-width
+								mt-3
+								mb-2
+							"
+							href="#!"
+							role="button"
+						>
+							<i class="fab fa-youtube"></i>
+						</a>
+					</section>
+				</div>
+			</div>
+		</nav>
+		<!-- Header Fin -->
 
-    <div class="container card-principal">
-      <div class="card mt-4">
-        <div class="card-body">
-          <div class="d-flex flex-column card-title">
-            <h5 class="fs-2 mt-5 mb-5" style="margin-right: 30px">
-              <i class="fas fa-circle"></i>
-              MENU
-            </h5>
-            <button
-              class="btn btn-primary justify-content-center mb-3"
-              type="button"
-            >
-              <i class="fas fa-file-download me-3"></i>
-              DESCARGAR EL MENÚ
-            </button>
-          </div>
+		<!-- Menu -->
+		<div class="container card-principal">
+			<div class="card mt-4">
+				<div class="card-body">
+					<div class="d-flex flex-column card-title">
+						<h5 class="fs-2 mt-5 mb-5" style="margin-right: 30px">
+							<i class="fas fa-circle"></i>
+							MENU
+						</h5>
+						<button
+							class="btn btn-primary justify-content-center mb-3"
+							type="button"
+						>
+							<i class="fas fa-file-download me-3"></i>
+							DESCARGAR EL MENÚ
+						</button>
+					</div>
 
-          <div class="row mb-3 card-hijo">
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-              <div
-                class="card"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                <img
-                  src="./img/menu1.jpg"
-                  class="card-img-top"
-                  alt="..."
-                  width="300"
-                  height="300"
-                />
-                <div class="card-body">
-                  <div class="card-title">
-                    <h5>Example</h5>
-                  </div>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
+					<div class="row mb-3 card-hijo">
+						<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+							<div class="card">
+								<div
+									data-bs-toggle="modal"
+									data-bs-target="#modalDescripcionProducto"
+								>
+									<img
+										src="./img/menu1.jpg"
+										class="card-img-top"
+										alt="..."
+										width="300"
+										height="300"
+									/>
+									<div class="card-body">
+										<div class="card-title">
+											<h5>Example</h5>
+										</div>
+										<p class="card-text">
+											Some quick example text to build on the card title and
+											make up the bulk of the card's content.
+										</p>
+									</div>
+								</div>
+								<div
+									class="card-body card-body-carrito mt-lg-1 mt-md-1 mt-sm-1"
+								>
+									<div class="row">
+										<div class="col-cantidad col-lg-12 col-md-12">
+											<p>CANTIDAD</p>
+										</div>
+									</div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-              <div
-                class="card"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                <img
-                  src="./img/menu2_grilles-chicken-steak-with-teriyaki-sauce.jpg"
-                  class="card-img-top"
-                  alt="..."
-                  width="300"
-                  height="300"
-                />
-                <div class="card-body">
-                  <div class="card-title">
-                    <h5>Example</h5>
-                  </div>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
+									<div class="row">
+										<div class="col-minus-input-plus col-lg-12 col-md-12">
+											<div class="row">
+												<div class="col-minus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-minus"></i>
+													</button>
+												</div>
 
-            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-              <div
-                class="card"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                <img
-                  src="./img/menu3_lamb-steak-pieces-with-sauces-grill.jpg"
-                  class="card-img-top"
-                  alt="..."
-                  width="300"
-                  height="300"
-                />
-                <div class="card-body">
-                  <div class="card-title">
-                    <h5>Example</h5>
-                  </div>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+												<div class="col-input col-lg-4 col-md-4 col-sm-4">
+													<input class="input-cantidad" type="text" value="1" />
+												</div>
 
-          <div class="row mb-3 card-hijo">
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-              <div
-                class="card"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                <img
-                  src="./img/hamburguesa.png"
-                  class="card-img-top"
-                  alt="..."
-                  width="300"
-                  height="300"
-                />
-                <div class="card-body">
-                  <div class="card-title">
-                    <h5>Example</h5>
-                  </div>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
+												<div class="col-plus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-              <div
-                class="card"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                <img
-                  src="./img/1.jpg"
-                  class="card-img-top"
-                  alt="..."
-                  width="300"
-                  height="300"
-                />
-                <div class="card-body">
-                  <div class="card-title">
-                    <h5>Example</h5>
-                  </div>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
+									<div class="row">
+										<div class="col-lg-12 col-md-12">
+											<div class="div-agregar-carrito">
+												<button type="button" class="btn btn-agregar-carrito">
+													<i class="fas fa-shopping-cart"></i>
+													<p>AÑADIR AL CARRITO</p>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-              <div
-                class="card"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                <img
-                  src="./img/2.jpg"
-                  class="card-img-top"
-                  alt="..."
-                  width="300"
-                  height="300"
-                />
-                <div class="card-body">
-                  <div class="card-title">
-                    <h5>Example</h5>
-                  </div>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+						<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+							<div class="card">
+								<div
+									data-bs-toggle="modal"
+									data-bs-target="#modalDescripcionProducto"
+								>
+									<img
+										src="./img/menu2_grilles-chicken-steak-with-teriyaki-sauce.jpg"
+										class="card-img-top"
+										alt="..."
+										width="300"
+										height="300"
+									/>
+									<div class="card-body">
+										<div class="card-title">
+											<h5>Example</h5>
+										</div>
+										<p class="card-text">
+											Some quick example text to build on the card title and
+											make up the bulk of the card's content.
+										</p>
+									</div>
+								</div>
+								<div
+									class="card-body card-body-carrito mt-lg-1 mt-md-1 mt-sm-1"
+								>
+									<div class="row">
+										<div class="col-cantidad col-lg-12 col-md-12">
+											<p>CANTIDAD</p>
+										</div>
+									</div>
 
-          <div class="row mb-3 card-hijo">
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-              <div
-                class="card"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                <img
-                  src="./img/3.jpg"
-                  class="card-img-top"
-                  alt="..."
-                  width="300"
-                  height="300"
-                />
-                <div class="card-body">
-                  <div class="card-title">
-                    <h5>Example</h5>
-                  </div>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
+									<div class="row">
+										<div class="col-minus-input-plus col-lg-12 col-md-12">
+											<div class="row">
+												<div class="col-minus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-minus"></i>
+													</button>
+												</div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-              <div
-                class="card"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                <img
-                  src="./img/reuniones.jpg"
-                  class="card-img-top"
-                  alt="..."
-                  width="300"
-                  height="300"
-                />
-                <div class="card-body">
-                  <div class="card-title">
-                    <h5>Example</h5>
-                  </div>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
+												<div class="col-input col-lg-4 col-md-4 col-sm-4">
+													<input class="input-cantidad" type="text" value="1" />
+												</div>
 
-            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-              <div
-                class="card"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                <img
-                  src="./img/celebraciones.jpg"
-                  class="card-img-top"
-                  alt="..."
-                  width="300"
-                  height="300"
-                />
-                <div class="card-body">
-                  <div class="card-title">
-                    <h5>Example</h5>
-                  </div>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                  <a class="page-link">Previous</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="index.html">1</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="servicios.html">2</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="contactenos.html">3</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="index.html">Next</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
+												<div class="col-plus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div
-        class="
-          modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl
-        "
-        style="width: 845px"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ejemplo</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <img
-              src="./img/menu1.jpg"
-              class="card-img-top"
-              alt="..."
-              style="width: 800px; height: 300px"
-            />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo
-              architecto cumque eligendi nisi voluptatum doloribus quidem autem,
-              quibusdam molestias quis deserunt vitae non facere nobis! Est in,
-              id temporibus consequuntur vel, vitae architecto nemo at voluptate
-              itaque reprehenderit similique earum aperiam ipsa ratione.
-              Consectetur distinctio dolor odit minima mollitia tempore nobis
-              laudantium id debitis ullam et itaque, dolorum explicabo.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <a
-              class="btn btn-outline-light btn-floating m-3 mt-4 btn-primary"
-              href="contactenos.html"
-              role="button"
-            >
-              ¿PREGUNTAS? O CONTACTANOS
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+									<div class="row">
+										<div class="col-lg-12 col-md-12">
+											<div class="div-agregar-carrito">
+												<button type="button" class="btn btn-agregar-carrito">
+													<i class="fas fa-shopping-cart"></i>
+													<p>AÑADIR AL CARRITO</p>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-    <!-- FOOTER -->
-    <footer
-      id="footer"
-      class="align-items-baseline bg-red-700 text-center text-white"
-      style="margin-top: 20px"
-    >
-      <!-- Grid container -->
-      <div class="pb-2">
-        <!-- Section: Social media -->
-        <section class="mb-2">
-          <!-- Facebook -->
-          <a
-            class="btn btn-outline-light btn-floating m-3 mt-4"
-            href="#!"
-            role="button"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
+						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+							<div class="card">
+								<div
+									data-bs-toggle="modal"
+									data-bs-target="#modalDescripcionProducto"
+								>
+									<img
+										src="./img/menu3_lamb-steak-pieces-with-sauces-grill.jpg"
+										class="card-img-top"
+										alt="..."
+										width="300"
+										height="300"
+									/>
+									<div class="card-body">
+										<div class="card-title">
+											<h5>Example</h5>
+										</div>
+										<p class="card-text">
+											Some quick example text to build on the card title and
+											make up the bulk of the card's content.
+										</p>
+									</div>
+								</div>
+								<div
+									class="card-body card-body-carrito mt-lg-1 mt-md-1 mt-sm-1"
+								>
+									<div class="row">
+										<div class="col-cantidad col-lg-12 col-md-12">
+											<p>CANTIDAD</p>
+										</div>
+									</div>
 
-          <!-- Twitter -->
-          <a
-            class="btn btn-outline-light btn-floating m-3 mt-4"
-            href="#!"
-            role="button"
-            ><i class="fab fa-twitter"></i
-          ></a>
+									<div class="row">
+										<div class="col-minus-input-plus col-lg-12 col-md-12">
+											<div class="row">
+												<div class="col-minus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-minus"></i>
+													</button>
+												</div>
 
-          <!-- Youtube -->
-          <a
-            class="btn btn-outline-light btn-floating m-3 mt-4"
-            href="#!"
-            role="button"
-          >
-            <i class="fab fa-youtube"></i>
-          </a>
-        </section>
-        <!-- Section: Social media -->
+												<div class="col-input col-lg-4 col-md-4 col-sm-4">
+													<input class="input-cantidad" type="text" value="1" />
+												</div>
 
-        <!-- Section: Text -->
-        <section
-          class="d-flex align-items-start mb-1"
-          style="text-align: justify; padding-left: 50px; padding-right: 50px"
-        >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-            distinctio earum repellat quaerat voluptatibus placeat nam, commodi
-            optio pariatur est quia magnam eum harum corrupti dicta, aliquam
-            sequi voluptate quas.
-          </p>
-        </section>
-        <!-- Section: Text -->
+												<div class="col-plus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
 
-        <!-- Section: Links -->
-        <section class="" style="padding: 20px">
-          <!--Grid row-->
-          <div class="row text-center">
-            <!--Grid column-->
-            <div
-              class="col-lg-2 col-md-3 mb-4 mb-md-0 justify-center"
-              style="padding: 0%; margin: 0%"
-            >
-              <picture class="img-responsive picture justify-center">
-                <source srcset="./img/logo@2x.png" type="image/svg+xml" />
-                <img
-                  src="./img/logo@2x.png"
-                  class="img-logo_footer"
-                  alt="logo del restaurante"
-                />
-              </picture>
-            </div>
-            <!--Grid column-->
+									<div class="row">
+										<div class="col-lg-12 col-md-12">
+											<div class="div-agregar-carrito">
+												<button type="button" class="btn btn-agregar-carrito">
+													<i class="fas fa-shopping-cart"></i>
+													<p>AÑADIR AL CARRITO</p>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-            <!--Grid column-->
-            <div class="col-lg-5 col-md-9 mb-4 mb-md-10">
-              <section>
-                <ul
-                  class="me-auto text-right"
-                  style="padding-left: 10px; padding-right: 10px"
-                >
-                  <li
-                    class="nav-item active"
-                    type="button"
-                    style="display: inline-block"
-                    ;
-                  >
-                    <a class="nav-link" href="mapa.html">
-                      <p>MAPA DEL SITIO</p>
-                    </a>
-                  </li>
-                  <li
-                    class="nav-item active"
-                    type="button"
-                    style="display: inline-block"
-                  >
-                    <a class="nav-link" href="contactenos.html">
-                      <p>CONTACTENOS</p>
-                    </a>
-                  </li>
-                  <li
-                    class="nav-item active"
-                    type="button"
-                    style="display: inline-block"
-                  >
-                    <a class="nav-link" href="#">
-                      <p>RESERVAS</p>
-                    </a>
-                  </li>
-                </ul>
+					<div class="row mb-3 card-hijo">
+						<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+							<div class="card">
+								<div
+									data-bs-toggle="modal"
+									data-bs-target="#modalDescripcionProducto"
+								>
+									<img
+										src="./img/hamburguesa.png"
+										class="card-img-top"
+										alt="..."
+										width="300"
+										height="300"
+									/>
+									<div class="card-body">
+										<div class="card-title">
+											<h5>Example</h5>
+										</div>
+										<p class="card-text">
+											Some quick example text to build on the card title and
+											make up the bulk of the card's content.
+										</p>
+									</div>
+								</div>
+								<div
+									class="card-body card-body-carrito mt-lg-1 mt-md-1 mt-sm-1"
+								>
+									<div class="row">
+										<div class="col-cantidad col-lg-12 col-md-12">
+											<p>CANTIDAD</p>
+										</div>
+									</div>
 
-                <div class="row" style="padding-left: 60px; text-align: left">
-                  <div class="col-lg-12 col-md-6 mb-md-0 text-right">
-                    <p>Restaurante Sal y Salsa Ltda.</p>
-                    <p>Calle 19 No. 7 - 30, Bogota</p>
-                    <p>reservas@salysalsa.com</p>
-                    <p>31232525321</p>
-                  </div>
-                </div>
-              </section>
-            </div>
-            <!--Grid column-->
+									<div class="row">
+										<div class="col-minus-input-plus col-lg-12 col-md-12">
+											<div class="row">
+												<div class="col-minus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-minus"></i>
+													</button>
+												</div>
 
-            <!--Grid column-->
-            <div class="col-lg-5 col-md-12 mb-4 mb-md-0">
-              <p class="text-uppercase">UBICACIÓN</p>
-              <br />
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15907.7370550156!2d-74.071814!3d4.605792!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a1f30307cf%3A0xf863232d4608bc5b!2zQ2wuIDE5ICM3LTMwLCBCb2dvdMOh!5e0!3m2!1ses-419!2sco!4v1631840312165!5m2!1ses-419!2sco"
-                width="100%"
-                height="200"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-              ></iframe>
-            </div>
-            <!--Grid column-->
-          </div>
-          <!--Grid row-->
-        </section>
-        <!-- Section: Links -->
-      </div>
-      <!-- Grid container -->
+												<div class="col-input col-lg-4 col-md-4 col-sm-4">
+													<input class="input-cantidad" type="text" value="1" />
+												</div>
 
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2020 Copyright: Grupo 10 - Talento JuvenTic
-      </div>
-      <!-- Copyright -->
-    </footer>
+												<div class="col-plus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-      crossorigin="anonymous"
-    ></script>
+									<div class="row">
+										<div class="col-lg-12 col-md-12">
+											<div class="div-agregar-carrito">
+												<button type="button" class="btn btn-agregar-carrito">
+													<i class="fas fa-shopping-cart"></i>
+													<p>AÑADIR AL CARRITO</p>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-    <script type="text/javascript" src="./js/menu.js"></script>
-  </body>
+						<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+							<div
+								class="card"
+							>
+								<div
+									data-bs-toggle="modal"
+									data-bs-target="#modalDescripcionProducto"
+								>
+									<img
+										src="./img/1.jpg"
+										class="card-img-top"
+										alt="..."
+										width="300"
+										height="300"
+									/>
+									<div class="card-body">
+										<div class="card-title">
+											<h5>Example</h5>
+										</div>
+										<p class="card-text">
+											Some quick example text to build on the card title and
+											make up the bulk of the card's content.
+										</p>
+									</div>
+								</div>
+								<div
+									class="card-body card-body-carrito mt-lg-1 mt-md-1 mt-sm-1"
+								>
+									<div class="row">
+										<div class="col-cantidad col-lg-12 col-md-12">
+											<p>CANTIDAD</p>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-minus-input-plus col-lg-12 col-md-12">
+											<div class="row">
+												<div class="col-minus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-minus"></i>
+													</button>
+												</div>
+
+												<div class="col-input col-lg-4 col-md-4 col-sm-4">
+													<input class="input-cantidad" type="text" value="1" />
+												</div>
+
+												<div class="col-plus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-lg-12 col-md-12">
+											<div class="div-agregar-carrito">
+												<button type="button" class="btn btn-agregar-carrito">
+													<i class="fas fa-shopping-cart"></i>
+													<p>AÑADIR AL CARRITO</p>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+							<div class="card">
+								<div
+									data-bs-toggle="modal"
+									data-bs-target="#modalDescripcionProducto"
+								>
+									<img
+										src="./img/2.jpg"
+										class="card-img-top"
+										alt="..."
+										width="300"
+										height="300"
+									/>
+									<div class="card-body">
+										<div class="card-title">
+											<h5>Example</h5>
+										</div>
+										<p class="card-text">
+											Some quick example text to build on the card title and
+											make up the bulk of the card's content.
+										</p>
+									</div>
+								</div>
+
+								<div
+									class="card-body card-body-carrito mt-lg-1 mt-md-1 mt-sm-1"
+								>
+									<div class="row">
+										<div class="col-cantidad col-lg-12 col-md-12">
+											<p>CANTIDAD</p>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-minus-input-plus col-lg-12 col-md-12">
+											<div class="row">
+												<div class="col-minus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-minus"></i>
+													</button>
+												</div>
+
+												<div class="col-input col-lg-4 col-md-4 col-sm-4">
+													<input class="input-cantidad" type="text" value="1" />
+												</div>
+
+												<div class="col-plus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-lg-12 col-md-12">
+											<div class="div-agregar-carrito">
+												<button type="button" class="btn btn-agregar-carrito">
+													<i class="fas fa-shopping-cart"></i>
+													<p>AÑADIR AL CARRITO</p>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row mb-3 card-hijo">
+						<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+							<div class="card">
+								<div
+									data-bs-toggle="modal"
+									data-bs-target="#modalDescripcionProducto"
+								>
+									<img
+										src="./img/3.jpg"
+										class="card-img-top"
+										alt="..."
+										width="300"
+										height="300"
+									/>
+									<div class="card-body">
+										<div class="card-title">
+											<h5>Example</h5>
+										</div>
+										<p class="card-text">
+											Some quick example text to build on the card title and
+											make up the bulk of the card's content.
+										</p>
+									</div>
+								</div>
+								<div
+									class="card-body card-body-carrito mt-lg-1 mt-md-1 mt-sm-1"
+								>
+									<div class="row">
+										<div class="col-cantidad col-lg-12 col-md-12">
+											<p>CANTIDAD</p>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-minus-input-plus col-lg-12 col-md-12">
+											<div class="row">
+												<div class="col-minus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-minus"></i>
+													</button>
+												</div>
+
+												<div class="col-input col-lg-4 col-md-4 col-sm-4">
+													<input class="input-cantidad" type="text" value="1" />
+												</div>
+
+												<div class="col-plus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-lg-12 col-md-12">
+											<div class="div-agregar-carrito">
+												<button type="button" class="btn btn-agregar-carrito">
+													<i class="fas fa-shopping-cart"></i>
+													<p>AÑADIR AL CARRITO</p>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+							<div class="card">
+								<div
+									data-bs-toggle="modal"
+									data-bs-target="#modalDescripcionProducto"
+								>
+									<img
+										src="./img/reuniones.jpg"
+										class="card-img-top"
+										alt="..."
+										width="300"
+										height="300"
+									/>
+									<div class="card-body">
+										<div class="card-title">
+											<h5>Example</h5>
+										</div>
+										<p class="card-text">
+											Some quick example text to build on the card title and
+											make up the bulk of the card's content.
+										</p>
+									</div>
+								</div>
+
+								<div
+									class="card-body card-body-carrito mt-lg-1 mt-md-1 mt-sm-1"
+								>
+									<div class="row">
+										<div class="col-cantidad col-lg-12 col-md-12">
+											<p>CANTIDAD</p>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-minus-input-plus col-lg-12 col-md-12">
+											<div class="row">
+												<div class="col-minus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-minus"></i>
+													</button>
+												</div>
+
+												<div class="col-input col-lg-4 col-md-4 col-sm-4">
+													<input class="input-cantidad" type="text" value="1" />
+												</div>
+
+												<div class="col-plus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-lg-12 col-md-12">
+											<div class="div-agregar-carrito">
+												<button type="button" class="btn btn-agregar-carrito">
+													<i class="fas fa-shopping-cart"></i>
+													<p>AÑADIR AL CARRITO</p>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+							<div class="card">
+								<div
+									data-bs-toggle="modal"
+									data-bs-target="#modalDescripcionProducto"
+								>
+									<img
+										src="./img/celebraciones.jpg"
+										class="card-img-top"
+										alt="..."
+										width="300"
+										height="300"
+									/>
+									<div class="card-body">
+										<div class="card-title">
+											<h5>Example</h5>
+										</div>
+										<p class="card-text">
+											Some quick example text to build on the card title and
+											make up the bulk of the card's content.
+										</p>
+									</div>
+								</div>
+                
+								<div
+									class="card-body card-body-carrito mt-lg-1 mt-md-1 mt-sm-1"
+								>
+									<div class="row">
+										<div class="col-cantidad col-lg-12 col-md-12">
+											<p>CANTIDAD</p>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-minus-input-plus col-lg-12 col-md-12">
+											<div class="row">
+												<div class="col-minus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-minus"></i>
+													</button>
+												</div>
+
+												<div class="col-input col-lg-4 col-md-4 col-sm-4">
+													<input class="input-cantidad" type="text" value="1" />
+												</div>
+
+												<div class="col-plus col-lg-4 col-md-4 col-sm-4">
+													<button type="button" class="btn">
+														<i class="fas fa-plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-lg-12 col-md-12">
+											<div class="div-agregar-carrito">
+												<button type="button" class="btn btn-agregar-carrito">
+													<i class="fas fa-shopping-cart"></i>
+													<p>AÑADIR AL CARRITO</p>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<nav aria-label="Page navigation example">
+							<ul class="pagination justify-content-center">
+								<li class="page-item disabled">
+									<a class="page-link">Previous</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="index.html">1</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="servicios.html">2</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="contactenos.html">3</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="index.html">Next</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Descripcion Producto -->
+		<div
+			class="modal fade"
+			id="modalDescripcionProducto"
+			tabindex="-1"
+			aria-labelledby="modalDescripcionProductoLabel"
+			aria-hidden="true"
+		>
+			<div
+				class="
+					modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl
+				"
+				style="width: 845px"
+			>
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalDescripcionProductoLabel">
+							Ejemplo
+						</h5>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">
+						<img
+							src="./img/menu1.jpg"
+							class="card-img-top"
+							alt="..."
+							style="width: 800px; height: 300px"
+						/>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo
+							architecto cumque eligendi nisi voluptatum doloribus quidem autem,
+							quibusdam molestias quis deserunt vitae non facere nobis! Est in,
+							id temporibus consequuntur vel, vitae architecto nemo at voluptate
+							itaque reprehenderit similique earum aperiam ipsa ratione.
+							Consectetur distinctio dolor odit minima mollitia tempore nobis
+							laudantium id debitis ullam et itaque, dolorum explicabo.
+						</p>
+					</div>
+					<div class="modal-footer">
+						<div class="row">
+							<div class="div-precio col-lg-5 col-md-5">
+								<p>$20.000</p>
+							</div>
+							<div class="div-contactanos col-lg-7 col-md-7">
+								<a
+									class="btn btn-outline-light btn-floating btn-primary"
+									href="contactenos.html"
+									role="button"
+								>
+									¿PREGUNTAS? O CONTACTANOS
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- FOOTER -->
+		<footer
+			id="footer"
+			class="align-items-baseline bg-red-700 text-center text-white"
+			style="margin-top: 20px"
+		>
+			<!-- Grid container -->
+			<div class="pb-2">
+				<!-- Section: Social media -->
+				<section class="mb-2">
+					<!-- Facebook -->
+					<a
+						class="btn btn-outline-light btn-floating m-3 mt-4"
+						href="#!"
+						role="button"
+						><i class="fab fa-facebook-f"></i
+					></a>
+
+					<!-- Twitter -->
+					<a
+						class="btn btn-outline-light btn-floating m-3 mt-4"
+						href="#!"
+						role="button"
+						><i class="fab fa-twitter"></i
+					></a>
+
+					<!-- Youtube -->
+					<a
+						class="btn btn-outline-light btn-floating m-3 mt-4"
+						href="#!"
+						role="button"
+					>
+						<i class="fab fa-youtube"></i>
+					</a>
+				</section>
+				<!-- Section: Social media -->
+
+				<!-- Section: Text -->
+				<section
+					class="d-flex align-items-start mb-1"
+					style="text-align: justify; padding-left: 50px; padding-right: 50px"
+				>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+						distinctio earum repellat quaerat voluptatibus placeat nam, commodi
+						optio pariatur est quia magnam eum harum corrupti dicta, aliquam
+						sequi voluptate quas.
+					</p>
+				</section>
+				<!-- Section: Text -->
+
+				<!-- Section: Links -->
+				<section class="" style="padding: 20px">
+					<!--Grid row-->
+					<div class="row text-center">
+						<!--Grid column-->
+						<div
+							class="col-lg-2 col-md-3 mb-4 mb-md-0 justify-center"
+							style="padding: 0%; margin: 0%"
+						>
+							<picture class="img-responsive picture justify-center">
+								<source srcset="./img/logo@2x.png" type="image/svg+xml" />
+								<img
+									src="./img/logo@2x.png"
+									class="img-logo_footer"
+									alt="logo del restaurante"
+								/>
+							</picture>
+						</div>
+						<!--Grid column-->
+
+						<!--Grid column-->
+						<div class="col-lg-5 col-md-9 mb-4 mb-md-10">
+							<section>
+								<ul
+									class="me-auto text-right"
+									style="padding-left: 10px; padding-right: 10px"
+								>
+									<li
+										class="nav-item active"
+										type="button"
+										style="display: inline-block"
+										;
+									>
+										<a class="nav-link" href="mapa.html">
+											<p>MAPA DEL SITIO</p>
+										</a>
+									</li>
+									<li
+										class="nav-item active"
+										type="button"
+										style="display: inline-block"
+									>
+										<a class="nav-link" href="contactenos.html">
+											<p>CONTACTENOS</p>
+										</a>
+									</li>
+									<li
+										class="nav-item active"
+										type="button"
+										style="display: inline-block"
+									>
+										<a class="nav-link" href="reserva.html">
+											<p>RESERVAS</p>
+										</a>
+									</li>
+								</ul>
+
+								<div class="row" style="padding-left: 60px; text-align: left">
+									<div class="col-lg-12 col-md-6 mb-md-0 text-right">
+										<p>Restaurante Sal y Salsa Ltda.</p>
+										<p>Calle 19 No. 7 - 30, Bogota</p>
+										<p>reservas@salysalsa.com</p>
+										<p>31232525321</p>
+									</div>
+								</div>
+							</section>
+						</div>
+						<!--Grid column-->
+
+						<!--Grid column-->
+						<div class="col-lg-5 col-md-12 mb-4 mb-md-0">
+							<p class="text-uppercase">UBICACIÓN</p>
+							<br />
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15907.7370550156!2d-74.071814!3d4.605792!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a1f30307cf%3A0xf863232d4608bc5b!2zQ2wuIDE5ICM3LTMwLCBCb2dvdMOh!5e0!3m2!1ses-419!2sco!4v1631840312165!5m2!1ses-419!2sco"
+								width="100%"
+								height="200"
+								style="border: 0"
+								allowfullscreen=""
+								loading="lazy"
+							></iframe>
+						</div>
+						<!--Grid column-->
+					</div>
+					<!--Grid row-->
+				</section>
+				<!-- Section: Links -->
+			</div>
+			<!-- Grid container -->
+
+			<!-- Copyright -->
+			<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+				© 2020 Copyright: Grupo 10 - Talento JuvenTic
+			</div>
+			<!-- Copyright -->
+		</footer>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+			crossorigin="anonymous"
+		></script>
+
+		<script type="text/javascript" src="./js/menu.js"></script>
+	</body>
 </html>
