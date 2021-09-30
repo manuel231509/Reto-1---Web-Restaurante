@@ -1,0 +1,5 @@
+.tabla-carrito td,
+th {
+  vertical-align: middle;
+  text-align: center;
+}
