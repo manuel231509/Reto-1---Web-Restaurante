@@ -1,0 +1,20 @@
+* {
+	box-sizing: border-box;
+}
+
+.card {
+	background-color: initial;
+	margin: 20px;
+}
+
+.card-principal {
+	border-radius: 2px;
+	box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card-body {
+  padding-left: 50px;
+  padding-right: 50px;
+}
