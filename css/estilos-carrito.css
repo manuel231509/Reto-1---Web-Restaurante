@@ -1,5 +1,9 @@
-.tabla-carrito td,
-th {
-  vertical-align: middle;
-  text-align: center;
+/* Botón de aumentar o disminuir productos en el carrito */
+.shopping-cart-quantity-input {
+  max-width: 4rem;
+  max-height: 4rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #eee;
+  padding: 5px;
 }
