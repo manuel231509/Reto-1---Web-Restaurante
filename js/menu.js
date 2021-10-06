@@ -520,6 +520,78 @@ const funcionInputCantidad = (card_menu) => {
 };
 /* ------------- ------------- */
 
+/* -------------- MANEJO DEL LOCALSTORAGE -------------- */
+/*  */
+/* -------------- NOS PERMITE OBTENER LOS PLATILLOS DEL LOCALSTORAGE CONVERTIDOS EN JSON -------------- */
+const obtenerPlatillosLocalStorage = () => {
+	let platilloLS;
+	if (localStorage.getItem("platillos") === null) {
+		platilloLS = [];
+	} else {
+		platilloLS = JSON.parse(localStorage.getItem("platillos"));
+	}
+	return platilloLS;
+};
+/* -------------- FIN -------------- */
+
+/* -------------- NOS PERMITE SABER SI UN PLATILLO EXISTE, DEVOLVIENDO TRUE O FALSE -------------- */
+const saberPlatilloExistente = (platilloLS, platillo) => {
+	return platilloLS.id === platillo.id ? true : false;
+};
+/* -------------- FIN -------------- */
+
+/* -------------- NOS PERMITE LEER EL LOCALSTORAGE Y NOS DEVULEVE TRUE O FALSE SI ALGUN ELEMENTO
+   YA FUE CREADO EN EL LOCALSTORAGE -------------- */
+const leerLocalStorage = (platilloLS, platillo) => {
+	let saber = platilloLS.some((platilloLS) => {
+		return saberPlatilloExistente(platilloLS, platillo);
+	});
+	return saber;
+};
+/* -------------- FIN -------------- */
+
+/* -------------- NOS PERMITE ELIMINAR UN PLATILLO SEGUN SU ID DEL LOCALSTORAGE -------------- */
+const eliminarPlatilloByIdLocalStorage = (platillo) => {
+	let platilloLS = obtenerPlatillosLocalStorage();
+
+	platilloLS.forEach((platilloLS, index) => {
+		if (saberPlatilloExistente(platilloLS, platillo)) {
+			platilloLS.splice(index, 1);
+		}
+	});
+	localStorage.setItem("platillos", JSON.stringify(platilloLS));
+};
+/* -------------- FIN -------------- */
+
+/* -------------- NOS PERMITE REMOVER POR EL ITEM CREADO,
+  QUE SE ENCUENTRAN ALMACENADA EN EL LOCALSTORAGE -------------- */
+const removerItemLocalStorage = () => {
+	localStorage.removeItem("platillos");
+};
+/* -------------- FIN -------------- */
+
+/* -------------- NOS PERMITE VACIAR EL LOCALSTORAGE -------------- */
+const vaciarLocalStorage = () => {
+	localStorage.clear();
+};
+/* -------------- FIN -------------- */
+
+/* -------------- NOS PERMITE GUARDAR EL PLATILLO SELECCIONADO EN EL LOCALSTORAGE */
+const guardarSeleccionMenuLocalStorage = (platillo) => {
+	let platilloLS = obtenerPlatillosLocalStorage();
+	if (!leerLocalStorage(platilloLS, platillo)) {
+		platilloLS.push(platillo);
+		localStorage.setItem("platillos", JSON.stringify(platilloLS));
+		alert("SE HA AGREGADO CORRECTAMENTE AL CARRITO");
+	} else {
+		alert(
+			"EL PLATILLO YA FUE AGREGADO EN EL CARRITO, POR FAVOR REVISA EL CARRITO"
+		);
+	}
+};
+/* --------------FIN -------------- */
+/* -------------- FIN -------------- */
+
 /* ------------- Aqui va agregar la funcion para agregar a un producto en LocalStorage ------------- */
 const funcionBtnAgregarCarrito = (card_menu) => {
 	let btnAgregarCarrito = document.getElementsByClassName(
@@ -535,20 +607,25 @@ const funcionBtnAgregarCarrito = (card_menu) => {
 		if (campos[card_menu.id].valor == true) {
 			let formulario_menu = document.querySelectorAll("#formulario_menu");
 
-			/* -------------- JOSE AQUI VAS AGREGAR LA PARTE DEL LOCALSTORAGE -------------- */
-			console.log("AQUI :D");
-			/* -------------- EL CAMPO CANTIDAD YA ESTA VALIDADO Y EL BOTON TAMBIEN -------------- */
-
 			setTimeout(() => {
-				
 				/* -------------- Aqui se va agergar un toast de Agregado Correctamente -------------- */
-				alert("SE HA AGREGADO CORRECTAMENTE AL CARRITO")
+				let platillo = {
+					id: card_menu.id,
+					nombre: listadoMenu[card_menu.id].nombre,
+					descripcion: listadoMenu[card_menu.id].descripcion,
+					valor: listadoMenu[card_menu.id].valor,
+					imagen: listadoMenu[card_menu.id].imagen,
+					cantidad: input_cantidad.value,
+				};
+				guardarSeleccionMenuLocalStorage(platillo);
 
 				formulario_menu[card_menu.id].reset();
 			}, 500);
 		} else {
 			/* -------------- Aqui se va agergar un toast de Error -------------- */
-			alert("NO SE HA PDIDO AGREGAR, POR FAVOR VERIFICA LA CANTIDAD QUE SEA CORRECTA");
+			alert(
+				"NO SE HA PDIDO AGREGAR, POR FAVOR VERIFICA LA CANTIDAD QUE SEA CORRECTA"
+			);
 		}
 	});
 };
