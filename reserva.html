@@ -12,15 +12,30 @@
 			href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik&display=swap"
 			rel="stylesheet"
 		/>
+
+		<!-- BOOSTRAP -->
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
 			rel="stylesheet"
 			integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
 			crossorigin="anonymous"
 		/>
+
+		<!-- FLATPICKER -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+		<script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
+
 		<link rel="stylesheet" href="./css/estilos.css" />
+		<link rel="stylesheet" href="./css/estilo-flatpickr.css" />
 		<link rel="stylesheet" href="./css/estilos-reserva.css" />
-		<script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
+		<script
+			src="https://kit.fontawesome.com/07f2d15362.js"
+			crossorigin="anonymous"
+		></script>
 		<title>GRUPO 10</title>
 	</head>
 	<body id="body">
@@ -173,9 +188,497 @@
 
 		<div class="card card-principal">
 			<div class="card-body">
-				<h5 class="card-title fs-2 mt-4 mb-2">HAZ TU RESERVA</h5>
-				<div class="row">
-					<div class="col-lg-12 col-md-12 mb-md-0 mt-0 card-principal"></div>
+				<h1 class="card-title mt-5 text-center">HAZ TU RESERVA</h1>
+				<h2 class="card-title mb-5 text-center">¡YA!</h2>
+				<div class="row d-flex justify-content-center">
+					<div
+						class="
+							col-lg-12 col-md-12
+							mb-md-0
+							mt-0
+							reserva
+							d-flex
+							justify-content-center
+						"
+					>
+						<div class="card">
+							<div class="card-body">
+								<form
+									id="formulario_reserva"
+									class="row formulario_reserva d-flex"
+									novalidate
+								>
+									<!-- CAMPO NOMBRES -->
+									<div
+										class="col-lg-12 col-md-12 d-flex justify-content-center"
+									>
+										<!-- Grupo: Nombre -->
+										<div class="formulario__grupo" id="grupo__nombres">
+											<label for="nombres" class="formulario__label"
+												>NOMBRES</label
+											>
+											<div class="d-flex flex-row formulario__grupo-input">
+												<input
+													type="text"
+													class="formulario__input"
+													name="nombres"
+													id="nombres"
+													placeholder="INGRESE LOS NOMBRES"
+													value="Manuel Jose"
+													required
+												/>
+												<i
+													class="
+														d-flex
+														align-items-center
+														formulario__validacion-estado
+														fas
+														fa-times-circle
+													"
+												>
+												</i>
+											</div>
+											<p class="invalid-feedback formulario__input-error1">
+												EL CAMPO NOMBRES ES OBLIGATORIO.
+											</p>
+											<p class="invalid-feedback formulario__input-error">
+												EL CAMPO NOMBRES SOLO PUEDE CONTENER LETRAS Y TIENE UN
+												MINIMO DE 10 Y UN MAXIMO DE 35 CARATERES.
+											</p>
+										</div>
+									</div>
+
+									<!-- CAMPO APELLIDOS -->
+									<div
+										class="col-lg-12 col-md-12 d-flex justify-content-center"
+									>
+										<!-- Grupo: Apellidos -->
+										<div class="formulario__grupo" id="grupo__apellidos">
+											<label for="apellidos" class="formulario__label"
+												>APELLIDOS</label
+											>
+											<div class="d-flex flex-row formulario__grupo-input">
+												<input
+													type="text"
+													class="formulario__input"
+													name="apellidos"
+													id="apellidos"
+													placeholder="INGRESE LOS APELLIDOS"
+													value="Sanchez Parra"
+													required
+												/>
+												<i
+													class="
+														d-flex
+														align-items-center
+														formulario__validacion-estado
+														fas
+														fa-times-circle
+													"
+												>
+												</i>
+											</div>
+											<p class="invalid-feedback formulario__input-error1">
+												EL CAMPO APELLIDO ES OBLIGATORIO.
+											</p>
+											<p class="invalid-feedback formulario__input-error">
+												EL CAMPO APELLIDOS SOLO PUEDE CONTENER LETRAS Y TIENE UN
+												MINIMO DE 10 Y UN MAXIMO DE 35 CARATERES.
+											</p>
+										</div>
+									</div>
+
+									<!-- CAMPO CEDULA -->
+									<div
+										class="col-lg-12 col-md-12 d-flex justify-content-center"
+									>
+										<!-- GRUPO: Cedula -->
+										<div class="formulario__grupo" id="grupo__cedula">
+											<label for="cedula" class="formulario__label">
+												CEDULA
+											</label>
+											<div class="d-flex flex-row formulario__grupo-input">
+												<input
+													type="text"
+													class="formulario__input"
+													name="cedula"
+													id="cedula"
+													placeholder="INGRESE LA CEDULA"
+													value="1090510816"
+													required
+												/>
+												<i
+													class="
+														d-flex
+														align-items-center
+														formulario__validacion-estado
+														fas
+														fa-times-circle
+													"
+												>
+												</i>
+											</div>
+											<p class="invalid-feedback formulario__input-error1">
+												EL CAMPO CEDULA ES OBLIGATORIO.
+											</p>
+											<p class="invalid-feedback formulario__input-error">
+												EL CAMPO CEDULA SOLO PUEDE CONTENER NUMEROS Y UN MAXIMO
+												DE 10 CARACTERES.
+											</p>
+										</div>
+									</div>
+
+									<!-- CAMPO CORREO ELECTRONICO -->
+									<div
+										class="col-lg-12 col-md-12 d-flex justify-content-center"
+									>
+										<!--Grupo: Correo Electronico-->
+										<div class="formulario__grupo" id="grupo__correo">
+											<label for="correo" class="formulario__label">
+												CORREO ELECTRONICO
+											</label>
+											<div class="d-flex flex-row formulario__grupo-input">
+												<input
+													type="email"
+													class="formulario__input"
+													name="correo"
+													id="correo"
+													placeholder="CORREO@CORREO.COM"
+													value="manuel231509@gmail.com"
+													required
+												/>
+												<i
+													class="
+														d-flex
+														align-items-center
+														formulario__validacion-estado
+														fas
+														fa-times-circle
+													"
+												>
+												</i>
+											</div>
+											<p class="invalid-feedback formulario__input-error1">
+												EL CAMPO CORREO ELECTRONICO ES OBLIGATORIO.
+											</p>
+											<p class="invalid-feedback formulario__input-error">
+												EL CAMPO CORREO ELECTRONICO SOLO PUEDE CONTENER LETRAS,
+												NUMEROS, PUNTOS, GUIONES, ARROVA, GUION BAJO Y MAXIMO DE
+												CARACTERES ES 20
+											</p>
+										</div>
+									</div>
+
+									<!-- CAMPO TELEFONO -->
+									<div
+										class="col-lg-12 col-md-12 d-flex justify-content-center"
+									>
+										<!-- GRUPO: Telefono -->
+										<div class="formulario__grupo" id="grupo__telefono">
+											<label for="telefono" class="formulario__label">
+												TELEFONO
+											</label>
+											<div class="d-flex flex-row formulario__grupo-input">
+												<input
+													type="text"
+													class="formulario__input"
+													name="telefono"
+													id="telefono"
+													placeholder="INGRESE EL TELEFONO"
+													value="3104622813"
+													required
+												/>
+												<i
+													class="
+														d-flex
+														align-items-center
+														formulario__validacion-estado
+														fas
+														fa-times-circle
+													"
+												>
+												</i>
+											</div>
+											<p class="invalid-feedback formulario__input-error1">
+												EL CAMPO TELEFONO ES OBLIGATORIO.
+											</p>
+											<p class="invalid-feedback formulario__input-error">
+												EL CAMPO TELEFONO SOLO PUEDE CONTENER NUMEROS Y UN
+												MAXIMO DE 10 CARACTERES.
+											</p>
+										</div>
+									</div>
+
+									<!-- CAMPO SERVICIOS -->
+									<div
+										class="col-lg-12 col-md-12 d-flex justify-content-center"
+									>
+										<!-- GRUPO: Servicio -->
+										<div class="formulario__grupo" id="grupo__servicio">
+											<label
+												for="servicio"
+												class="
+													d-flex
+													flex-row
+													align-self-center
+													formulario__label
+												"
+											>
+												SELECCIONE EL SERVICIO
+											</label>
+											<div
+												class="
+													d-flex
+													flex-row
+													formulario__grupo-input
+													align-self-center
+													formulario__grupo-select
+												"
+											>
+												<select
+													class="d-flex flex-row formulario__input"
+													name="servicio"
+													id="servicio"
+													
+													required
+												>
+													<option  disabled value="">
+														SELECCIONE...
+													</option>
+													<option selected value="1">CELEBRACIÓN DE CUMPLEAÑOS</option>
+													<option value="2">ANIVERSARIOS</option>
+													<option value="3">FIESTAS INFANTILES</option>
+													<option value="4">DECLARACIONES O PROPUESTAS</option>
+													<option value="5">DESPEDIDAS</option>
+													<option value="6">CENA CON AMIGOS</option>
+												</select>
+												<i
+													class="
+														d-flex
+														align-items-center
+														formulario__validacion-estado
+														fas
+														fa-times-circle
+													"
+												>
+												</i>
+											</div>
+											<p class="invalid-feedback formulario__input-error">
+												EL CAMPO SERVICIO ES OBLIGATORIO, SELECCIONA UN TIPO DE
+												SERVICIO.
+											</p>
+										</div>
+									</div>
+
+									<!-- CAMPO  CANTIDAD PERSONAS -->
+									<div
+										class="col-lg-12 col-md-12 d-flex justify-content-center"
+									>
+										<!-- GRUPO: Cantidad Personas -->
+										<div class="formulario__grupo" id="grupo__cantidadPersonas">
+											<label for="cantidadPersonas" class="formulario__label">
+												CANTIDAD DE PERSONAS
+											</label>
+											<div class="d-flex flex-row formulario__grupo-input">
+												<input
+													type="text"
+													class="formulario__input"
+													name="cantidadPersonas"
+													id="cantidadPersonas"
+													placeholder="INGRESE LA CANTIDAD DE PERSONAS"
+													value="20"
+													required
+												/>
+												<i
+													class="
+														d-flex
+														align-items-center
+														formulario__validacion-estado
+														fas
+														fa-times-circle
+													"
+												>
+												</i>
+											</div>
+											<p class="invalid-feedback formulario__input-error1">
+												EL CAMPO CANTIDAD DE PERSONAS ES OBLIGATORIO.
+											</p>
+											<p class="invalid-feedback formulario__input-error">
+												EL CAMPO CANTIDAD DE PERSONAS SOLO PUEDE CONTENER
+												NUMEROS.
+											</p>
+										</div>
+									</div>
+
+									<!-- CAMPO  FECHA -->
+									<div
+										class="col-lg-12 col-md-12 d-flex justify-content-center"
+									>
+										<!-- GRUPO: Fecha -->
+										<div class="formulario__grupo" id="grupo__fecha">
+											<label for="fecha" class="formulario__label">
+												FECHA DE LA RESERVA
+											</label>
+											<div class="d-flex flex-row formulario__grupo-input">
+												<input
+													type="datetime-local"
+													class="formulario__input"
+													name="fecha"
+													id="fecha"
+													placeholder="SELECCIONE LA FECHA"
+													required
+												/>
+												<i
+													class="
+														d-flex
+														align-items-center
+														formulario__validacion-estado
+														fas
+														fa-times-circle
+													"
+												>
+												</i>
+											</div>
+											<p class="invalid-feedback formulario__input-error">
+												EL CAMPO FECHA ES OBLIGATORIO.
+											</p>
+										</div>
+									</div>
+
+									<!-- CAMPO  HORA -->
+									<div
+										class="col-lg-12 col-md-12 d-flex justify-content-center"
+									>
+										<!-- GRUPO: Hora -->
+										<div class="formulario__grupo" id="grupo__hora">
+											<label for="hora" class="formulario__label">
+												HORA DE LA RESERVA
+											</label>
+											<div class="d-flex flex-row formulario__grupo-input">
+												<input
+													type="text"
+													class="formulario__input hora"
+													name="hora"
+													id="hora"
+													placeholder="SELECCIONE LA HORA DE LA RESERVA"
+													required
+												/>
+												<i
+													class="
+														d-flex
+														align-items-center
+														formulario__validacion-estado
+														fas
+														fa-times-circle
+													"
+												>
+												</i>
+											</div>
+											<p class="invalid-feedback formulario__input-error">
+												EL CAMPO HORA DE LA RESERVA ES OBLIGATORIO.
+											</p>
+										</div>
+									</div>
+
+									<!-- CAMPO INDICACIONES ESPECIALES -->
+									<div
+										class="col-lg-12 col-md-12 d-flex justify-content-center"
+									>
+										<!-- Grupo: Indicaciones Especiales -->
+										<div
+											class="formulario__grupo"
+											id="grupo__indicacionesEspeciales"
+										>
+											<label
+												for="indicaciones-especiales"
+												class="formulario__label"
+												>INDICACIONES ESPECIALES</label
+											>
+											<div
+												class="
+													d-flex
+													flex-row
+													formulario__grupo-input formulario__grupo-textarea
+												"
+											>
+												<textarea
+													name="indicacionesEspeciales"
+													id="indicacionesEspeciales"
+													placeholder="INGRESE LAS INDICACIONES ESPECIALES"
+													rows="5"
+													class="formulario__textarea"
+
+													required
+												></textarea>
+												<i
+													class="
+														d-flex
+														align-items-center
+														formulario__validacion-estado
+														fas
+														fa-times-circle
+													"
+												></i>
+											</div>
+											<p class="invalid-feedback formulario__input-error">
+												El campo Indicaciones Especiales solo puede contener
+												letras, el minimo es de 10 y maximo son 200 caracteres.
+											</p>
+											<p class="invalid-feedback formulario__input-error1">
+												El campo Indicaciones Especiales es obligatorio
+											</p>
+										</div>
+									</div>
+
+									<!-- CAMPO TERMINOS Y CONDICIONES -->
+									<div
+										class="col-lg-12 col-md-12 d-flex justify-content-center"
+									>
+										<!-- GRUPO: Terminos y Condiciones -->
+										<div class="formulario__grupo" id="grupo__terminos">
+											<label class="formulario__label">
+												<input
+													class="formulario__checkbox"
+													type="checkbox"
+													name="terminos"
+													id="terminos"
+												/>
+												Acepto los Terminos y Condiciones
+											</label>
+										</div>
+									</div>
+
+									<!-- MENSAJE DEL FORMULARIO -->
+									<div class="col-lg-12 col-md-12 text-center">
+										<div class="formulario__mensaje" id="formulario__mensaje">
+											<p>
+												<span>
+													<i class="fas fa-exclamation-triangle"> </i>
+													<strong>ERROR: </strong>&nbsp;POR FAVOR COMPLETE EL
+													FORMULARIO CORRECTAMENTE
+												</span>
+											</p>
+										</div>
+									</div>
+
+									<!-- BOTON RESERVAR -->
+									<div class="col-lg-12 col-md-12 mt-2 text-center">
+										<div class="formulario__grupo formulario__grupo-btn-enviar">
+											<button type="submit" class="formulario__btn">
+												RESERVAR
+											</button>
+											<p
+												class="formulario__mensaje-exito"
+												id="formulario__mensaje-exito"
+											>
+												<span>FORMULARIO ENVIADO EXISITOSAMENTE!</span>
+											</p>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -334,6 +837,10 @@
 			crossorigin="anonymous"
 		></script>
 
-		<script type="text/javascript" src="./js/menu.js"></script>
+		<script type="text/javascript" src="./js/redes-sociales-flotante.js"></script>
+
+		<script type="text/javascript" src="./js/flatpickr.js"></script>
+
+		<script type="text/javascript" src="./js/formulario-reserva.js"></script>
 	</body>
 </html>

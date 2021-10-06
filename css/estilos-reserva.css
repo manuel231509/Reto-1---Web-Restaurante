@@ -14,7 +14,278 @@
 	-moz-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
 }
 
+.card:hover {
+	margin: 20px;
+	border-radius: 2px;
+	box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
+}
+
+.reserva {
+	padding: 0%;
+	margin: 0%;
+	background-color: initial;
+}
+
+.reserva > .card {
+	padding: 0%;
+	margin: 0%;
+	/*width: 60%;*/
+	background: #f3f2f2;
+}
+
 .card-body {
-  padding-left: 50px;
-  padding-right: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.card-body > h5 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.card-title {
+	font-size: 3.5rem;
+	color: #682828;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.formulario_reserva {
+	display: grid;
+}
+
+.formulario__label {
+	display: block;
+	font-weight: 900;
+	margin: 10px;
+	cursor: pointer;
+	width: fit-content;
+}
+
+.formulario__textarea {
+	resize: none;
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	border: 1px solid;
+	line-height: 20px;
+	padding: 15px 40px 15px 20px;
+	transition: 0.3s ease all;
+	position: relative;
+	left: 15px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.formulario__input {
+	width: 100%;
+	background: #ffff;
+	border: 1px solid;
+	border-radius: 3px;
+	height: 55px;
+	line-height: 5px;
+	transition: 0.3s ease all;
+	padding: 15px 40px 15px 20px;
+	position: relative;
+	left: 15px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.formulario__grupo {
+	width: 100%;
+}
+
+.formulario__input:focus,
+.formulario__textarea:focus {
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.5);
+}
+
+.formulario__input-error,
+.formulario__input-error1 {
+	font-size: 15px;
+	margin-bottom: 10px;
+	margin-top: -8px;
+	margin-left: 15px;
+	padding: 5;
+	display: none;
+}
+
+.formulario__input-error-activo,
+.formulario__input-error1-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	display: flex;
+	position: relative;
+	right: 20px;
+	bottom: 4px;
+	z-index: 100;
+	font-size: 20px;
+	opacity: 0;
+}
+
+.formulario__grupo-textarea > .formulario__validacion-estado {
+	right: 24px;
+	bottom: 5px;
+}
+
+.formulario__grupo-select > .formulario__validacion-estado {
+	right: 30px;
+	bottom: 4px;
+}
+.formulario__checkbox {
+	margin-left: 15px;
+	margin-right: 15px;
+	cursor: pointer;
+}
+
+.formulario__mensaje {
+	height: 55px;
+	width: 97%;
+	background: #f66060;
+	color: rgb(255, 250, 250);
+	padding: 0 15px;
+	border-radius: 3px;
+	position: relative;
+	left: 15px;
+	top: 10px;
+	bottom: -15px;
+	margin-bottom: 18px;
+	display: none;
+}
+
+.formulario__mensaje strong {
+	color: black;
+}
+
+.formulario__mensaje i {
+	color: gold;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	width: 100%;
+	height: 100%;
+	margin: 0%;
+	padding: 0%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.formulario__btn {
+	height: 45px;
+	width: 100%;
+	background: rgb(32, 32, 32);
+	color: #fffdff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: 0.5s ease all;
+	position: relative;
+	width: 97%;
+	left: 6px;
+}
+
+.formulario__grupo-btn-enviar{
+	width: 100%;
+	height: 100%;
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px #a3a3a3;
+}
+
+.formulario__mensaje-exito {
+	height: 25px;
+	width: 97%;
+	font-size: 90%;
+	background-color: #119200;
+	color: whitesmoke;
+	padding: 0 15px;
+	border-radius: 3px;
+	position: relative;
+	left: 12px;
+	top: 10px;
+	bottom: -15px;
+	margin-bottom: 10px;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- ----- Estilos para Validacion ----- -----  */
+
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input,
+.formulario__grupo-incorrecto .formulario__textarea {
+	border: 3px solid #bb2929;
+}
+
+.formulario__input-check {
+	background-color: #e8f0fe;
+}
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media (min-width: 0px) {
+	.reserva > .card {
+		width: 100%;
+		background-color: inherit;
+	}
+	.card-body {
+		background: none;
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+}
+@media (min-width: 576px) {
+	.reserva > .card {
+		width: 89%;
+		background: #f3f2f2;
+	}
+	.card-body {
+		padding-left: 45px;
+		padding-right: 45px;
+	}
+}
+@media (min-width: 768px) {
+	.reserva > .card {
+		width: 80%;
+	}
+	.card-body {
+		padding-left: 55px;
+		padding-right: 55px;
+	}
+}
+
+@media (min-width: 992px) {
+	.reserva > .card {
+		width: 65%;
+	}
+	.card-body {
+		padding-left: 65px;
+		padding-right: 65px;
+	}
 }
