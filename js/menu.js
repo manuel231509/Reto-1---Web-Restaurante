@@ -292,4 +292,17 @@ cards_menus.forEach((card_menu) => {
 			input_cantidad.value = rest;
 		}
 	});
+
+
+	/* Aqui va agregar la funcion para agregar a un producto en LocalStorage */
+	
+	let btn = document.getElementsByClassName("btn-agregar-carrito")[
+		card_menu.id
+	];
+	btn.addEventListener("click", (b) => {
+		console.log("LE DIO CLICK POSICION - " + card_menu.id);
+		let input_cantidad =
+			document.getElementsByClassName("input-cantidad")[card_menu.id];
+		console.log(input_cantidad.value);
+	});
 });
