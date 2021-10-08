@@ -127,9 +127,9 @@ const expresiones = {
 const campos = [];
 
 /* ------------- Crea un nuevo card con su repectivo menu ------------- */
-const agregandoListadoMenu = (i, tamaño, divRow) => {
+const agregandoListadoMenu = (i, divRow) => {
 	let divRowCol = document.createElement("div");
-	divRowCol.classList.add("col-lg-4", "col-md-6", "col-sm-12", "col-xs-12");
+	divRowCol.classList.add("col-lg-4", "col-md-12", "col-sm-12", "col-xs-12");
 
 	let divRowColCard = document.createElement("div");
 	divRowColCard.classList.add("card", "card-menu");
@@ -242,7 +242,7 @@ const agregandoListadoMenu = (i, tamaño, divRow) => {
 				<i class="fas fa-shopping-cart"></i>
 				<p>AÑADIR AL CARRITO</p>
 			</button>
-		</div>
+			</div>
 	</div>
 </div>`;
 
@@ -253,6 +253,7 @@ const agregandoListadoMenu = (i, tamaño, divRow) => {
 	);
 
 	divRowColCard_DataModalCardBody_CardTitleH5.innerText = listadoMenu[i].nombre;
+
 	divRowColCard_DataModalCardBody.appendChild(
 		divRowColCard_DataModalCardBody_CardTitle
 	);
@@ -275,6 +276,18 @@ const agregandoListadoMenu = (i, tamaño, divRow) => {
 };
 /* ------------- Fin ------------- */
 
+/* -------------- NOS PERMITE OBTENER LOS PLATILLOS DEL LOCALSTORAGE CONVERTIDOS EN JSON -------------- */
+const obtenerPlatillosLocalStorage = () => {
+	let platilloLS;
+	if (localStorage.getItem("platillos") === null) {
+		platilloLS = [];
+	} else {
+		platilloLS = JSON.parse(localStorage.getItem("platillos"));
+	}
+	return platilloLS;
+};
+/* -------------- FIN -------------- */
+
 /* ------------- Esta funcion Obtiene el numero de filas y crea menu segun las filas y las columnas ------------- */
 (function () {
 	"Lista Menu";
@@ -291,7 +304,7 @@ const agregandoListadoMenu = (i, tamaño, divRow) => {
 
 		idCardBody.appendChild(divRow);
 		while (cont < 3 && i < tamaño) {
-			agregandoListadoMenu(i, tamaño, divRow);
+			agregandoListadoMenu(i, divRow);
 			i++;
 			cont++;
 		}
@@ -522,17 +535,6 @@ const funcionInputCantidad = (card_menu) => {
 
 /* -------------- MANEJO DEL LOCALSTORAGE -------------- */
 /*  */
-/* -------------- NOS PERMITE OBTENER LOS PLATILLOS DEL LOCALSTORAGE CONVERTIDOS EN JSON -------------- */
-const obtenerPlatillosLocalStorage = () => {
-	let platilloLS;
-	if (localStorage.getItem("platillos") === null) {
-		platilloLS = [];
-	} else {
-		platilloLS = JSON.parse(localStorage.getItem("platillos"));
-	}
-	return platilloLS;
-};
-/* -------------- FIN -------------- */
 
 /* -------------- NOS PERMITE SABER SI UN PLATILLO EXISTE, DEVOLVIENDO TRUE O FALSE -------------- */
 const saberPlatilloExistente = (platilloLS, platillo) => {
@@ -554,8 +556,8 @@ const leerLocalStorage = (platilloLS, platillo) => {
 const eliminarPlatilloByIdLocalStorage = (platillo) => {
 	let platilloLS = obtenerPlatillosLocalStorage();
 
-	platilloLS.forEach((platilloLS, index) => {
-		if (saberPlatilloExistente(platilloLS, platillo)) {
+	platilloLS.forEach((platillos, index) => {
+		if (saberPlatilloExistente(platillos, platillo)) {
 			platilloLS.splice(index, 1);
 		}
 	});
@@ -582,15 +584,94 @@ const guardarSeleccionMenuLocalStorage = (platillo) => {
 	if (!leerLocalStorage(platilloLS, platillo)) {
 		platilloLS.push(platillo);
 		localStorage.setItem("platillos", JSON.stringify(platilloLS));
-		alert("SE HA AGREGADO CORRECTAMENTE AL CARRITO");
+		return true;
 	} else {
-		alert(
-			"EL PLATILLO YA FUE AGREGADO EN EL CARRITO, POR FAVOR REVISA EL CARRITO"
-		);
+		return false;
 	}
+	console.log(platilloLS);
 };
 /* --------------FIN -------------- */
 /* -------------- FIN -------------- */
+
+const funcionToastr = (tipo_alerta, mensaje, titulo) => {
+	toastr[tipo_alerta](mensaje, titulo);
+	toastr.options = {
+		closeButton: true,
+		debug: false,
+		newestOnTop: false,
+		progressBar: true,
+		positionClass: "toast-top-center",
+		preventDuplicates: true,
+		onclick: true,
+		showDuration: "300",
+		hideDuration: "1000",
+		timeOut: "5000",
+		extendedTimeOut: "1000",
+		showEasing: "swing",
+		hideEasing: "linear",
+		showMethod: "fadeIn",
+		hideMethod: "fadeOut",
+	};
+	toastr.options.onShown = function () {
+		console.log("hello");
+	};
+	toastr.options.onHidden = function () {
+		console.log("goodbye");
+	};
+	toastr.options.onclick = function () {
+		console.log("clicked");
+	};
+	toastr.options.onCloseClick = function () {
+		console.log("close button clicked");
+	};
+};
+
+const funcionSweetAlert = (
+	title,
+	showDenyButton,
+	showCancelButton,
+	confirmButtonText,
+	denyButtonText,
+	mensajeSuccess,
+	mensajeInfo,
+	card_menu,
+	input_cantidad
+) => {
+	Swal.fire({
+		title: title,
+		showDenyButton: showDenyButton,
+		showCancelButton: showCancelButton,
+		confirmButtonText: confirmButtonText,
+		denyButtonText: denyButtonText,
+	}).then((result) => {
+		/* Read more about isConfirmed, isDenied below */
+		if (result.isConfirmed) {
+			let platillo = {
+				id: card_menu.id,
+				nombre: listadoMenu[card_menu.id].nombre,
+				descripcion: listadoMenu[card_menu.id].descripcion,
+				valor: listadoMenu[card_menu.id].valor,
+				imagen: listadoMenu[card_menu.id].imagen,
+				cantidad: input_cantidad.value,
+			};
+			if (guardarSeleccionMenuLocalStorage(platillo)) {
+				console.log("true");
+				Swal.fire(mensajeSuccess, "", "success");
+				formulario_menu[card_menu.id].reset();
+			} else {
+				console.log("false");
+				Swal.fire(
+					"EL PLATO SELECCIONADO, YA FUE AGREGADO AL CARRITO,\n" +
+						"POR FAVOR REVISE EL CARRITO",
+					"",
+					"info"
+				);
+			}
+		} else if (result.isDenied || result.isDismissed) {
+			Swal.fire(mensajeInfo, "", "info");
+		}
+	});
+};
 
 /* ------------- Aqui va agregar la funcion para agregar a un producto en LocalStorage ------------- */
 const funcionBtnAgregarCarrito = (card_menu) => {
@@ -603,28 +684,24 @@ const funcionBtnAgregarCarrito = (card_menu) => {
 			"formulario__input-cantidad"
 		)[card_menu.id];
 		/* -------------- -------------- */
-
 		if (campos[card_menu.id].valor == true) {
-			let formulario_menu = document.querySelectorAll("#formulario_menu");
-
-			setTimeout(() => {
-				/* -------------- Aqui se va agergar un toast de Agregado Correctamente -------------- */
-				let platillo = {
-					id: card_menu.id,
-					nombre: listadoMenu[card_menu.id].nombre,
-					descripcion: listadoMenu[card_menu.id].descripcion,
-					valor: listadoMenu[card_menu.id].valor,
-					imagen: listadoMenu[card_menu.id].imagen,
-					cantidad: input_cantidad.value,
-				};
-				guardarSeleccionMenuLocalStorage(platillo);
-
-				formulario_menu[card_menu.id].reset();
-			}, 500);
+			funcionSweetAlert(
+				"¿DESEAS AGREGAR EL PLATO AL CARRITO?",
+				true,
+				false,
+				"SI",
+				"NO",
+				"SE AGREGO EL PLATO AL CARRITO CORRECTAMENTE...",
+				"NO SE AGREGO EL PLATO AL CARRITO...",
+				card_menu,
+				input_cantidad
+			);
 		} else {
 			/* -------------- Aqui se va agergar un toast de Error -------------- */
-			alert(
-				"NO SE HA PDIDO AGREGAR, POR FAVOR VERIFICA LA CANTIDAD QUE SEA CORRECTA"
+			funcionToastr(
+				"error",
+				"NO SE HA PDIDO AGREGAR, POR FAVOR VERIFICA LA CANTIDAD QUE SEA CORRECTA",
+				"ERROR"
 			);
 		}
 	});
