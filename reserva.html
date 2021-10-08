@@ -33,9 +33,15 @@
 		<link rel="stylesheet" href="./css/estilo-flatpickr.css" />
 		<link rel="stylesheet" href="./css/estilos-reserva.css" />
 		<script
-			src="https://kit.fontawesome.com/07f2d15362.js"
+			src="httytps://kit.fontawesome.com/07f2d15362.js"
 			crossorigin="anonymous"
 		></script>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+		></script>
+		<script type="text/javascript" src="./js/sendGmail.js">
+		</script>
 		<title>GRUPO 10</title>
 	</head>
 	<body id="body">
@@ -224,7 +230,6 @@
 													name="nombres"
 													id="nombres"
 													placeholder="INGRESE LOS NOMBRES"
-													value="Manuel Jose"
 													required
 												/>
 												<i
@@ -264,7 +269,6 @@
 													name="apellidos"
 													id="apellidos"
 													placeholder="INGRESE LOS APELLIDOS"
-													value="Sanchez Parra"
 													required
 												/>
 												<i
@@ -304,7 +308,6 @@
 													name="cedula"
 													id="cedula"
 													placeholder="INGRESE LA CEDULA"
-													value="1090510816"
 													required
 												/>
 												<i
@@ -344,7 +347,6 @@
 													name="correo"
 													id="correo"
 													placeholder="CORREO@CORREO.COM"
-													value="manuel231509@gmail.com"
 													required
 												/>
 												<i
@@ -385,7 +387,6 @@
 													name="telefono"
 													id="telefono"
 													placeholder="INGRESE EL TELEFONO"
-													value="3104622813"
 													required
 												/>
 												<i
@@ -439,18 +440,17 @@
 													class="d-flex flex-row formulario__input"
 													name="servicio"
 													id="servicio"
-													
 													required
 												>
-													<option  disabled value="">
-														SELECCIONE...
+													<option selected disabled value="">SELECCIONE...</option>
+													<option value="CELEBRACIÓN DE CUMPLEAÑOS">
+														CELEBRACIÓN DE CUMPLEAÑOS
 													</option>
-													<option selected value="1">CELEBRACIÓN DE CUMPLEAÑOS</option>
-													<option value="2">ANIVERSARIOS</option>
-													<option value="3">FIESTAS INFANTILES</option>
-													<option value="4">DECLARACIONES O PROPUESTAS</option>
-													<option value="5">DESPEDIDAS</option>
-													<option value="6">CENA CON AMIGOS</option>
+													<option value="ANIVERSARIOS">ANIVERSARIOS</option>
+													<option value="FIESTAS INFANTILES">FIESTAS INFANTILES</option>
+													<option value="DECLARACIONES O PROPUESTAS">DECLARACIONES O PROPUESTAS</option>
+													<option value="DESPEDIDAS">DESPEDIDAS</option>
+													<option value="CENA CON AMIGOS">CENA CON AMIGOS</option>
 												</select>
 												<i
 													class="
@@ -486,7 +486,6 @@
 													name="cantidadPersonas"
 													id="cantidadPersonas"
 													placeholder="INGRESE LA CANTIDAD DE PERSONAS"
-													value="20"
 													required
 												/>
 												<i
@@ -607,7 +606,6 @@
 													placeholder="INGRESE LAS INDICACIONES ESPECIALES"
 													rows="5"
 													class="formulario__textarea"
-
 													required
 												></textarea>
 												<i
@@ -837,7 +835,10 @@
 			crossorigin="anonymous"
 		></script>
 
-		<script type="text/javascript" src="./js/redes-sociales-flotante.js"></script>
+		<script
+			type="text/javascript"
+			src="./js/redes-sociales-flotante.js"
+		></script>
 
 		<script type="text/javascript" src="./js/flatpickr.js"></script>
 

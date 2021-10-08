@@ -15,17 +15,48 @@ const expresiones = {
 };
 
 let campos = {
-	nombres: false,
-	apellidos: false,
-	cedula: false,
-	correo: false,
-	telefono: false,
-	servicio: false,
-	cantidadPersonas: false,
-	fecha: false,
-	hora: false,
-	indicacionesEspeciales: false,
+	nombres: {
+		name: "",
+		valor: false,
+	},
+	apellidos: {
+		name: "",
+		valor: false,
+	},
+	cedula: {
+		name: "",
+		valor: false,
+	},
+	correo: {
+		name: "",
+		valor: false,
+	},
+	telefono: {
+		name: "",
+		valor: false,
+	},
+	servicio: {
+		name: "",
+		valor: false,
+	},
+	cantidadPersonas: {
+		name: "",
+		valor: false,
+	},
+	fecha: {
+		name: "",
+		valor: false,
+	},
+	hora: {
+		name: "",
+		valor: false,
+	},
+	indicacionesEspeciales: {
+		name: "",
+		valor: false,
+	},
 };
+
 /* -------------- Class Formulario Grupo Incorrecto -------------- */
 const removeClassFormularioGrupoIncorrecto = (campo) => {
 	document
@@ -147,7 +178,7 @@ const removeClassFormularioMensajeActivo = () => {
 };
 /* -------------- Fin -------------- */
 
-const addClassTrue = (campo, error) => {
+const addClassTrue = (campo, error, input) => {
 	removeClassFormularioGrupoIncorrecto(campo);
 
 	addClassFormularioGrupoCorrecto(campo);
@@ -164,10 +195,11 @@ const addClassTrue = (campo, error) => {
 		addClassFormularioTextAreaCheck(campo);
 	}
 
-	campos[campo] = true;
+	campos[campo].name = input;
+	campos[campo].valor = true;
 };
 
-const addClassFalse = (campo, error) => {
+const addClassFalse = (campo, error, input) => {
 	addClassFormularioGrupoIncorrecto(campo);
 
 	removeClassFormularioGrupoCorrecto(campo);
@@ -179,18 +211,20 @@ const addClassFalse = (campo, error) => {
 	addClassFormularioInputErrorActivo(campo, error);
 
 	if (campo != "indicacionesEspeciales") {
+		removeClassFormularioInputCheck(campo);
 	} else {
 		removeClassFormularioTextAreaCheck(campo);
 	}
 
-	campos[campo] = false;
+	campos[campo].name = input;
+	campos[campo].valor = false;
 };
 
 const validarCampo = (expresion, input, campo, error) => {
 	if (expresion.test(input.value)) {
-		addClassTrue(campo, error);
+		addClassTrue(campo, error, input.value);
 	} else {
-		addClassFalse(campo, error);
+		addClassFalse(campo, error, input.value);
 	}
 };
 
@@ -208,11 +242,19 @@ const validarCampoVacio = (expresion, e) => {
 
 const validarCampoSelect = (input, campo, error) => {
 	if (input.value != "") {
-		addClassTrue(campo, error);
+		addClassTrue(campo, error, input);
 	} else {
-		addClassFalse(campo, error);
+		addClassFalse(campo, error, input);
 	}
 };
+const validarCampoFecha = (input, campo, error) => {
+		if (input.value != "") {
+		addClassTrue(campo, error, input.value);
+	} else {
+		addClassFalse(campo, error, input.value);
+	}
+};
+
 let t = null;
 let am_pm = null;
 
@@ -259,6 +301,7 @@ const validarCampoHora = (input, campo, error, e) => {
 	const flatpickr_am_pm = document.getElementsByClassName("flatpickr-am-pm")[0];
 
 	let hora = validarFlatpickrHora(flatpickr_hora, flatpickr_am_pm);
+
 	let minutos = flatpickr_minutos.value;
 
 	const inputHora = document.getElementById("hora");
@@ -273,22 +316,38 @@ const validarCampoHora = (input, campo, error, e) => {
 	);
 
 	if (input.value != "") {
-		addClassTrue(campo, error);
+		addClassTrue(campo, error, input.value);
 	} else {
-		addClassFalse(campo, error);
+		addClassFalse(campo, error, input.value);
 	}
 };
 
+const flatpickr_hora = document.getElementsByClassName("numInput")[1];
+flatpickr_hora.addEventListener("blur", (evento) => {
+	const inputHora = document.getElementById("hora");
+	campos["hora"].name = inputHora.value;
+});
+
+const flatpickr_minutos = document.getElementsByClassName("numInput")[2];
+flatpickr_minutos.addEventListener("blur", (evento) => {
+	const inputHora = document.getElementById("hora");
+	campos["hora"].name = inputHora.value;
+});
+
 const validarFlatpickrHora = (flatpickr_hora, flatpickr_am_pm) => {
 	let flh = flatpickr_hora.value;
-	if (flatpickr_am_pm.innerHTML === "PM") {
-		if (flh != 12) {
-			return String(parseInt(flh) + 12);
+	if (flh != "") {
+		if (flatpickr_am_pm.innerHTML === "PM") {
+			if (flh != 12) {
+				return String(parseInt(flh) + 12);
+			} else {
+				return flh;
+			}
 		} else {
 			return flh;
 		}
 	} else {
-		return flh;
+		return 12;
 	}
 };
 
@@ -311,13 +370,13 @@ const validarFormulario = (e) => {
 			validarCampoVacio(expresiones.telefono, e);
 			break;
 		case "servicio":
-			validarCampoSelect(campo, campo.name, "error");
+			validarCampoSelect(campo.value, campo.name, "error");
 			break;
 		case "cantidadPersonas":
 			validarCampoVacio(expresiones.cantidadPersonas, e);
 			break;
 		case "fecha":
-			validarCampoSelect(campo, campo.name, "error");
+			validarCampoFecha(campo, campo.name, "error");
 			break;
 		case "hora":
 			validarCampoHora(campo, campo.name, "error", e);
@@ -350,15 +409,12 @@ const removeClassFormInputCheck = () => {
 	for (const campo in campos) {
 		if (campos.hasOwnProperty.call(campos, campo)) {
 			const element = campos[campo];
-			if (element == false) {
+			if (element.valor == false) {
 				const error =
-					campo == "servicio" ||
-					campo == "cantidadPersonas" ||
-					campo == "fecha" ||
-					campo == "hora"
+					campo == "servicio" || campo == "fecha" || campo == "hora"
 						? "error"
 						: "error1";
-				addClassFalse(campo, error);
+				addClassFalse(campo, error, "");
 			}
 		}
 	}
@@ -367,16 +423,15 @@ const removeClassFormInputCheck = () => {
 formulario.addEventListener("submit", (e) => {
 	e.preventDefault();
 	if (
-		campos.nombres &&
-		campos.apellidos &&
-		campos.cedula &&
-		campos.correo &&
-		campos.telefono &&
-		campos.cantidadPersonas &&
-		campos.indicacionesEspeciales &&
+		campos.nombres.valor &&
+		campos.apellidos.valor &&
+		campos.cedula.valor &&
+		campos.correo.valor &&
+		campos.telefono.valor &&
+		campos.cantidadPersonas.valor &&
+		campos.indicacionesEspeciales.valor &&
 		terminos.checked
 	) {
-		formulario.reset();
 		addClassFormularioMensajeExitoActivo();
 		setTimeout(() => {
 			removeClassFormularioMensajeExitoActivo();
@@ -388,6 +443,9 @@ formulario.addEventListener("submit", (e) => {
 			document.querySelectorAll(".formulario__input-check").forEach((data) => {
 				data.classList.remove("formulario__input-check");
 			});
+		
+			sendMail(campos);
+
 			campos = {
 				nombres: false,
 				apellidos: false,
@@ -400,12 +458,13 @@ formulario.addEventListener("submit", (e) => {
 				hora: false,
 				indicacionesEspeciales: false,
 			};
-		}, 2000);
+			formulario.reset();
+		}, 1100);
 	} else {
 		addClassFormularioMensajeActivo();
 		setTimeout(() => {
 			removeClassFormularioMensajeActivo();
 			removeClassFormInputCheck();
-		}, 2000);
+		}, 1500);
 	}
 });
