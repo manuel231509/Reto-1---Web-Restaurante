@@ -22,6 +22,11 @@
     <link rel="stylesheet" href="./css/estilos-carrusel-inicio.css" />
     <link rel="stylesheet" href="./css/estilos-carrito.css" />
     <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript" src="./js/sendGmailCarrito.js"></script>
     <title>GRUPO 10</title>
   </head>
   <body>
@@ -106,13 +111,25 @@
                   >
                     <a class="nav-link" href="contactenos.html">CONTACTENOS</a>
                   </li>
+                  <li
+                    class="d-flex align-items-start nav-item active"
+                    type="button"
+                  >
+                    <a class="nav-link" href="carrito.html">
+                      <i class="fas fa-shopping-cart icon-carrito"></i>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </section>
 
-        <div class="d-flex justify-content-end" style="z-index: 1">
+        <div
+          id="redes-sociales-flotante"
+          class="d-flex justify-content-end"
+          style="z-index: 1"
+        >
           <section class="d-flex flex-column bg-red-800 redes-sociales">
             <!-- Facebook -->
             <a
@@ -166,46 +183,50 @@
 
     <!--INICIO CARRITO DE COMPRAS-->
     <div class="container mx-auto my-5">
-      <div class="row">
-        <div class="col-md-8">
-          <h1 style="color: #5f2018; font-family: fantasy">
-            Carrito de Compra
-          </h1>
-          <!--Contenedor de elementos del carrito-->
-          <div class="contenedor-productos"></div>
-        </div>
-        <div class="col-md-4">
-          <div
-            class="px-4 py-5"
-            style="
-              border-radius: 19px;
-              background: #dedede;
-              box-shadow: 20px 20px 60px #bdbdbd, -20px -20px 60px #ffffff;
-            "
-          >
-            <div class="row mb-3">
-              <div
-                class="col fs-3 px-auto"
-                style="color: #5f2018; font-family: fantasy"
-              >
-                Total
-              </div>
-              <div
-                class="col fs-3 px-auto"
-                style="color: #5f2018; font-family: fantasy"
-              >
-                $63.200
-              </div>
-            </div>
-            <div class="row">
-              <div class="col d-flex justify-content-center">
-                <button
-                  type="button"
-                  class="btn py-3 px-5 fs-3 fw-bold"
-                  style="background-color: #fd7e14; color: #ffffff"
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-8 col-md-12">
+            <h1 style="color: #5f2018; font-family: fantasy">
+              Carrito de Compra
+            </h1>
+            <!--Contenedor de elementos del carrito-->
+            <div id="contenedor-productos" class="contenedor-productos"></div>
+          </div>
+
+          <div class="col-lg-4 col-md-12" style="margin-top: 56px">
+            <div
+              class="px-4 py-5"
+              style="
+                border-radius: 19px;
+                background: #dedede;
+                box-shadow: 20px 20px 60px #bdbdbd, -20px -20px 60px #ffffff;
+              "
+            >
+              <div class="row mb-3">
+                <div
+                  class="col fs-3 px-auto"
+                  style="color: #5f2018; font-family: fantasy"
                 >
-                  Pagar ahora
-                </button>
+                  Total
+                </div>
+                <div
+                  id="total-carrito"
+                  class="col fs-3 px-auto"
+                  style="color: #5f2018; font-family: fantasy"
+                ></div>
+              </div>
+              <div class="row">
+                <div class="col d-flex justify-content-center">
+                  <button
+                    type="button"
+                    class="btn py-3 px-5 fs-3 fw-bold"
+                    style="background-color: #fd7e14; color: #ffffff"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Pagar ahora
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -216,18 +237,19 @@
 
     <!--Botón seguir comprando-->
     <div class="d-flex justify-content-center">
-      <button
-        type="link"
+      <a
+        type="button"
         class="btn btn-lg p-3 fs-3 fw-bold"
         style="background-color: #fd7e14; color: #ffffff"
         href="menu.html"
       >
         Seguir comprando
-      </button>
+      </a>
     </div>
 
     <!-- FOOTER -->
     <footer
+      id="footer"
       class="align-items-baseline bg-red-700 text-center text-white"
       style="margin-top: 20px"
     >
@@ -327,7 +349,7 @@
                     type="button"
                     style="display: inline-block"
                   >
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="reserva.html">
                       <p>RESERVAS</p>
                     </a>
                   </li>
@@ -350,9 +372,9 @@
               <p class="text-uppercase">UBICACIÓN</p>
               <br />
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9342344323386!2d-74.07400248551748!3d4.605797243756272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a1f30307cf%3A0xf863232d4608bc5b!2zQ2wuIDE5ICM3LTMwLCBCb2dvdMOh!5e0!3m2!1ses-419!2sco!4v1631813671036!5m2!1ses-419!2sco"
-                width="300"
-                height="300"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15907.7370550156!2d-74.071814!3d4.605792!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a1f30307cf%3A0xf863232d4608bc5b!2zQ2wuIDE5ICM3LTMwLCBCb2dvdMOh!5e0!3m2!1ses-419!2sco!4v1631840312165!5m2!1ses-419!2sco"
+                width="100%"
+                height="200"
                 style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
@@ -373,6 +395,66 @@
       <!-- Copyright -->
     </footer>
 
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">
+              ¡Digite sus datos para completar su compra!
+            </h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form class="needs-validation" novalidate>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  required
+                />
+                <div class="valid-feedback">Looks good!</div>
+                <div id="emailHelp" class="form-text">
+                  No compartiremos tu correo con nadie más.
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Pagar y enviar correo
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
@@ -383,12 +465,11 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="./js/menu.js"></script>
-    <script type="text/javascript" src="./js/carrito.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script
       type="text/javascript"
       src="./js/redes-sociales-flotante.js"
     ></script>
+    <script type="text/javascript" src="./js/carrito.js"></script>
   </body>
 </html>
