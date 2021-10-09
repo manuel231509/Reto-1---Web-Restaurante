@@ -5,26 +5,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./css/estilos.css" />
-    <link rel="stylesheet" href="./css/estilos-menu.css" />
-    <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
-    <title>GRUPO 10</title>
-  </head>
-  <body id="body">
-    <!-- NAVBAR -->
+		<!-- Bootstrap CSS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+		/>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<link rel="stylesheet" href="./css/estilos.css" />
+		<link rel="stylesheet" href="./css/estilos-menu.css" />
+		<script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
+		<title>GRUPO 10</title>
+	</head>
+	<body id="body">
+		<!-- NAVBAR -->
 
     <nav id="menu" class="navbar-expand-lg bg-red-600">
       <div class="container-fluid">
@@ -189,7 +195,68 @@
       </div>
     </div>
 
-    <!-- Modal Descripcion Producto -->
+		<!-- Modal Descripcion Producto -->
+		<div
+			class="modal fade"
+			id="modalDescripcionProducto"
+			tabindex="-1"
+			aria-labelledby="modalDescripcionProductoLabel"
+			aria-hidden="true"
+		>
+			<div
+				class="
+					modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl
+				"
+				style="width: 845px"
+			>
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalDescripcionProductoLabel">
+							Ejemplo
+						</h5>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">
+						<img
+							src="./img/menu1.jpg"
+							class="card-img-top"
+							alt="..."
+							style="width: 800px; height: 300px"
+						/>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo
+							architecto cumque eligendi nisi voluptatum doloribus quidem autem,
+							quibusdam molestias quis deserunt vitae non facere nobis! Est in,
+							id temporibus consequuntur vel, vitae architecto nemo at voluptate
+							itaque reprehenderit similique earum aperiam ipsa ratione.
+							Consectetur distinctio dolor odit minima mollitia tempore nobis
+							laudantium id debitis ullam et itaque, dolorum explicabo.
+						</p>
+					</div>
+					<div class="modal-footer">
+						<div class="row">
+							<div class="div-precio col-lg-5 col-md-5">
+								<p>$20.000</p>
+							</div>
+							<div class="div-contactanos col-lg-7 col-md-7">
+								<a
+									class="btn btn-outline-light btn-floating btn-primary"
+									href="contactenos.html"
+									role="button"
+								>
+									¿PREGUNTAS? O CONTACTANOS
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
     <div
       class="modal fade"
@@ -394,12 +461,19 @@
       </div>
       <!-- Grid container -->
 
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2020 Copyright: Grupo 10 - Talento JuvenTic
-      </div>
-      <!-- Copyright -->
-    </footer>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+			crossorigin="anonymous"
+		></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"

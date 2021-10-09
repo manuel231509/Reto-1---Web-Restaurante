@@ -99,7 +99,7 @@
 .formulario__input:focus,
 .formulario__textarea:focus {
 	outline: none;
-	box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.5);
+	box-shadow: 3px 0px 30px #a3a3a380;
 }
 
 .formulario__input-error,
@@ -108,7 +108,7 @@
 	margin-bottom: 10px;
 	margin-top: -8px;
 	margin-left: 15px;
-	padding: 5;
+	padding: 5px;
 	display: none;
 }
 
@@ -122,7 +122,6 @@
 	position: relative;
 	right: 20px;
 	bottom: 4px;
-	z-index: 100;
 	font-size: 20px;
 	opacity: 0;
 }

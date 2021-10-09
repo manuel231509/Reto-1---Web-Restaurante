@@ -171,7 +171,7 @@ formulario.addEventListener("submit", (e) => {
       document
         .getElementById("formulario__mensaje-exito")
         .classList.remove("formulario__mensaje-exito-activo");
-    }, 5000);
+    }, 1500);
 
     document
       .querySelectorAll(".formulario__grupo-correcto")
@@ -186,6 +186,6 @@ formulario.addEventListener("submit", (e) => {
       document
         .getElementById("formulario__mensaje")
         .classList.remove("formulario__mensaje-activo");
-    }, 5000);
+    }, 1500);
   }
 });
