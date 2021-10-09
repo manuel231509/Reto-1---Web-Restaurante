@@ -562,7 +562,7 @@ contenedor_productos_card.forEach((contenedor_producto, index) => {
   /* -------------- -------------- */
 
   /* -------------- -------------- */
-  funcionInputCantidad(index);
+  /* funcionInputCantidad(index); */
   /* -------------- -------------- */
 
   btnDelete.addEventListener("click", (e) => {
@@ -617,18 +617,20 @@ const funcionSweetAlert = (
   }).then((result) => {
     /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
+      let total_carrito = document.getElementById("total-carrito");
       const campos = {
         to_name: document.getElementById("nombre").value,
         correo: document.getElementById("email").value,
         message:
           "SE REALIZÓ LA COMPRA DE LOS PLATILLOS, EL TOTAL DEL PEDIDO ES DE: $" +
-          document.getElementById("total-carrito"),
+          total_carrito.innerText,
       };
       sendMail(campos);
       removerItemLocalStorage();
       contenedor_productos_card.forEach((e) => {
         contenedor_productos.removeChild(e);
       });
+      total_carrito.innerText = "";
       Swal.fire(mensajeSuccess, "", "success");
     } else if (result.isDenied || result.isDismissed) {
       Swal.fire(mensajeInfo, "", "info");
