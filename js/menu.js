@@ -132,7 +132,13 @@ const agregandoListadoMenu = (i, divRow) => {
 	divRowCol.classList.add("col-lg-4", "col-md-12", "col-sm-12", "col-xs-12");
 
 	let divRowColCard = document.createElement("div");
-	divRowColCard.classList.add("card", "card-menu");
+	divRowColCard.classList.add(
+		"card",
+		"card-menu",
+		"border",
+		"border-danger",
+		"border-3"
+	);
 
 	let divRowColCard_DataModal = document.createElement("div");
 	divRowColCard_DataModal.setAttribute("data-bs-toggle", "modal");
@@ -181,13 +187,13 @@ const agregandoListadoMenu = (i, divRow) => {
 	<div class="col-minus-input-plus col-lg-12 col-md-12">
 		<div class="row">
 			<div class="col-minus col-lg-4 col-md-4 col-sm-4">
-				<button id="btn_minus" type="button" class="btn">
+				<button id=btn_minus-${i} type="button" class="btn">
 					<i class="fas fa-minus"></i>
 				</button>
 			</div>
 
 			<form
-				id="formulario_menu"
+				id=formulario_menu-${i}
 				class="formulario_menu"
 				novalidate
 			>
@@ -198,6 +204,7 @@ const agregandoListadoMenu = (i, divRow) => {
 						<div class="d-flex flex-row formulario__grupo-input">
 							<input
 								type="text"
+								id=input_cantidad-${i}
 								class="formulario__input-cantidad"
 								name="input_cantidad_${i}"
 								id="input_cantidad_${i}"
@@ -227,7 +234,7 @@ const agregandoListadoMenu = (i, divRow) => {
 			</form>
 
 			<div class="col-plus col-lg-4 col-md-4 col-sm-4">
-				<button id="btn_plus" type="button" class="btn">
+				<button id=btn_plus-${i} type="button" class="btn">
 					<i class="fas fa-plus"></i>
 				</button>
 			</div>
@@ -472,12 +479,13 @@ const funcionCardMenu = (card_menu) => {
 /* ------------- Fin ------------- */
 
 /* ------------- Esta funcion realiza un evento de AddEventListener el cual nos permite aumentar o disminuir la cantidad ------------- */
-const funcionMinusPlus = (card_menu) => {
-	let minus = document.querySelectorAll(`#btn_minus`);
-	minus[card_menu.id].addEventListener("click", () => {
-		let input_cantidad = document.getElementsByClassName(
-			"formulario__input-cantidad"
-		)[card_menu.id];
+const funcionMinusPlus = (idCardMenu) => {
+	let minus = document.getElementById(`btn_minus-${idCardMenu}`);
+	minus.addEventListener("click", () => {
+
+		let input_cantidad = document.getElementById(
+			`input_cantidad-${idCardMenu}`
+		);
 		let cantidad = input_cantidad.value;
 		if (cantidad != "") {
 			cantidad = parseInt(cantidad);
@@ -493,11 +501,11 @@ const funcionMinusPlus = (card_menu) => {
 		}
 	});
 
-	let plus = document.querySelectorAll(`#btn_plus`);
-	plus[card_menu.id].addEventListener("click", () => {
-		let input_cantidad = document.getElementsByClassName(
-			"formulario__input-cantidad"
-		)[card_menu.id];
+	let plus = document.getElementById(`btn_plus-${idCardMenu}`);
+	plus.addEventListener("click", () => {
+		let input_cantidad = document.getElementById(
+			`input_cantidad-${idCardMenu}`
+		);
 		let cant = input_cantidad.value;
 		if (cant != "") {
 			cant = parseInt(cant);
@@ -516,10 +524,10 @@ const funcionMinusPlus = (card_menu) => {
 /* ------------- Fin ------------- */
 
 /* ------------- ------------- */
-const funcionInputCantidad = (card_menu) => {
-	const input_cantidad = document.querySelectorAll("#formulario_menu input")[
-		card_menu.id
-	];
+const funcionInputCantidad = (idCardMenu) => {
+	const input_cantidad = document.getElementById(
+		`input_cantidad-${idCardMenu}`
+	);
 	if (input_cantidad.value != "") {
 		validarCampoVacio(
 			expresiones.cantidad,
@@ -588,7 +596,6 @@ const guardarSeleccionMenuLocalStorage = (platillo) => {
 	} else {
 		return false;
 	}
-	console.log(platilloLS);
 };
 /* --------------FIN -------------- */
 /* -------------- FIN -------------- */
@@ -634,10 +641,12 @@ const funcionSweetAlert = (
 	denyButtonText,
 	mensajeSuccess,
 	mensajeInfo,
-	card_menu,
-	input_cantidad
+	idCardMenu,
+	input_cantidad,
+	formulario
 ) => {
 	Swal.fire({
+		icon: "question",
 		title: title,
 		showDenyButton: showDenyButton,
 		showCancelButton: showCancelButton,
@@ -647,44 +656,56 @@ const funcionSweetAlert = (
 		/* Read more about isConfirmed, isDenied below */
 		if (result.isConfirmed) {
 			let platillo = {
-				id: card_menu.id,
-				nombre: listadoMenu[card_menu.id].nombre,
-				descripcion: listadoMenu[card_menu.id].descripcion,
-				valor: listadoMenu[card_menu.id].valor,
-				imagen: listadoMenu[card_menu.id].imagen,
+				id: idCardMenu,
+				nombre: listadoMenu[idCardMenu].nombre,
+				descripcion: listadoMenu[idCardMenu].descripcion,
+				valor: listadoMenu[idCardMenu].valor,
+				imagen: listadoMenu[idCardMenu].imagen,
 				cantidad: input_cantidad.value,
 			};
 			if (guardarSeleccionMenuLocalStorage(platillo)) {
-				console.log("true");
-				Swal.fire(mensajeSuccess, "", "success");
-				formulario_menu[card_menu.id].reset();
+				Swal.fire({
+					icon: "success",
+					title: mensajeSuccess,
+					showConfirmButton: false,
+					timer: 1100,
+				});
+				formulario.reset();
 			} else {
-				console.log("false");
-				Swal.fire(
-					"EL PLATO SELECCIONADO, YA FUE AGREGADO AL CARRITO,\n" +
+				Swal.fire({
+					icon: "error",
+					title:
+						"EL PLATO SELECCIONADO, YA FUE AGREGADO AL CARRITO,\n" +
 						"POR FAVOR REVISE EL CARRITO",
-					"",
-					"info"
-				);
+					showConfirmButton: false,
+					timer: 1700,
+				});
 			}
 		} else if (result.isDenied || result.isDismissed) {
-			Swal.fire(mensajeInfo, "", "info");
+			Swal.fire({
+				icon: "info",
+				title:mensajeInfo,
+				showConfirmButton: false,
+				timer: 1500,
+			});
 		}
 	});
 };
 
 /* ------------- Aqui va agregar la funcion para agregar a un producto en LocalStorage ------------- */
-const funcionBtnAgregarCarrito = (card_menu) => {
-	let btnAgregarCarrito = document.getElementsByClassName(
-		"formulario__btn-agregar-carrito"
-	)[card_menu.id];
+const funcionBtnAgregarCarrito = (idCardMenu) => {
+	let btnAgregarCarrito = document.getElementById(
+		`btn-agregar-carrito-${idCardMenu}`
+	);
+	let formulario = document.getElementById(`formulario_menu-${idCardMenu}`);
+	
 	btnAgregarCarrito.addEventListener("click", (b) => {
 		/* -------------- -------------- */
-		let input_cantidad = document.getElementsByClassName(
-			"formulario__input-cantidad"
-		)[card_menu.id];
+		let input_cantidad = document.getElementById(
+			`input_cantidad-${idCardMenu}`
+		);
 		/* -------------- -------------- */
-		if (campos[card_menu.id].valor == true) {
+		if (campos[idCardMenu].valor == true) {
 			funcionSweetAlert(
 				"¿DESEAS AGREGAR EL PLATO AL CARRITO?",
 				true,
@@ -693,8 +714,9 @@ const funcionBtnAgregarCarrito = (card_menu) => {
 				"NO",
 				"SE AGREGO EL PLATO AL CARRITO CORRECTAMENTE...",
 				"NO SE AGREGO EL PLATO AL CARRITO...",
-				card_menu,
-				input_cantidad
+				idCardMenu,
+				input_cantidad,
+				formulario
 			);
 		} else {
 			/* -------------- Aqui se va agergar un toast de Error -------------- */
@@ -712,20 +734,22 @@ const funcionBtnAgregarCarrito = (card_menu) => {
    id card_body --------------*/
 let cards_menus = document.querySelectorAll("#card-body .card");
 cards_menus.forEach((card_menu) => {
+	const idCardMenu = card_menu.id;
+
 	/* -------------- -------------- */
 	funcionCardMenu(card_menu);
 	/* -------------- -------------- */
 
 	/* -------------- -------------- */
-	funcionMinusPlus(card_menu);
+	funcionMinusPlus(idCardMenu);
 	/* -------------- -------------- */
 
 	/* -------------- -------------- */
-	funcionInputCantidad(card_menu);
+	funcionInputCantidad(idCardMenu);
 	/* -------------- -------------- */
 
 	/* -------------- -------------- */
-	funcionBtnAgregarCarrito(card_menu);
+	funcionBtnAgregarCarrito(idCardMenu);
 	/* -------------- -------------- */
 });
 /* -------------- Fin -------------- */
