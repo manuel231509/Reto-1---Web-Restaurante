@@ -4,10 +4,10 @@ const expresiones = {
 
 const campos = [];
 
-console.log(campos);
-
 // div donde van a estar ubicados todos los productos en el carrito de compras
 const productsContainer = document.querySelector(".contenedor-productos");
+let colProductos = document.getElementById("col-productos");
+let colMensajeVacio = document.getElementById("col-mensaje-vacio");
 
 /* -------------- NOS PERMITE OBTENER LOS PLATILLOS DEL LOCALSTORAGE CONVERTIDOS EN JSON -------------- */
 const obtenerPlatillosLocalStorage = () => {
@@ -22,16 +22,29 @@ const obtenerPlatillosLocalStorage = () => {
 /* -------------- FIN -------------- */
 
 /* -------------- NOS PERMITE SABER SI UN PLATILLO EXISTE, DEVOLVIENDO TRUE O FALSE -------------- */
-const saberPlatilloExistente = (platilloLS, platillo) => {
-	return platilloLS.id === platillo.id ? true : false;
+const saberPlatilloExistente = (platilloLS, idPlatillo) => {
+	return platilloLS.id === idPlatillo ? true : false;
+};
+/* -------------- FIN -------------- */
+
+const modificarCantidadPlatilloByIdlocalStorage = (idPlatillo, cantidad) => {
+	let platilloLS = obtenerPlatillosLocalStorage();
+
+	let platillo = platilloLS.find((platillo) => {
+		return platillo.id === idPlatillo;
+	});
+
+	platillo.cantidad = cantidad;
+
+	localStorage.setItem("platillos", JSON.stringify(platilloLS))
 };
 
 /* -------------- NOS PERMITE ELIMINAR UN PLATILLO SEGUN SU ID DEL LOCALSTORAGE -------------- */
-const eliminarPlatilloByIdLocalStorage = (platillo) => {
+const eliminarPlatilloByIdLocalStorage = (idPlatillo) => {
 	let platilloLS = obtenerPlatillosLocalStorage();
 
 	platilloLS.forEach((platillos, index) => {
-		if (saberPlatilloExistente(platillos, platillo)) {
+		if (saberPlatilloExistente(platillos, idPlatillo)) {
 			platilloLS.splice(index, 1);
 		}
 	});
@@ -46,284 +59,13 @@ const removerItemLocalStorage = () => {
 };
 /* -------------- FIN -------------- */
 
-let platilloLS = obtenerPlatillosLocalStorage();
-console.log("storage");
-console.log(platilloLS);
-
-platilloLS.forEach((platillos) => {
-	const div = document.createElement("div");
-	div.classList.add(
-		"card",
-		"mb-3",
-		"p-3",
-		"border",
-		"border-danger",
-		"border-3",
-		"carrito-card"
-	);
-
-	const Content = `
-      
-              <div class="row">
-                <div
-                  class="
-                    col-lg-5 col-md-12 col-sm-12
-                    d-flex
-                    align-self-center
-                    justify-content-center
-                  "
-                >
-                  <img
-                    src=${platillos.imagen}
-                    alt="foto-producto-carrito"
-                    width="290"
-                    height="290"
-                    class="imagen-carrito"
-                  />
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                  <div class="card-body">
-                    <h2
-                      class="card-title"
-                      style="color: #5f2018; font-family: fantasy"
-                    >
-                      ${platillos.nombre}
-                    </h2>
-                    <p class="card-text">
-                      ${platillos.descripcion.substr(0, 100)}.....
-                    </p>
-                    <!-- <input
-                      class="
-                        shopping-cart-quantity-input
-                        shoppingCartItemQuantity
-                        mt-3
-                      "
-                      type="number"
-                      min="1"
-                      value="1"
-                    /> -->
-                  </div>
-                  <div id="card-body" class="card-body">
-                    <div class="row">
-                      <div class="col-cantidad col-lg-12 col-md-12">
-                        <p>CANTIDAD</p>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-minus-input-plus col-lg-12 col-md-12">
-                        <div class="row">
-                          <div class="col-minus col-lg-4 col-md-4 col-sm-4">
-                            <button id="btn_minus" type="button" class="btn">
-                              <i class="fas fa-minus"></i>
-                            </button>
-                          </div>
-
-                          <form
-                            id="formulario_carrito_input"
-                            class="formulario_carrito_input"
-                            novalidate
-                          >
-                            <!-- CAMPO CANTIDAD -->
-                            <div class="col-input col-lg-4 col-md-4 col-sm-4">
-                              <!-- GRUPO: Cantidad -->
-                              <div
-                                class="formulario__grupo"
-                                id="grupo__cantidad_${platillos.id}"
-                              >
-                                <div
-                                  class="
-                                    d-flex
-                                    flex-row
-                                    formulario__grupo-input
-                                  "
-                                >
-                                  <input
-                                    type="text"
-                                    class="formulario__input-cantidad"
-                                    name="input_cantidad_${platillos.id}"
-                                    id="input_cantidad_${platillos.id}"
-                                    value=${platillos.cantidad}
-                                    disabled
-                                    required
-                                  />
-                                  <i
-                                    class="
-                                      d-flex
-                                      align-items-center
-                                      formulario__validacion-estado
-                                      fas
-                                      fa-times-circle
-                                    "
-                                  >
-                                  </i>
-                                </div>
-                                <p
-                                  class="
-                                    invalid-feedback
-                                    formulario__input-error1
-                                  "
-                                >
-                                  EL CAMPO CANTIDAD ES OBLIGATORIO
-                                </p>
-                                <p
-                                  class="
-                                    invalid-feedback
-                                    formulario__input-error
-                                  "
-                                >
-                                  EL CAMPO CANTIDAD SOLO PUEDE CONTENER NUMEROS,
-                                  DEBE SER MAYOR QUE 0 Y TIENE UN MAXIMO DE
-                                  CARACTERES DE 5.
-                                </p>
-                              </div>
-                            </div>
-                          </form>
-
-                          <div class="col-plus col-lg-4 col-md-4 col-sm-4">
-                            <button id="btn_plus" type="button" class="btn">
-                              <i class="fas fa-plus"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-12 col-sm-12 px-2">
-                  <div class="card-body">
-                    <div class="card-title">
-                      <h2 id="valor"
-                        class="text-center"
-                        style="color: #5f2018; font-family: fantasy"
-                      >
-                        ${platillos.valor}
-                      </h2>
-                    </div>
-                    <div
-                      class="
-                        card-text
-                        d-flex
-                        align-self-end
-                        justify-content-center
-                      "
-                      style="height: 89%"
-                    >
-                      <button
-                        id=${platillos.id}
-                        type="button"
-                        class="btn btn-danger boton-carrito-eliminar"
-                        style="height: 3rem; width: 3rem"
-                      >
-                        <i class="fas fa-trash-alt"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    `;
-	/* const Content = `
-              <div class="row">
-                <div
-                  class="
-                    col-lg-5 col-md-12 col-sm-12
-                    d-flex
-                    align-self-center
-                    justify-content-center
-                  "
-                >
-                  <img
-                    src=${platillos.imagen}
-                    alt="foto-producto-carrito"
-                    width="290"
-                    height="290"
-                    class="imagen-carrito"
-                  />
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                  <div class="card-body">
-                    <h2
-                      class="card-title"
-                      style="color: #5f2018; font-family: fantasy"
-                    >
-                      ${platillos.nombre}
-                    </h2>
-                    <p class="card-text">
-                      ${platillos.descripcion.substr(0, 100)}.....
-                    </p>
-                    <input
-                      class="
-                        shopping-cart-quantity-input
-                        shoppingCartItemQuantity
-                        mt-3
-                      "
-                      type="number"
-                      min="1"
-                      value=${platillos.cantidad}
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-12 col-sm-12 px-2">
-                  <div class="card-body">
-                    <div class="card-title">
-                      <h2
-                        class="text-center"
-                        style="color: #5f2018; font-family: fantasy"
-                      >
-                        ${platillos.valor}
-                      </h2>
-                    </div>
-                    <div
-                      class="
-                        card-text
-                        d-flex
-                        align-self-end
-                        justify-content-center
-                      "
-                      style="height: 89%"
-                    >
-                      <button
-                        id=${platillos.id}
-                        type="button"
-                        class="btn btn-danger boton-carrito-eliminar"
-                        style="height: 3rem; width: 3rem"
-                      >
-                        <i class="fas fa-trash-alt"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>`;
- */
-	div.innerHTML = Content;
-	div.id = platillos.id;
-	productsContainer.appendChild(div);
-	campos.push({ cantidad_id: platillos.id, valor: false });
-});
-
-const contenedor_productos = document.getElementById("contenedor-productos");
-
-const contenedor_productos_card = document.querySelectorAll(
-	"#contenedor-productos .card"
-);
-
-let sumaPlatillos = 0;
-const obtenerTotalCarrito = () => {
-	platilloLS.forEach((platillos) => {
-		precioString = platillos.valor.replace("$", "");
-		cantidadString = platillos.cantidad;
-		let cantidadNumber = parseFloat(cantidadString);
-		let precioNumber = parseFloat(precioString);
-		let valorPlatillos = precioNumber * cantidadNumber;
-		sumaPlatillos += valorPlatillos;
-	});
-
-	return sumaPlatillos;
-};
 /* -------------- Class Formulario Input Error Activo -------------- */
 const removeClassFormularioInputErrorActivo = (campo, error) => {
-	document
-		.querySelector(`#grupo__cantidad_${campo} .formulario__input-${error}`)
-		.classList.remove(`formulario__input-${error}-activo`);
+	document.querySelector(
+		`#grupo__cantidad_${campo} .formulario__input-${error}`
+	);
+
+	// .classList.remove(`formulario__input-${error}-activo`);
 };
 const addClassFormularioInputErrorActivo = (campo, error) => {
 	document
@@ -401,8 +143,7 @@ const removeClassFormularioInputCheck = (campo) => {
 };
 /* -------------- Fin -------------- */
 
-const addClassTrue = (campo, error) => {
-	console.log(campo);
+const addClassTrue = (campo, index, error) => {
 	removeClassFormularioGrupoIncorrecto(campo);
 
 	addClassFormularioGrupoCorrecto(campo);
@@ -415,10 +156,10 @@ const addClassTrue = (campo, error) => {
 
 	addClassFormularioInputCheck(campo);
 
-	campos[campo].valor = true;
+	campos[index].valor = true;
 };
 
-const addClassFalse = (campo, error) => {
+const addClassFalse = (campo, index, error) => {
 	addClassFormularioGrupoIncorrecto(campo);
 
 	removeClassFormularioGrupoCorrecto(campo);
@@ -431,31 +172,258 @@ const addClassFalse = (campo, error) => {
 
 	removeClassFormularioInputCheck(campo);
 
-	campos[campo].valor = false;
+	campos[index].valor = false;
 };
 
-const validarCampo = (expresion, input, campo, error) => {
+const validarCampo = (expresion, input, campo, index, error) => {
 	if (expresion.test(input)) {
-		addClassTrue(campo, error);
+		addClassTrue(campo, index, error);
 	} else {
-		addClassFalse(campo, error);
+		addClassFalse(campo, index, error);
 	}
 };
 
-const validarCampoVacio = (expresion, valor, inputName) => {
-	inputName = inputName.split("_")[2];
+const validarCampoVacio = (expresion, valor, inputName, index) => {
+	inputName = inputName.split("-")[1];
+
 	if (valor == "") {
 		removeClassFormularioInputErrorActivo(inputName, "error");
-		validarCampo(expresion, valor, inputName, "error1");
+		validarCampo(expresion, valor, inputName, index, "error1");
 	} else {
 		removeClassFormularioInputErrorActivo(inputName, "error1");
-		validarCampo(expresion, valor, inputName, "error");
+		validarCampo(expresion, valor, inputName, index, "error");
 	}
 };
 
 const validarFormulario = (e) => {
 	validarCampoVacio(expresiones.cantidad, e.target.value, e.target.name);
 };
+
+let sumaPlatillos = 0;
+const obtenerTotalCarrito = (platillos) => {
+	precioString = platillos.valor.replace("$", "");
+	cantidadString = platillos.cantidad;
+	let cantidadNumber = parseFloat(cantidadString);
+	let precioNumber = parseFloat(precioString);
+	let valorPlatillos = precioNumber * cantidadNumber;
+	sumaPlatillos += valorPlatillos;
+	return sumaPlatillos;
+};
+
+let colPagarAhora = document.getElementById("col_pagar-ahora");
+
+let platilloLS = obtenerPlatillosLocalStorage();
+
+if (platilloLS.length == 0) {
+	colMensajeVacio.classList.remove("d-none");
+} else {
+	colProductos.classList.remove("d-none");
+	colPagarAhora.classList.remove("d-none");
+}
+
+platilloLS.forEach((platillos, index) => {
+	const idPlatillo = platillos.id;
+	const div = document.createElement("div");
+	div.classList.add(
+		"card",
+		"mb-3",
+		"p-3",
+		"border",
+		"border-danger",
+		"border-3",
+		"carrito-card"
+	);
+	div.setAttribute("id", idPlatillo);
+	div.style.maxWidth = "100%";
+
+	const Content = `
+<div class="row">
+	<div
+		class="
+			col-lg-4 col-md-12 col-sm-12
+			p-0
+			d-flex
+			align-items-center
+			flex-column
+		"
+	>
+		<div class="card-body" style="max-height:100%;padding:0%">
+			<img
+				src="${platillos.imagen}"
+				alt="foto-producto-carrito"
+				class="imagen-carrito"
+				style="width:100%;height:100%"
+			/>
+		</div>
+	</div>
+	<div class="col-lg-6 col-md-12 col-sm-12" style="padding: 0%">
+		<div class="card-body">
+			<h2
+				class="card-title text-center mb-3"
+				style="color: #5f2018; font-family: fantasy"
+			>
+				${platillos.nombre}
+			</h2>
+			<div class="text-start text-justify">
+				<p class="card-text lh-6">
+					${platillos.descripcion.substr(0, 150)}.....
+				</p>
+			</div>
+		</div>
+		<div id="card-body" class="card-body">
+			<div class="row">
+				<div class="col-cantidad col-lg-12 col-md-12">
+					<p>CANTIDAD</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-minus-input-plus col-lg-12 col-md-12">
+					<div class="row">
+						<div class="col-minus col-lg-4 col-md-4 col-sm-4">
+							<button
+								id="btn_minus-${idPlatillo}"
+								type="button"
+								class="btn"
+							>
+								<i class="fas fa-minus"></i>
+							</button>
+						</div>
+
+						<form
+							id="formulario_carrito_input"
+							class="formulario_carrito_input"
+							novalidate
+						>
+							<!-- CAMPO CANTIDAD -->
+							<div class="col-input col-lg-4 col-md-4 col-sm-4">
+								<!-- GRUPO: Cantidad -->
+								<div
+									class="formulario__grupo"
+									id="grupo__cantidad_${idPlatillo}"
+								>
+									<div
+										class="
+											d-flex
+											flex-row
+											formulario__grupo-input
+										"
+									>
+										<input
+											type="text"
+											class="formulario__input-cantidad"
+											name="input_cantidad-${idPlatillo}"
+											id="input_cantidad-${idPlatillo}"
+											value="${platillos.cantidad}"
+											disabled
+											required
+										/>
+										<i
+											class="
+												d-flex
+												align-items-center
+												formulario__validacion-estado
+												fas
+												fa-times-circle
+											"
+										>
+										</i>
+									</div>
+									<p
+										class="
+											invalid-feedback
+											formulario__input-error1
+										"
+									>
+										EL CAMPO CANTIDAD ES OBLIGATORIO
+									</p>
+									<p
+										class="
+											invalid-feedback
+											formulario__input-error
+										"
+									>
+										EL CAMPO CANTIDAD SOLO PUEDE CONTENER
+										NUMEROS, DEBE SER MAYOR QUE 0 Y TIENE UN
+										MAXIMO DE CARACTERES DE 5.
+									</p>
+								</div>
+							</div>
+						</form>
+
+						<div class="col-plus col-lg-4 col-md-4 col-sm-4">
+							<button
+								id="btn_plus-${idPlatillo}"
+								type="button"
+								class="btn"
+							>
+								<i class="fas fa-plus"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		class="col-lg-2 col-md-12 col-sm-12 d-flex"
+		style="padding: 0%"
+	>
+		<div
+			class="card-body d-flex align-items-center flex-column"
+			style="padding: 0%; margin: 0%"
+		>
+			<div
+				class="card-text d-flex align-self-stretch justify-content-center pt-3 pb-3"
+			>
+				<h2
+					id="valor-${idPlatillo}"
+					class="text-row"
+					style="
+						color: #5f2018;
+						font-family: fantasy;
+						font-size: 27px;
+						margin: 0%;
+					"
+				>
+					${platillos.valor}
+				</h2>
+			</div>
+			<div class="card-text d-flex align-items-center" style="height:100%; padding:5px">
+				<button
+					id="btn_eliminar-${idPlatillo}"
+					type="button"
+					class="btn btn-danger boton-carrito-eliminar"
+					style="height: 3rem; width: 3rem"
+					>
+					<i class="fas fa-trash-alt"></i>
+				</button>
+			</div>
+		</div>			
+	</div>
+</div>
+  `;
+
+	div.innerHTML = Content;
+	productsContainer.appendChild(div);
+	campos.push({ cantidad_id: platillos.id, valor: false });
+	let totalCarrito = obtenerTotalCarrito(platillos);
+
+	document.getElementById("total-carrito").innerHTML = totalCarrito;
+
+	validarCampoVacio(
+		expresiones.cantidad,
+		platillos.cantidad,
+		`input_cantidad-${platillos.id}`,
+		index
+	);
+});
+
+const contenedor_productos = document.getElementById("contenedor-productos");
+
+const contenedor_productos_card = document.querySelectorAll(
+	"#contenedor-productos .card"
+);
+let lengthContenedorProductosCard = contenedor_productos_card.length;
 
 const funcionInputCantidad = (index) => {
 	const input_cantidad = document.querySelectorAll(
@@ -475,47 +443,38 @@ const funcionInputCantidad = (index) => {
 
 let resul = 0;
 
-const funcionMinusPlus = (index) => {
-	console.log(index);
-	let minus = document.querySelectorAll(`#btn_minus`);
-	console.log(minus);
+const funcionMinusPlus = (idCard, index) => {
+	let minus = document.getElementById(`btn_minus-${idCard}`);
 
-	minus[index].addEventListener("click", () => {
-		let input_cantidad = document.getElementsByClassName(
-			"formulario__input-cantidad"
-		)[index];
+	minus.addEventListener("click", () => {
+		let input_cantidad = document.getElementById(`input_cantidad-${idCard}`);
 		let cantidad = input_cantidad.value;
+
 		if (cantidad != "") {
 			cantidad = parseInt(cantidad);
 			let rest = cantidad - 1;
 			if (rest >= 1) {
 				input_cantidad.value = rest;
 				const valor = document
-					.querySelectorAll("#valor")
-					[index].innerText.split("$")[1];
+					.getElementById(`valor-${idCard}`)
+					.innerText.split("$")[1];
 				let total_apagar = document.getElementById("total-carrito");
 				sumaPlatillos = sumaPlatillos - parseInt(valor);
-				console.log("resta");
-				console.log("valor");
-				console.log(parseInt(valor));
-				console.log("sumaPlatillos");
-				console.log(sumaPlatillos);
-
 				total_apagar.innerText = sumaPlatillos;
+				modificarCantidadPlatilloByIdlocalStorage(idCard, rest);
 			}
 			validarCampoVacio(
 				expresiones.cantidad,
 				input_cantidad.value,
-				input_cantidad.name
+				input_cantidad.name,
+				index
 			);
 		}
 	});
 
-	let plus = document.querySelectorAll(`#btn_plus`);
-	plus[index].addEventListener("click", () => {
-		let input_cantidad = document.getElementsByClassName(
-			"formulario__input-cantidad"
-		)[index];
+	let plus = document.getElementById(`btn_plus-${idCard}`);
+	plus.addEventListener("click", () => {
+		let input_cantidad = document.getElementById(`input_cantidad-${idCard}`);
 		let cant = input_cantidad.value;
 		if (cant != "") {
 			cant = parseInt(cant);
@@ -523,83 +482,92 @@ const funcionMinusPlus = (index) => {
 			if (suma >= 1) {
 				input_cantidad.value = suma;
 				const valor = document
-					.querySelectorAll("#valor")
-					[index].innerText.split("$")[1];
+					.getElementById(`valor-${idCard}`)
+					.innerText.split("$")[1];
 				let total_apagar = document.getElementById("total-carrito");
 				sumaPlatillos = sumaPlatillos + parseInt(valor);
-				console.log("");
-				console.log("suma");
-				console.log("valor");
-				console.log(parseInt(valor));
-				console.log("sumaPlatillos");
-				console.log(sumaPlatillos);
-
 				total_apagar.innerText = sumaPlatillos;
+				modificarCantidadPlatilloByIdlocalStorage(idCard, suma);
 			}
 			validarCampoVacio(
 				expresiones.cantidad,
 				input_cantidad.value,
-				input_cantidad.name
+				input_cantidad.name,
+				index
 			);
 		}
 	});
 };
 
-let totalCarrito = obtenerTotalCarrito();
+const eliminarPlato = (idCard, contenedor_productos, contenedor_producto) => {
+	let btnDelete = document.getElementById(`btn_eliminar-${idCard}`);
 
-document.getElementById("total-carrito").innerHTML = totalCarrito;
+	btnDelete.addEventListener("click", () => {
+		Swal.fire({
+			icon: "question",
+			title: "¿DESEAS ELIMINAR ESTE PLATO DEL CARRITO?",
+			showDenyButton: true,
+			showConfirmButton: false,
+			showCancelButton: true,
+			denyButtonText: `Eliminar`,
+		}).then((result) => {
+			if (result.isDenied) {
+				Swal.fire({
+					icon: "success",
+					title: "EL PLATO FUE ELIMINADO CON EXITO",
+					showConfirmButton: false,
+					timer: 1100,
+				});
+				const valor = document
+					.getElementById(`valor-${idCard}`)
+					.innerText.split("$")[1];
+
+				let input_cantidad = document.getElementById(
+					`input_cantidad-${idCard}`
+				);
+
+				let cantidad = input_cantidad.value;
+
+				let total_apagar = document.getElementById("total-carrito");
+
+				sumaPlatillos = sumaPlatillos - parseInt(valor) * parseInt(cantidad);
+				total_apagar.innerText = sumaPlatillos;
+
+				eliminarPlatilloByIdLocalStorage(idCard);
+				contenedor_productos.removeChild(contenedor_producto);
+
+				lengthContenedorProductosCard -= 1;
+
+				if (lengthContenedorProductosCard == 0) {
+					colProductos.classList.add("d-none");
+					colPagarAhora.classList.add("d-none");
+					colMensajeVacio.classList.remove("d-none");
+				}
+			} else {
+				Swal.fire({
+					icon: "error",
+					title: "EL PLATO NO FUE ELIMINADO",
+					showConfirmButton: false,
+					timer: 1100,
+				});
+			}
+		});
+	});
+};
 
 contenedor_productos_card.forEach((contenedor_producto, index) => {
-	let btnDelete = document.querySelectorAll(".boton-carrito-eliminar")[index];
-	console.log("index");
-	console.log(index);
-	console.log("campos");
-	console.log(campos);
-	console.log("btnDelete");
-	console.log(btnDelete);
+	const idCard = contenedor_producto.id;
 	/* -------------- -------------- */
-	funcionMinusPlus(index);
+	funcionMinusPlus(idCard, index);
 	/* -------------- -------------- */
 
 	/* -------------- -------------- */
 	/* funcionInputCantidad(index); */
 	/* -------------- -------------- */
 
-	btnDelete.addEventListener("click", (e) => {
-		console.log("eliminar btn");
-		const idCard = contenedor_producto.id;
-		console.log("idcard");
-		console.log(idCard);
-		Swal.fire({
-			title: "¿Deseas eliminar este platillo del carrito?",
-			showDenyButton: true,
-			showConfirmButton: false,
-			showCancelButton: true,
-			denyButtonText: `Eliminar`,
-		}).then((result) => {
-			/* Read more about isConfirmed, isDenied below */
-			if (result.isDenied) {
-				Swal.fire({
-					icon: "success",
-					title: "El producto fue eliminado con éxito",
-					showConfirmButton: false,
-					timer: 1500,
-				});
-				const valor = document
-					.querySelectorAll("#valor")
-					[index].innerText.split("$")[1];
-				let input_cantidad = document.getElementsByClassName(
-					"formulario__input-cantidad"
-				)[index];
-				let cantidad = input_cantidad.value;
-				let total_apagar = document.getElementById("total-carrito");
-				sumaPlatillos = sumaPlatillos - parseInt(valor) * parseInt(cantidad);
-				total_apagar.innerText = sumaPlatillos;
-				eliminarPlatilloByIdLocalStorage(contenedor_producto);
-				contenedor_productos.removeChild(contenedor_producto);
-			}
-		});
-	});
+	/* -------------- -------------- */
+	eliminarPlato(idCard, contenedor_productos, contenedor_producto);
+	/* -------------- -------------- */
 });
 
 //----------------Validar campos del formulario--------------------
@@ -641,6 +609,7 @@ const funcionSweetAlert = (
 		}
 	});
 };
+
 (function () {
 	"use strict";
 
@@ -656,7 +625,7 @@ const funcionSweetAlert = (
 			} else {
 				event.preventDefault();
 				event.stopPropagation();
-				console.log("ELIMINAR");
+
 				funcionSweetAlert(
 					"¿DESEAS CONTINUAR CON EL PEDIDO?",
 					true,
@@ -672,114 +641,6 @@ const funcionSweetAlert = (
 		});
 	});
 })();
-
-/* btnDelete.addEventListener("click", function (e) {
-  btnDelete = e.target;
-  const idProductoEliminar = btnDelete.closest(".card").id;
-  console.log(idProductoEliminar);
-  if (idProductoEliminar == platillos.id) {
-    Swal.fire({
-      title: "¿Deseas eliminar este platillo del carrito?",
-      showDenyButton: true,
-      showCancelButton: true,
-      denyButtonText: `Eliminar`,
-    }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
-/* if (result.isDenied) {
-        eliminarPlatilloByIdLocalStorage(platillos[idProductoEliminar]);
-
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "El producto fue eliminado con éxito",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      }
-    });
-  } */
-/* }); */
-
-/*function addToCartItem(e) {
-  const button = e.target;
-  const item = button.closest(".card");
-  const itemTitle = item.querySelector(".card-title").textContent;
-  const itemPrice = item.querySelector(".precio-hidden").textContent;
-  const itemImg = item.querySelector(".card-img-top").src;
-  const itemText = item.querySelector(".card-text").textContent;
-
-  const newItem = {
-    title: itemTitle,
-    price: itemPrice,
-    img: itemImg,
-    text: itemText,
-    cantidad: 1,
-  };
-
-  addItemCart(newItem);
-}*/
-
-/*const renderCart = () => {
-  productsContainer.innerHTML = ``;
-  cart.map((item) => {
-    const div = document.createElement("div");
-    div.classList.add("itemCart");
-    const Content = `
-    
-              <div class="row g-0">
-                <div class="col-md-3 px-2">
-                  <img
-                    src=${item.img}
-                    class="img-fluid rounded-start"
-                    alt="foto-producto-carrito"
-                  />
-                </div>
-                <div class="col-md-6 px-2">
-                  <div class="card-body">
-                    <h2
-                      class="card-title"
-                      style="color: #5f2018; font-family: fantasy"
-                    >
-                      ${item.title}
-                    </h2>
-                    <p class="card-text">
-                      ${item.text}
-                    </p>
-                    <input
-                      class="
-                        shopping-cart-quantity-input
-                        shoppingCartItemQuantity
-                        mt-3
-                      "
-                      type="number"
-                      min="1"
-                      value=${item.cantidad}
-                    />
-                  </div>
-                </div>
-                <div class="col-md-3 px-2" style="padding: 1rem">
-                  <h2
-                    class="card-text"
-                    style="color: #5f2018; font-family: fantasy"
-                  >
-                    $${item.price}
-                  </h2>
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    style="height: 3rem; width: 3rem"
-                  >
-                    <i class="fas fa-trash-alt"></i>
-                  </button>
-                </div>
-              </div>
-    
-    `;
-
-    div.innerHTML = Content;
-    productsContainer.append(div);
-  });
-};*/
 
 /* -------------- MANEJO DEL LOCALSTORAGE -------------- */
 /*  */
