@@ -248,7 +248,7 @@ const validarCampoSelect = (input, campo, error) => {
 	}
 };
 const validarCampoFecha = (input, campo, error) => {
-		if (input.value != "") {
+	if (input.value != "") {
 		addClassTrue(campo, error, input.value);
 	} else {
 		addClassFalse(campo, error, input.value);
@@ -370,7 +370,7 @@ const validarFormulario = (e) => {
 			validarCampoVacio(expresiones.telefono, e);
 			break;
 		case "servicio":
-			validarCampoSelect(campo.value, campo.name, "error");
+			validarCampoSelect(campo, campo.name, "error");
 			break;
 		case "cantidadPersonas":
 			validarCampoVacio(expresiones.cantidadPersonas, e);
@@ -428,6 +428,7 @@ formulario.addEventListener("submit", (e) => {
 		campos.cedula.valor &&
 		campos.correo.valor &&
 		campos.telefono.valor &&
+		campos.servicio.valor &&
 		campos.cantidadPersonas.valor &&
 		campos.indicacionesEspeciales.valor &&
 		terminos.checked
@@ -443,20 +444,50 @@ formulario.addEventListener("submit", (e) => {
 			document.querySelectorAll(".formulario__input-check").forEach((data) => {
 				data.classList.remove("formulario__input-check");
 			});
-		
-			sendMail(campos);
+
+			/* sendMail(campos); */
 
 			campos = {
-				nombres: false,
-				apellidos: false,
-				cedula: false,
-				correo: false,
-				telefono: false,
-				servicio: false,
-				cantidadPersonas: false,
-				fecha: false,
-				hora: false,
-				indicacionesEspeciales: false,
+				nombres: {
+					name: "",
+					valor: false,
+				},
+				apellidos: {
+					name: "",
+					valor: false,
+				},
+				cedula: {
+					name: "",
+					valor: false,
+				},
+				correo: {
+					name: "",
+					valor: false,
+				},
+				telefono: {
+					name: "",
+					valor: false,
+				},
+				servicio: {
+					name: "",
+					valor: false,
+				},
+				cantidadPersonas: {
+					name: "",
+					valor: false,
+				},
+				fecha: {
+					name: "",
+					valor: false,
+				},
+				hora: {
+					name: "",
+					valor: false,
+				},
+				indicacionesEspeciales: {
+					name: "",
+					valor: false,
+				},
 			};
 			formulario.reset();
 		}, 1100);

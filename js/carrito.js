@@ -1,5 +1,5 @@
 const expresiones = {
-  cantidad: /^[1-9]\d{0,4}$/,
+	cantidad: /^[1-9]\d{0,4}$/,
 };
 
 const campos = [];
@@ -11,38 +11,38 @@ const productsContainer = document.querySelector(".contenedor-productos");
 
 /* -------------- NOS PERMITE OBTENER LOS PLATILLOS DEL LOCALSTORAGE CONVERTIDOS EN JSON -------------- */
 const obtenerPlatillosLocalStorage = () => {
-  let platilloLS;
-  if (localStorage.getItem("platillos") === null) {
-    platilloLS = [];
-  } else {
-    platilloLS = JSON.parse(localStorage.getItem("platillos"));
-  }
-  return platilloLS;
+	let platilloLS;
+	if (localStorage.getItem("platillos") === null) {
+		platilloLS = [];
+	} else {
+		platilloLS = JSON.parse(localStorage.getItem("platillos"));
+	}
+	return platilloLS;
 };
 /* -------------- FIN -------------- */
 
 /* -------------- NOS PERMITE SABER SI UN PLATILLO EXISTE, DEVOLVIENDO TRUE O FALSE -------------- */
 const saberPlatilloExistente = (platilloLS, platillo) => {
-  return platilloLS.id === platillo.id ? true : false;
+	return platilloLS.id === platillo.id ? true : false;
 };
 
 /* -------------- NOS PERMITE ELIMINAR UN PLATILLO SEGUN SU ID DEL LOCALSTORAGE -------------- */
 const eliminarPlatilloByIdLocalStorage = (platillo) => {
-  let platilloLS = obtenerPlatillosLocalStorage();
+	let platilloLS = obtenerPlatillosLocalStorage();
 
-  platilloLS.forEach((platillos, index) => {
-    if (saberPlatilloExistente(platillos, platillo)) {
-      platilloLS.splice(index, 1);
-    }
-  });
-  localStorage.setItem("platillos", JSON.stringify(platilloLS));
+	platilloLS.forEach((platillos, index) => {
+		if (saberPlatilloExistente(platillos, platillo)) {
+			platilloLS.splice(index, 1);
+		}
+	});
+	localStorage.setItem("platillos", JSON.stringify(platilloLS));
 };
 /* -------------- FIN -------------- */
 
 /* -------------- NOS PERMITE REMOVER POR EL ITEM CREADO,
   QUE SE ENCUENTRAN ALMACENADA EN EL LOCALSTORAGE -------------- */
 const removerItemLocalStorage = () => {
-  localStorage.removeItem("platillos");
+	localStorage.removeItem("platillos");
 };
 /* -------------- FIN -------------- */
 
@@ -51,18 +51,18 @@ console.log("storage");
 console.log(platilloLS);
 
 platilloLS.forEach((platillos) => {
-  const div = document.createElement("div");
-  div.classList.add(
-    "card",
-    "mb-3",
-    "p-3",
-    "border",
-    "border-danger",
-    "border-3",
-    "carrito-card"
-  );
+	const div = document.createElement("div");
+	div.classList.add(
+		"card",
+		"mb-3",
+		"p-3",
+		"border",
+		"border-danger",
+		"border-3",
+		"carrito-card"
+	);
 
-  const Content = `
+	const Content = `
       
               <div class="row">
                 <div
@@ -221,7 +221,7 @@ platilloLS.forEach((platillos) => {
                 </div>
               </div>
     `;
-  /* const Content = `
+	/* const Content = `
               <div class="row">
                 <div
                   class="
@@ -294,255 +294,255 @@ platilloLS.forEach((platillos) => {
                 </div>
               </div>`;
  */
-  div.innerHTML = Content;
-  div.id = platillos.id;
-  productsContainer.appendChild(div);
-  campos.push({ cantidad_id: platillos.id, valor: false });
+	div.innerHTML = Content;
+	div.id = platillos.id;
+	productsContainer.appendChild(div);
+	campos.push({ cantidad_id: platillos.id, valor: false });
 });
 
 const contenedor_productos = document.getElementById("contenedor-productos");
 
 const contenedor_productos_card = document.querySelectorAll(
-  "#contenedor-productos .card"
+	"#contenedor-productos .card"
 );
 
 let sumaPlatillos = 0;
 const obtenerTotalCarrito = () => {
-  platilloLS.forEach((platillos) => {
-    precioString = platillos.valor.replace("$", "");
-    cantidadString = platillos.cantidad;
-    let cantidadNumber = parseFloat(cantidadString);
-    let precioNumber = parseFloat(precioString);
-    let valorPlatillos = precioNumber * cantidadNumber;
-    sumaPlatillos += valorPlatillos;
-  });
+	platilloLS.forEach((platillos) => {
+		precioString = platillos.valor.replace("$", "");
+		cantidadString = platillos.cantidad;
+		let cantidadNumber = parseFloat(cantidadString);
+		let precioNumber = parseFloat(precioString);
+		let valorPlatillos = precioNumber * cantidadNumber;
+		sumaPlatillos += valorPlatillos;
+	});
 
-  return sumaPlatillos;
+	return sumaPlatillos;
 };
 /* -------------- Class Formulario Input Error Activo -------------- */
 const removeClassFormularioInputErrorActivo = (campo, error) => {
-  document
-    .querySelector(`#grupo__cantidad_${campo} .formulario__input-${error}`)
-    .classList.remove(`formulario__input-${error}-activo`);
+	document
+		.querySelector(`#grupo__cantidad_${campo} .formulario__input-${error}`)
+		.classList.remove(`formulario__input-${error}-activo`);
 };
 const addClassFormularioInputErrorActivo = (campo, error) => {
-  document
-    .querySelector(`#grupo__cantidad_${campo} .formulario__input-${error}`)
-    .classList.add(`formulario__input-${error}-activo`);
+	document
+		.querySelector(`#grupo__cantidad_${campo} .formulario__input-${error}`)
+		.classList.add(`formulario__input-${error}-activo`);
 };
 /* -------------- Fin -------------- */
 
 /* -------------- Class Formulario Grupo Incorrecto -------------- */
 const removeClassFormularioGrupoIncorrecto = (campo) => {
-  document
-    .getElementById(`grupo__cantidad_${campo}`)
-    .classList.remove("formulario__grupo-incorrecto");
+	document
+		.getElementById(`grupo__cantidad_${campo}`)
+		.classList.remove("formulario__grupo-incorrecto");
 };
 const addClassFormularioGrupoIncorrecto = (campo) => {
-  document
-    .getElementById(`grupo__cantidad_${campo}`)
-    .classList.add("formulario__grupo-incorrecto");
+	document
+		.getElementById(`grupo__cantidad_${campo}`)
+		.classList.add("formulario__grupo-incorrecto");
 };
 /* -------------- Fin -------------- */
 
 /* -------------- Class Formulario Grupo Correcto -------------- */
 const removeClassFormularioGrupoCorrecto = (campo) => {
-  document
-    .getElementById(`grupo__cantidad_${campo}`)
-    .classList.remove("formulario__grupo-correcto");
+	document
+		.getElementById(`grupo__cantidad_${campo}`)
+		.classList.remove("formulario__grupo-correcto");
 };
 const addClassFormularioGrupoCorrecto = (campo) => {
-  document
-    .getElementById(`grupo__cantidad_${campo}`)
-    .classList.add("formulario__grupo-correcto");
+	document
+		.getElementById(`grupo__cantidad_${campo}`)
+		.classList.add("formulario__grupo-correcto");
 };
 /* -------------- Fin -------------- */
 
 /* -------------- Class Check Circle -------------- */
 const addClassCheckCircle = (campo) => {
-  document
-    .querySelector(`#grupo__cantidad_${campo} i`)
-    .classList.add("fa-check-circle");
+	document
+		.querySelector(`#grupo__cantidad_${campo} i`)
+		.classList.add("fa-check-circle");
 };
 const removeClassCheckCircle = (campo) => {
-  document
-    .querySelector(`#grupo__cantidad_${campo} i`)
-    .classList.remove("fa-check-circle");
+	document
+		.querySelector(`#grupo__cantidad_${campo} i`)
+		.classList.remove("fa-check-circle");
 };
 /* -------------- Fin -------------- */
 
 /* -------------- Class Times Circle -------------- */
 const removeClassTimesCircle = (campo) => {
-  document
-    .querySelector(`#grupo__cantidad_${campo} i`)
-    .classList.remove("fa-times-circle");
+	document
+		.querySelector(`#grupo__cantidad_${campo} i`)
+		.classList.remove("fa-times-circle");
 };
 const addClassTimesCircle = (campo) => {
-  document
-    .querySelector(`#grupo__cantidad_${campo} i`)
-    .classList.add("fa-times-circle");
+	document
+		.querySelector(`#grupo__cantidad_${campo} i`)
+		.classList.add("fa-times-circle");
 };
 /* -------------- Fin -------------- */
 
 /* -------------- Class Formulario Input Check -------------- */
 const addClassFormularioInputCheck = (campo) => {
-  document
-    .querySelector(
-      `#grupo__cantidad_${campo} .formulario__grupo-input .formulario__input-cantidad`
-    )
-    .classList.add("formulario__input-check");
+	document
+		.querySelector(
+			`#grupo__cantidad_${campo} .formulario__grupo-input .formulario__input-cantidad`
+		)
+		.classList.add("formulario__input-check");
 };
 const removeClassFormularioInputCheck = (campo) => {
-  document
-    .querySelector(
-      `#grupo__cantidad_${campo} .formulario__grupo-input .formulario__input-cantidad`
-    )
-    .classList.remove("formulario__input-check");
+	document
+		.querySelector(
+			`#grupo__cantidad_${campo} .formulario__grupo-input .formulario__input-cantidad`
+		)
+		.classList.remove("formulario__input-check");
 };
 /* -------------- Fin -------------- */
 
 const addClassTrue = (campo, error) => {
-  console.log(campo);
-  removeClassFormularioGrupoIncorrecto(campo);
+	console.log(campo);
+	removeClassFormularioGrupoIncorrecto(campo);
 
-  addClassFormularioGrupoCorrecto(campo);
+	addClassFormularioGrupoCorrecto(campo);
 
-  addClassCheckCircle(campo);
+	addClassCheckCircle(campo);
 
-  removeClassTimesCircle(campo);
+	removeClassTimesCircle(campo);
 
-  removeClassFormularioInputErrorActivo(campo, error);
+	removeClassFormularioInputErrorActivo(campo, error);
 
-  addClassFormularioInputCheck(campo);
+	addClassFormularioInputCheck(campo);
 
-  campos[campo].valor = true;
+	campos[campo].valor = true;
 };
 
 const addClassFalse = (campo, error) => {
-  addClassFormularioGrupoIncorrecto(campo);
+	addClassFormularioGrupoIncorrecto(campo);
 
-  removeClassFormularioGrupoCorrecto(campo);
+	removeClassFormularioGrupoCorrecto(campo);
 
-  addClassTimesCircle(campo);
+	addClassTimesCircle(campo);
 
-  removeClassCheckCircle(campo);
+	removeClassCheckCircle(campo);
 
-  addClassFormularioInputErrorActivo(campo, error);
+	addClassFormularioInputErrorActivo(campo, error);
 
-  removeClassFormularioInputCheck(campo);
+	removeClassFormularioInputCheck(campo);
 
-  campos[campo].valor = false;
+	campos[campo].valor = false;
 };
 
 const validarCampo = (expresion, input, campo, error) => {
-  if (expresion.test(input)) {
-    addClassTrue(campo, error);
-  } else {
-    addClassFalse(campo, error);
-  }
+	if (expresion.test(input)) {
+		addClassTrue(campo, error);
+	} else {
+		addClassFalse(campo, error);
+	}
 };
 
 const validarCampoVacio = (expresion, valor, inputName) => {
-  inputName = inputName.split("_")[2];
-  if (valor == "") {
-    removeClassFormularioInputErrorActivo(inputName, "error");
-    validarCampo(expresion, valor, inputName, "error1");
-  } else {
-    removeClassFormularioInputErrorActivo(inputName, "error1");
-    validarCampo(expresion, valor, inputName, "error");
-  }
+	inputName = inputName.split("_")[2];
+	if (valor == "") {
+		removeClassFormularioInputErrorActivo(inputName, "error");
+		validarCampo(expresion, valor, inputName, "error1");
+	} else {
+		removeClassFormularioInputErrorActivo(inputName, "error1");
+		validarCampo(expresion, valor, inputName, "error");
+	}
 };
 
 const validarFormulario = (e) => {
-  validarCampoVacio(expresiones.cantidad, e.target.value, e.target.name);
+	validarCampoVacio(expresiones.cantidad, e.target.value, e.target.name);
 };
 
 const funcionInputCantidad = (index) => {
-  const input_cantidad = document.querySelectorAll(
-    "#formulario_carrito_input input"
-  )[index];
-  if (input_cantidad.value != "") {
-    validarCampoVacio(
-      expresiones.cantidad,
-      input_cantidad.value,
-      input_cantidad.name
-    );
-  }
-  input_cantidad.addEventListener("keyup", validarFormulario);
-  input_cantidad.addEventListener("blur", validarFormulario);
-  input_cantidad.addEventListener("focus", validarFormulario);
+	const input_cantidad = document.querySelectorAll(
+		"#formulario_carrito_input input"
+	)[index];
+	if (input_cantidad.value != "") {
+		validarCampoVacio(
+			expresiones.cantidad,
+			input_cantidad.value,
+			input_cantidad.name
+		);
+	}
+	input_cantidad.addEventListener("keyup", validarFormulario);
+	input_cantidad.addEventListener("blur", validarFormulario);
+	input_cantidad.addEventListener("focus", validarFormulario);
 };
 
 let resul = 0;
 
 const funcionMinusPlus = (index) => {
-  console.log(index);
-  let minus = document.querySelectorAll(`#btn_minus`);
-  console.log(minus);
+	console.log(index);
+	let minus = document.querySelectorAll(`#btn_minus`);
+	console.log(minus);
 
-  minus[index].addEventListener("click", () => {
-    let input_cantidad = document.getElementsByClassName(
-      "formulario__input-cantidad"
-    )[index];
-    let cantidad = input_cantidad.value;
-    if (cantidad != "") {
-      cantidad = parseInt(cantidad);
-      let rest = cantidad - 1;
-      if (rest >= 1) {
-        input_cantidad.value = rest;
-        const valor = document
-          .querySelectorAll("#valor")
-          [index].innerText.split("$")[1];
-        let total_apagar = document.getElementById("total-carrito");
-        sumaPlatillos = sumaPlatillos - parseInt(valor);
-        console.log("resta");
-        console.log("valor");
-        console.log(parseInt(valor));
-        console.log("sumaPlatillos");
-        console.log(sumaPlatillos);
+	minus[index].addEventListener("click", () => {
+		let input_cantidad = document.getElementsByClassName(
+			"formulario__input-cantidad"
+		)[index];
+		let cantidad = input_cantidad.value;
+		if (cantidad != "") {
+			cantidad = parseInt(cantidad);
+			let rest = cantidad - 1;
+			if (rest >= 1) {
+				input_cantidad.value = rest;
+				const valor = document
+					.querySelectorAll("#valor")
+					[index].innerText.split("$")[1];
+				let total_apagar = document.getElementById("total-carrito");
+				sumaPlatillos = sumaPlatillos - parseInt(valor);
+				console.log("resta");
+				console.log("valor");
+				console.log(parseInt(valor));
+				console.log("sumaPlatillos");
+				console.log(sumaPlatillos);
 
-        total_apagar.innerText = sumaPlatillos;
-      }
-      validarCampoVacio(
-        expresiones.cantidad,
-        input_cantidad.value,
-        input_cantidad.name
-      );
-    }
-  });
+				total_apagar.innerText = sumaPlatillos;
+			}
+			validarCampoVacio(
+				expresiones.cantidad,
+				input_cantidad.value,
+				input_cantidad.name
+			);
+		}
+	});
 
-  let plus = document.querySelectorAll(`#btn_plus`);
-  plus[index].addEventListener("click", () => {
-    let input_cantidad = document.getElementsByClassName(
-      "formulario__input-cantidad"
-    )[index];
-    let cant = input_cantidad.value;
-    if (cant != "") {
-      cant = parseInt(cant);
-      let suma = cant + 1;
-      if (suma >= 1) {
-        input_cantidad.value = suma;
-        const valor = document
-          .querySelectorAll("#valor")
-          [index].innerText.split("$")[1];
-        let total_apagar = document.getElementById("total-carrito");
-        sumaPlatillos = sumaPlatillos + parseInt(valor);
-        console.log("");
-        console.log("suma");
-        console.log("valor");
-        console.log(parseInt(valor));
-        console.log("sumaPlatillos");
-        console.log(sumaPlatillos);
+	let plus = document.querySelectorAll(`#btn_plus`);
+	plus[index].addEventListener("click", () => {
+		let input_cantidad = document.getElementsByClassName(
+			"formulario__input-cantidad"
+		)[index];
+		let cant = input_cantidad.value;
+		if (cant != "") {
+			cant = parseInt(cant);
+			let suma = cant + 1;
+			if (suma >= 1) {
+				input_cantidad.value = suma;
+				const valor = document
+					.querySelectorAll("#valor")
+					[index].innerText.split("$")[1];
+				let total_apagar = document.getElementById("total-carrito");
+				sumaPlatillos = sumaPlatillos + parseInt(valor);
+				console.log("");
+				console.log("suma");
+				console.log("valor");
+				console.log(parseInt(valor));
+				console.log("sumaPlatillos");
+				console.log(sumaPlatillos);
 
-        total_apagar.innerText = sumaPlatillos;
-      }
-      validarCampoVacio(
-        expresiones.cantidad,
-        input_cantidad.value,
-        input_cantidad.name
-      );
-    }
-  });
+				total_apagar.innerText = sumaPlatillos;
+			}
+			validarCampoVacio(
+				expresiones.cantidad,
+				input_cantidad.value,
+				input_cantidad.name
+			);
+		}
+	});
 };
 
 let totalCarrito = obtenerTotalCarrito();
@@ -550,123 +550,127 @@ let totalCarrito = obtenerTotalCarrito();
 document.getElementById("total-carrito").innerHTML = totalCarrito;
 
 contenedor_productos_card.forEach((contenedor_producto, index) => {
-  let btnDelete = document.querySelectorAll(".boton-carrito-eliminar")[index];
-  console.log("index");
-  console.log(index);
-  console.log("campos");
-  console.log(campos);
-  console.log("btnDelete");
-  console.log(btnDelete);
-  /* -------------- -------------- */
-  funcionMinusPlus(index);
-  /* -------------- -------------- */
+	let btnDelete = document.querySelectorAll(".boton-carrito-eliminar")[index];
+	console.log("index");
+	console.log(index);
+	console.log("campos");
+	console.log(campos);
+	console.log("btnDelete");
+	console.log(btnDelete);
+	/* -------------- -------------- */
+	funcionMinusPlus(index);
+	/* -------------- -------------- */
 
-  /* -------------- -------------- */
-  /* funcionInputCantidad(index); */
-  /* -------------- -------------- */
+	/* -------------- -------------- */
+	/* funcionInputCantidad(index); */
+	/* -------------- -------------- */
 
-  btnDelete.addEventListener("click", (e) => {
-    console.log("eliminar btn");
-    const idCard = contenedor_producto.id;
-    console.log("idcard");
-    console.log(idCard);
-    Swal.fire({
-      title: "¿Deseas eliminar este platillo del carrito?",
-      showDenyButton: true,
-      showConfirmButton: false,
-      showCancelButton: true,
-      denyButtonText: `Eliminar`,
-    }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
-      if (result.isDenied) {
-        Swal.fire({
-          icon: "success",
-          title: "El producto fue eliminado con éxito",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        const valor = document
-          .querySelectorAll("#valor")
-          [index].innerText.split("$")[1];
-        let total_apagar = document.getElementById("total-carrito");
-        sumaPlatillos = sumaPlatillos - parseInt(valor);
-        total_apagar.innerText = sumaPlatillos;
-        eliminarPlatilloByIdLocalStorage(contenedor_producto);
-        contenedor_productos.removeChild(contenedor_producto);
-      }
-    });
-  });
+	btnDelete.addEventListener("click", (e) => {
+		console.log("eliminar btn");
+		const idCard = contenedor_producto.id;
+		console.log("idcard");
+		console.log(idCard);
+		Swal.fire({
+			title: "¿Deseas eliminar este platillo del carrito?",
+			showDenyButton: true,
+			showConfirmButton: false,
+			showCancelButton: true,
+			denyButtonText: `Eliminar`,
+		}).then((result) => {
+			/* Read more about isConfirmed, isDenied below */
+			if (result.isDenied) {
+				Swal.fire({
+					icon: "success",
+					title: "El producto fue eliminado con éxito",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+				const valor = document
+					.querySelectorAll("#valor")
+					[index].innerText.split("$")[1];
+				let input_cantidad = document.getElementsByClassName(
+					"formulario__input-cantidad"
+				)[index];
+				let cantidad = input_cantidad.value;
+				let total_apagar = document.getElementById("total-carrito");
+				sumaPlatillos = sumaPlatillos - parseInt(valor) * parseInt(cantidad);
+				total_apagar.innerText = sumaPlatillos;
+				eliminarPlatilloByIdLocalStorage(contenedor_producto);
+				contenedor_productos.removeChild(contenedor_producto);
+			}
+		});
+	});
 });
 
 //----------------Validar campos del formulario--------------------
 const funcionSweetAlert = (
-  title,
-  showDenyButton,
-  showCancelButton,
-  confirmButtonText,
-  denyButtonText,
-  mensajeSuccess,
-  mensajeInfo
+	title,
+	showDenyButton,
+	showCancelButton,
+	confirmButtonText,
+	denyButtonText,
+	mensajeSuccess,
+	mensajeInfo
 ) => {
-  Swal.fire({
-    title: title,
-    showDenyButton: showDenyButton,
-    showCancelButton: showCancelButton,
-    confirmButtonText: confirmButtonText,
-    denyButtonText: denyButtonText,
-  }).then((result) => {
-    /* Read more about isConfirmed, isDenied below */
-    if (result.isConfirmed) {
-      let total_carrito = document.getElementById("total-carrito");
-      const campos = {
-        to_name: document.getElementById("nombre").value,
-        correo: document.getElementById("email").value,
-        message:
-          "SE REALIZÓ LA COMPRA DE LOS PLATILLOS, EL TOTAL DEL PEDIDO ES DE: $" +
-          total_carrito.innerText,
-      };
-      sendMail(campos);
-      removerItemLocalStorage();
-      contenedor_productos_card.forEach((e) => {
-        contenedor_productos.removeChild(e);
-      });
-      total_carrito.innerText = "";
-      Swal.fire(mensajeSuccess, "", "success");
-    } else if (result.isDenied || result.isDismissed) {
-      Swal.fire(mensajeInfo, "", "info");
-    }
-  });
+	Swal.fire({
+		title: title,
+		showDenyButton: showDenyButton,
+		showCancelButton: showCancelButton,
+		confirmButtonText: confirmButtonText,
+		denyButtonText: denyButtonText,
+	}).then((result) => {
+		/* Read more about isConfirmed, isDenied below */
+		if (result.isConfirmed) {
+			let total_carrito = document.getElementById("total-carrito");
+			const campos = {
+				to_name: document.getElementById("nombre").value,
+				correo: document.getElementById("email").value,
+				message:
+					"SE REALIZÓ LA COMPRA DE LOS PLATILLOS, EL TOTAL DEL PEDIDO ES DE: $" +
+					total_carrito.innerText,
+			};
+			sendMail(campos);
+			removerItemLocalStorage();
+			contenedor_productos_card.forEach((e) => {
+				contenedor_productos.removeChild(e);
+			});
+			total_carrito.innerText = "";
+			Swal.fire(mensajeSuccess, "", "success");
+		} else if (result.isDenied || result.isDismissed) {
+			Swal.fire(mensajeInfo, "", "info");
+		}
+	});
 };
 (function () {
-  "use strict";
+	"use strict";
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll(".needs-validation");
+	// Fetch all the forms we want to apply custom Bootstrap validation styles to
+	var forms = document.querySelectorAll(".needs-validation");
 
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms).forEach(function (form) {
-    form.addEventListener("submit", function (event) {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      } else {
-        event.preventDefault();
-        event.stopPropagation();
-        console.log("ELIMINAR");
-        funcionSweetAlert(
-          "¿DESEAS CONTINUAR CON EL PEDIDO?",
-          true,
-          false,
-          "SI",
-          "NO",
-          "SE REALIZO CON EXITO EL PEDIDO...",
-          "NO SE REALIZO EL PEDIDO..."
-        );
-      }
+	// Loop over them and prevent submission
+	Array.prototype.slice.call(forms).forEach(function (form) {
+		form.addEventListener("submit", function (event) {
+			if (!form.checkValidity()) {
+				event.preventDefault();
+				event.stopPropagation();
+			} else {
+				event.preventDefault();
+				event.stopPropagation();
+				console.log("ELIMINAR");
+				funcionSweetAlert(
+					"¿DESEAS CONTINUAR CON EL PEDIDO?",
+					true,
+					false,
+					"SI",
+					"NO",
+					"SE REALIZO CON EXITO EL PEDIDO...",
+					"NO SE REALIZO EL PEDIDO..."
+				);
+			}
 
-      form.classList.add("was-validated");
-    });
-  });
+			form.classList.add("was-validated");
+		});
+	});
 })();
 
 /* btnDelete.addEventListener("click", function (e) {
