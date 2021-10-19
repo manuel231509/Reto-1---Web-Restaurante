@@ -131,19 +131,18 @@
 
 #col_pagar-ahora {
 	position: fixed;
-	right: 2.2%;
+	right: 38px;
 	bottom: 39px;
-	z-index: -1;
 }
 
 .row-total > .col {
-  display: flex;
+	display: flex;
 	flex-grow: 0;
 	flex-shrink: 0;
 	flex-basis: 3%;
 }
 
-@media (min-width: 0px) and (max-width: 985px) {
+@media (min-width: 0px) and (max-width: 990px) {
 	#col_pagar-ahora {
 		position: relative;
 		right: inherit;
@@ -152,15 +151,16 @@
 	}
 }
 
-@media (min-width: 986px) and (max-width: 1180px) {
+@media (min-width: 991px) and (max-width: 1280px) {
 	.imagen-carrito {
 		height: 150px;
 		width: 150px;
 	}
+
 	#col_pagar-ahora {
 		position: fixed;
 		right: 2.2%;
 		bottom: 39px;
-		z-index: -1;
+		z-index: 0;
 	}
 }

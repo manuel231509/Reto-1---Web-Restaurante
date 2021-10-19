@@ -36,7 +36,7 @@ const modificarCantidadPlatilloByIdlocalStorage = (idPlatillo, cantidad) => {
 
 	platillo.cantidad = cantidad;
 
-	localStorage.setItem("platillos", JSON.stringify(platilloLS))
+	localStorage.setItem("platillos", JSON.stringify(platilloLS));
 };
 
 /* -------------- NOS PERMITE ELIMINAR UN PLATILLO SEGUN SU ID DEL LOCALSTORAGE -------------- */
@@ -612,6 +612,27 @@ const funcionSweetAlert = (
 
 (function () {
 	"use strict";
+
+	const footer = document.getElementById("footer");
+
+	window.addEventListener("scroll", function () {
+		console.log(lengthContenedorProductosCard);
+		const anchoNavegador = this.window.innerWidth;
+		const footPos = footer.getBoundingClientRect().y;
+		if (anchoNavegador > 990) {
+			if (lengthContenedorProductosCard > 0) {
+				if (footPos < 590 - 64) {
+					this.document
+						.getElementById("col_pagar-ahora")
+						.classList.add("d-none");
+				} else {
+					this.document
+						.getElementById("col_pagar-ahora")
+						.classList.remove("d-none");
+				}
+			}
+		}
+	});
 
 	// Fetch all the forms we want to apply custom Bootstrap validation styles to
 	var forms = document.querySelectorAll(".needs-validation");
