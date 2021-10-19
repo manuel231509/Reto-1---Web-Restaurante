@@ -482,7 +482,6 @@ const funcionCardMenu = (card_menu) => {
 const funcionMinusPlus = (idCardMenu) => {
 	let minus = document.getElementById(`btn_minus-${idCardMenu}`);
 	minus.addEventListener("click", () => {
-
 		let input_cantidad = document.getElementById(
 			`input_cantidad-${idCardMenu}`
 		);
@@ -684,7 +683,7 @@ const funcionSweetAlert = (
 		} else if (result.isDenied || result.isDismissed) {
 			Swal.fire({
 				icon: "info",
-				title:mensajeInfo,
+				title: mensajeInfo,
 				showConfirmButton: false,
 				timer: 1500,
 			});
@@ -698,7 +697,7 @@ const funcionBtnAgregarCarrito = (idCardMenu) => {
 		`btn-agregar-carrito-${idCardMenu}`
 	);
 	let formulario = document.getElementById(`formulario_menu-${idCardMenu}`);
-	
+
 	btnAgregarCarrito.addEventListener("click", (b) => {
 		/* -------------- -------------- */
 		let input_cantidad = document.getElementById(
