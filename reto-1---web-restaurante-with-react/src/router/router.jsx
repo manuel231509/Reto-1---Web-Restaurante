@@ -1,9 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Menu from "../views/Menu.js";
 const routes = [
+	/* {
+		path: "/",
+		component: Home,
+	}, */
 	{
-		path: "/sandwiches",
-		component: Sandwiches,
+		path: "/menu",
+		component: Menu,
 	},
 	{
 		path: "/tacos",
@@ -24,13 +29,13 @@ const router = () => {
 	return (
 		<>
 			<Router>
-				<div>
+				<>
 					<ul>
 						<li>
 							<Link to="/tacos">Tacos</Link>
 						</li>
 						<li>
-							<Link to="/sandwiches">Sandwiches</Link>
+							<Link to="/menu">Menu</Link>
 						</li>
 					</ul>
 
@@ -39,7 +44,7 @@ const router = () => {
 							<RouteWithSubRoutes key={i} {...route} />
 						))}
 					</Switch>
-				</div>
+				</>
 			</Router>
 		</>
 	);
