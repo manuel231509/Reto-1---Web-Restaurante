@@ -1,7 +1,11 @@
-import React from "react";
+import Inicio from "./views/Inicio";
 
-const App = () => {
-	return <></>;
-};
+function App() {
+  return (
+    <>
+      <Inicio />
+    </>
+  );
+}
 
 export default App;

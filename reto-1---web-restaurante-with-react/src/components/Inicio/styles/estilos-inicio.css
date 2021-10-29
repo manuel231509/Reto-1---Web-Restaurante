@@ -1,0 +1,113 @@
+/* CARRUSEL DE IMAGENES */
+
+.carousel-item {
+  height: 900px;
+}
+
+.carousel-item img {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  min-height: 900px;
+}
+
+.carousel-item h5 {
+  font-size: 5rem;
+  padding-bottom: 300px;
+}
+
+.carousel-item p {
+  font-size: 2rem;
+}
+
+.carousel-caption h5 {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.carousel-caption p {
+  font-size: 1em;
+}
+
+/* SECCION MAIN */
+
+.main h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+}
+.main {
+  background: url(../../../assets/images/menu.jpg);
+  background-size: cover;
+  height: 100vh;
+  background-position: 50% 50%;
+  width: 100%;
+}
+
+.btn1 {
+  height: 45px;
+  width: 35%;
+  border: none;
+  outline: none;
+  background-color: rgb(248, 26, 92);
+  color: white;
+  font-weight: 700;
+  border-radius: 60px;
+}
+.btn1:hover {
+  background-color: rgb(138, 48, 75);
+  transition: 0.5s;
+}
+h1 {
+  font-weight: 700;
+}
+
+.card:hover {
+  box-shadow: -3px -2px 25px -5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -3px -2px 25px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -3px -2px 25px -5px rgba(0, 0, 0, 0.75);
+  transition: 1s;
+}
+
+/* TESTIMONIOS*/
+.foto {
+  border-radius: 100px;
+  width: 200px;
+  height: 200px;
+}
+
+/* DESTACADOS*/
+
+@media (min-width: 576px) {
+  .carousel-caption h5 {
+    font-size: 3rem;
+  }
+  .carousel-caption p {
+    font-size: 1.1em;
+  }
+}
+@media (min-width: 768px) {
+  .carousel-caption h5 {
+    font-size: 3rem;
+  }
+  .carousel-caption p {
+    font-size: 1.6em;
+  }
+}
+@media (min-width: 992px) {
+  .carousel-caption h5 {
+    font-size: 4rem;
+  }
+  .carousel-caption p {
+    font-size: 1.8em;
+  }
+}
+@media (min-width: 1200px) {
+  .carousel-caption h5 {
+    font-size: 5rem;
+  }
+  .carousel-caption p {
+    font-size: 2rem;
+  }
+}
