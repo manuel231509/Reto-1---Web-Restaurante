@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "nombre": "Celebración de cumpleaños",
+      "descripcion":
+        "Phasellus efficitur augue ante, sed pharetra orci imperdiet ac. Nulla sodales nunc justo, vel varius lorem rutrum luctus. Nunc imperdiet, mauris eu fermentum ultrices, dolor est dapibus magna, eget hendrerit augue urna sed arcu. Etiam fermentum posuere aliquet. Nulla faucibus, dui et bibendum hendrerit nulla libero molestie quam, sed mollis erat ante vel ante.",
+      "imagen": "./assets/images/cumpleanos.svg"
+    },
+    {
+      "id": 2,
+      "nombre": "Aniversarios",
+      "descripcion":
+        "Phasellus efficitur augue ante, sed pharetra orci imperdiet ac. Nulla sodales nunc justo, vel varius lorem rutrum luctus. Nunc imperdiet, mauris eu fermentum ultrices, dolor est dapibus magna, eget hendrerit augue urna sed arcu. Etiam fermentum posuere aliquet. Nulla faucibus, dui et bibendum hendrerit nulla libero molestie quam, sed mollis erat ante vel ante.",
+      "imagen": "./assets/images/aniversario.svg"
+    },
+    {
+      "id": 3,
+      "nombre": "Fiestas Infantiles",
+      "descripcion":
+        "Phasellus efficitur augue ante, sed pharetra orci imperdiet ac. Nulla sodales nunc justo, vel varius lorem rutrum luctus. Nunc imperdiet, mauris eu fermentum ultrices, dolor est dapibus magna, eget hendrerit augue urna sed arcu. Etiam fermentum posuere aliquet. Nulla faucibus, dui et bibendum hendrerit nulla libero molestie quam, sed mollis erat ante vel ante.",
+      "imagen": "./assets/images/fiesta-infantil.svg"
+    },
+    {
+      "id": 4,
+      "nombre": "Declaraciones o propuestas",
+      "descripcion":
+        "Phasellus efficitur augue ante, sed pharetra orci imperdiet ac. Nulla sodales nunc justo, vel varius lorem rutrum luctus. Nunc imperdiet, mauris eu fermentum ultrices, dolor est dapibus magna, eget hendrerit augue urna sed arcu. Etiam fermentum posuere aliquet. Nulla faucibus, dui et bibendum hendrerit nulla libero molestie quam, sed mollis erat ante vel ante.",
+      "imagen": "./assets/images/propuesta-declaracion.svg"
+    },
+    {
+      "id": 5,
+      "nombre": "Despedidas",
+      "descripcion":
+        "Phasellus efficitur augue ante, sed pharetra orci imperdiet ac. Nulla sodales nunc justo, vel varius lorem rutrum luctus. Nunc imperdiet, mauris eu fermentum ultrices, dolor est dapibus magna, eget hendrerit augue urna sed arcu. Etiam fermentum posuere aliquet. Nulla faucibus, dui et bibendum hendrerit nulla libero molestie quam, sed mollis erat ante vel ante.",
+      "imagen": "./assets/images/despedidas.svg"
+    },
+    {
+      "id": 6,
+      "nombre": "Cena con amigos",
+      "descripcion":
+        "Phasellus efficitur augue ante, sed pharetra orci imperdiet ac. Nulla sodales nunc justo, vel varius lorem rutrum luctus. Nunc imperdiet, mauris eu fermentum ultrices, dolor est dapibus magna, eget hendrerit augue urna sed arcu. Etiam fermentum posuere aliquet. Nulla faucibus, dui et bibendum hendrerit nulla libero molestie quam, sed mollis erat ante vel ante.",
+      "imagen": "./assets/images/cena-amigos.svg"
+    }
+]
