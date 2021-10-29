@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ComponentEtiquetaImg from "../Componente etiqueta img/componentEtiquetaImg";
-import ComponentEtiquetaP from "../Componente etiqueta p/componentEtiquetaP";
-import ComponentEtiquetaFontAwesomeIcon from "../Componente etiqueta FontAwesomeIcon/componentEtiquetaFontAwesomeIcon";
+import ComponentEtiquetaImg from "./EtiquetaImg";
+import ComponentEtiquetaP from "./EtiquetaP";
+import ComponentEtiquetaFontAwesomeIcon from "../FontAwesome/EtiquetaFontAwesomeIcon";
 
-const componentEtiquetaA = (props) => {
+const EtiquetaA = (props) => {
 	const { a_CallComponentBool, a_className, a_href, a_role } =
 		props.objectArray;
+		
 	if (a_CallComponentBool === true) {
 		return (
 			<a className={a_className} href={a_href} role={a_role}>
@@ -19,8 +20,8 @@ const componentEtiquetaA = (props) => {
 	return null;
 };
 
-componentEtiquetaA.propTypes = {
+EtiquetaA.propTypes = {
 	objectArray: PropTypes.object,
 };
 
-export default componentEtiquetaA;
+export default EtiquetaA;

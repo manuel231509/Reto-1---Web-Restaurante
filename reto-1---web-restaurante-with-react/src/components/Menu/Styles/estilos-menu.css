@@ -227,10 +227,10 @@
 	width: 50%;
 	opacity: 1;
 	color: white;
-	opacity: .95;
+	opacity: 0.95;
 }
-.toast-progress{
+.toast-progress {
 	background-color: #e9ecef;
-	opacity: .85;
+	opacity: 0.85;
 	height: 5px;
 }

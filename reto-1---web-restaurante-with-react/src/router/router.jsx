@@ -1,17 +1,22 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Menu from "../views/Menu.js";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route /* Link */,
+} from "react-router-dom";
+import Layout from "../components/Layout/Layout";
+import Menu from "../views/Menu";
 const routes = [
-	/* {
+	{
 		path: "/",
-		component: Home,
-	}, */
+		component: Menu,
+	},
 	{
 		path: "/menu",
 		component: Menu,
 	},
-	{
-		path: "/tacos",
+	/*{
+		 path: "/tacos",
 		component: Tacos,
 		routes: [
 			{
@@ -23,28 +28,19 @@ const routes = [
 				component: Cart,
 			},
 		],
-	},
+	},*/
 ];
 const router = () => {
 	return (
 		<>
 			<Router>
-				<>
-					<ul>
-						<li>
-							<Link to="/tacos">Tacos</Link>
-						</li>
-						<li>
-							<Link to="/menu">Menu</Link>
-						</li>
-					</ul>
-
+				<Layout>
 					<Switch>
 						{routes.map((route, i) => (
 							<RouteWithSubRoutes key={i} {...route} />
 						))}
 					</Switch>
-				</>
+				</Layout>
 			</Router>
 		</>
 	);
@@ -64,11 +60,7 @@ const RouteWithSubRoutes = (route) => {
 	);
 };
 
-function Sandwiches() {
-	return <h2>Sandwiches</h2>;
-}
-
-function Tacos({ routes }) {
+/* function Tacos({ routes }) {
 	return (
 		<div>
 			<h2>Tacos</h2>
@@ -96,6 +88,6 @@ function Bus() {
 
 function Cart() {
 	return <h3>Cart</h3>;
-}
+} */
 
 export default router;

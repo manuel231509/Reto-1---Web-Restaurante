@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-const componentEtiquetaImg = (props) => {
+const EtiquetaImg = (props) => {
 	const { img_CallComponentBool, img_className, img_src, img_alt } =
 		props.objectArray;
 	if (img_CallComponentBool === true) {
@@ -10,8 +9,8 @@ const componentEtiquetaImg = (props) => {
 	return null;
 };
 
-componentEtiquetaImg.propTypes = {
+EtiquetaImg.propTypes = {
 	objectArray: PropTypes.object,
 };
 
-export default componentEtiquetaImg;
+export default EtiquetaImg;

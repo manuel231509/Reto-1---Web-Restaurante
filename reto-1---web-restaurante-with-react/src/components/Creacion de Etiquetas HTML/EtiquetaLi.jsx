@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ComponentEtiquetaA from "../Componente etiqueta a/componentEtiquetaA";
+import ComponentEtiquetaA from "./EtiquetaA";
 
-const componentEtiquetaLi = (props) => {
+const EtiquetaLi = (props) => {
 	const { li_CallComponentBool, li_className, li_type, li_style } =
 		props.objectArray;
 	if (li_CallComponentBool === true) {
@@ -17,8 +17,8 @@ const componentEtiquetaLi = (props) => {
 	return null;
 };
 
-componentEtiquetaLi.propTypes = {
+EtiquetaLi.propTypes = {
 	objectArray: PropTypes.object,
 };
 
-export default componentEtiquetaLi;
+export default EtiquetaLi;

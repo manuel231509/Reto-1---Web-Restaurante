@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const componentEtiquetaFontAwesomeIcon = (props) => {
+const EtiquetaFontAwesomeIcon = (props) => {
 	const {
 		fontAwesomeIcon_CallComponentBool,
 		fontAwesomeIcon_className,
@@ -21,8 +21,8 @@ const componentEtiquetaFontAwesomeIcon = (props) => {
 	return null;
 };
 
-componentEtiquetaFontAwesomeIcon.propTypes = {
+EtiquetaFontAwesomeIcon.propTypes = {
 	objectArray: PropTypes.object,
 };
 
-export default componentEtiquetaFontAwesomeIcon;
+export default EtiquetaFontAwesomeIcon;

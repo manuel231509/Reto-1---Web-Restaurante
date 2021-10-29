@@ -1,15 +1,15 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import {
 	faFacebookF,
 	faTwitter,
 	faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import ComponentEtiquetaA from "../Componente etiqueta a/componentEtiquetaA";
-import ComponentEtiquetaP from "../Componente etiqueta p/componentEtiquetaP";
-import ComponentEtiquetaImg from "../Componente etiqueta img/componentEtiquetaImg";
-import ComponentEtiquetaLi from "../Componente etiqueta Li/componentEtiquetaLi";
+import ComponentEtiquetaA from "../Creacion de Etiquetas HTML/EtiquetaA";
+import ComponentEtiquetaP from "../Creacion de Etiquetas HTML/EtiquetaP";
+import ComponentEtiquetaImg from "../Creacion de Etiquetas HTML/EtiquetaImg";
+import ComponentEtiquetaLi from "../Creacion de Etiquetas HTML/EtiquetaLi";
 
-const footer = () => {
+const Footer = forwardRef((props, refFooter) => {
 	const objectRedesSociales = [
 		{
 			a_CallComponentBool: true,
@@ -126,6 +126,7 @@ const footer = () => {
 		<>
 			<footer
 				id="footer"
+				ref={refFooter}
 				className="align-items-baseline bg-red-700 text-center text-white"
 				style={{ marginTop: 20 }}
 			>
@@ -151,10 +152,10 @@ const footer = () => {
 							objectArray={{
 								p_CallComponentBool: true,
 								p_texto: `
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-									distinctio earum repellat quaerat voluptatibus placeat nam,
-									commodi optio pariatur est quia magnam eum harum corrupti dicta,
-									aliquam sequi voluptate quas.`,
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+										distinctio earum repellat quaerat voluptatibus placeat nam,
+										commodi optio pariatur est quia magnam eum harum corrupti dicta,
+										aliquam sequi voluptate quas.`,
 							}}
 						/>
 					</section>
@@ -171,14 +172,14 @@ const footer = () => {
 							>
 								<picture className="img-responsive picture justify-center">
 									<source
-										srcSet="./assets/Images/logo@2x.png"
+										srcSet="./assets/images/logo@2x.png"
 										type="image/svg+xml"
 									/>
 									<ComponentEtiquetaImg
 										objectArray={{
 											img_CallComponentBool: true,
 											img_className: "img-logo_footer",
-											img_src: "./assets/Images/logo@2x.png",
+											img_src: "./assets/images/logo@2x.png",
 											img_alt: "Logo del restaurante",
 										}}
 									/>
@@ -249,6 +250,6 @@ const footer = () => {
 			</footer>
 		</>
 	);
-};
+});
 
-export default footer;
+export default Footer;
