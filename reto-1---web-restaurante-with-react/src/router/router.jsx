@@ -6,14 +6,15 @@ import {
 } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 import Menu from "../views/Menu";
+import Reserva from "../views/Reserva";
 const routes = [
-	{
-		path: "/",
-		component: Menu,
-	},
 	{
 		path: "/menu",
 		component: Menu,
+	},
+	{
+		path: "/reserva",
+		component: Reserva,
 	},
 	/*{
 		 path: "/tacos",

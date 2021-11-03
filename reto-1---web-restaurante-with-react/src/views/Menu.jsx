@@ -1,9 +1,9 @@
 import React from "react";
-import "../components/Menu/Styles/estilos-menu.css";
-import CardsPlato from "../components/Menu/CardsPlatos";
+import CardsPlatos from "../components/Menu/Card Menu/CardsPlatos";
 import ModalDescripcionProducto from "../components/Menu/Modal Descripcion/ModalDescripcionProducto";
 
 import PlatoProvider from "../contexts/PlatoProvider";
+import "../components/Menu/Styles/estilos-menu.css";
 
 const Menu = () => {
 	console.log("Menu");
@@ -25,8 +25,7 @@ const Menu = () => {
 									DESCARGAR EL MENÚ
 								</button>
 							</div>
-							{/* <CardProducto State={State} listMenu={listadoMenu.listMenu} /> */}
-							<CardsPlato />
+							<CardsPlatos />
 						</div>
 					</div>
 				</div>

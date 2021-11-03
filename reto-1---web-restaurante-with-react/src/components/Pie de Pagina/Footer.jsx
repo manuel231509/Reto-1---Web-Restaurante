@@ -92,7 +92,7 @@ const Footer = forwardRef((props, refFooter) => {
 					li_style: { display: "inline-block" },
 					a_CallComponentBool: true,
 					a_className: "nav-link",
-					a_href: "reserva.html",
+					a_href: "/reserva",
 					a_role: "button",
 					p_CallComponentBool: true,
 					p_texto: "RESERVAS",

@@ -158,6 +158,9 @@
 
 .formulario__input-error-activo,
 .formulario__input-error1-activo {
+	width: 150px;
+	font-size: 12px;
+	margin-top: 10px;
 	display: block;
 }
 
@@ -165,7 +168,7 @@
 	display: flex;
 	position: relative;
 	right: 29px;
-	bottom: -1px;
+	bottom: -9px;
 	font-size: 20px;
 	opacity: 0;
 }
@@ -213,6 +216,9 @@
 	opacity: 1;
 }
 
+.formulario__grupo-correcto .formulario__input-cantidad {
+	border: 2px solid #1ed12d;
+}
 .formulario__grupo-incorrecto .formulario__input-cantidad {
 	border: 3px solid #bb2929;
 }

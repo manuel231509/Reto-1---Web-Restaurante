@@ -3,11 +3,8 @@ import PlatoContext from "../../../contexts/PlatoContext";
 // import PropTypes from "prop-types";
 import EtiquetaP from "../../Creacion de Etiquetas HTML/EtiquetaP";
 
-const ModalDescripcionProducto = () => {
-	console.log("Modal Descripcion");
-	console.log("platoSeleccionado");
+const ModalDescripcionProducto = () => {;
 	const { platoSeleccionado } = useContext(PlatoContext);
-	console.log(platoSeleccionado);
 	return (
 		<>
 			<div
