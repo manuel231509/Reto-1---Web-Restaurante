@@ -1,7 +1,7 @@
 import React from "react";
-import imagen1 from "../../assets/images/1.jpg";
-import imagen2 from "../../assets/images/2.jpg";
-import imagen3 from "../../assets/images/3.jpg";
+// import imagen1 from "../../assets/images/1.jpg";
+// import imagen2 from "../../assets/images/2.jpg";
+// import imagen3 from "../../assets/images/3.jpg";
 
 const Carrusel = () => {
   return (
@@ -37,7 +37,7 @@ const Carrusel = () => {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
-                src={imagen1}
+                src="./assets/images/1.jpg"
                 className="d-block w-100 img-fluid"
                 alt="..."
               />
@@ -52,7 +52,7 @@ const Carrusel = () => {
             </div>
             <div className="carousel-item">
               <img
-                src={imagen2}
+                src="./assets/images/2.jpg"
                 className="d-block w-100 img-fluid"
                 alt="..."
               />
@@ -63,7 +63,7 @@ const Carrusel = () => {
             </div>
             <div className="carousel-item">
               <img
-                src={imagen3}
+                src="./assets/images/3.jpg"
                 className="d-block w-100 img-fluid"
                 alt="..."
               />

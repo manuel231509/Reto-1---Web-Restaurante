@@ -1,7 +1,7 @@
 import React from "react";
-import testimonio from "../../assets/images/testimonio.jpg";
-import testimonio2 from "../../assets/images/testimonio2.jpg";
-import testimonio3 from "../../assets/images/testimonio3.jpg";
+// import testimonio from "../../assets/images/testimonio.jpg";
+// import testimonio2 from "../../assets/images/testimonio2.jpg";
+// import testimonio3 from "../../assets/images/testimonio3.jpg";
 
 const Testimonios = () => {
   return (
@@ -18,7 +18,12 @@ const Testimonios = () => {
             <div className="col-lg-7 m-auto">
               <div className="row text-center">
                 <div className="col-lg-4">
-                  <img src={testimonio2} className="foto" alt="" />
+                  <img
+                    src="./assets/images/testimonio.jpg"
+                    className="foto"
+                    alt=""
+                    style={{ objectFit: "cover" }}
+                  />
                   <h6>JUAN</h6>
                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -27,7 +32,12 @@ const Testimonios = () => {
                   </p>
                 </div>
                 <div className="col-lg-4">
-                  <img src={testimonio} className="foto" alt="" />
+                  <img
+                    src="./assets/images/testimonio2.jpg"
+                    className="foto"
+                    alt=""
+                    style={{ objectFit: "cover" }}
+                  />
                   <h6>MARIA</h6>
                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -36,7 +46,12 @@ const Testimonios = () => {
                   </p>
                 </div>
                 <div className="col-lg-4">
-                  <img src={testimonio3} className="foto" alt="" />
+                  <img
+                    src="./assets/images/testimonio3.jpg"
+                    className="foto"
+                    alt=""
+                    style={{ objectFit: "cover" }}
+                  />
                   <h6>DAVID</h6>
                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.

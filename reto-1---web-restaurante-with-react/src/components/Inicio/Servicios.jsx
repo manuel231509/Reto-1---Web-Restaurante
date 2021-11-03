@@ -1,7 +1,7 @@
 import React from "react";
-import celebraciones from "../../assets/images/celebraciones.jpg";
-import reuniones from "../../assets/images/reuniones.jpg";
-import cumpleaños from "../../assets/images/cumpleaños.jpg";
+// import celebraciones from "../../assets/images/celebraciones.jpg";
+// import reuniones from "../../assets/images/reuniones.jpg";
+// import cumpleaños from "../../assets/images/cumpleaños.jpg";
 
 const Servicios = () => {
   return (
@@ -18,7 +18,11 @@ const Servicios = () => {
           </div>
           <div className="row">
             <div className="col-lg-4">
-              <img src={celebraciones} alt="" className="img-fluid mb-3 " />
+              <img
+                src="./assets/images/celebraciones.jpg"
+                alt=""
+                className="img-fluid mb-3 "
+              />
 
               <h5>Reuniones</h5>
               <p>
@@ -29,7 +33,11 @@ const Servicios = () => {
               </p>
             </div>
             <div className="col-lg-4">
-              <img src={reuniones} alt="" className="img-fluid mb-3" />
+              <img
+                src="./assets/images/reuniones.jpg"
+                alt=""
+                className="img-fluid mb-3"
+              />
 
               <h5>Celebraciones</h5>
               <p>
@@ -40,7 +48,11 @@ const Servicios = () => {
               </p>
             </div>
             <div className="col-lg-4">
-              <img src={cumpleaños} alt="" className="img-fluid mb-3" />
+              <img
+                src="./assets/images/cumpleaños.jpg"
+                alt=""
+                className="img-fluid mb-3"
+              />
 
               <h5>Cumpleaños</h5>
               <p>

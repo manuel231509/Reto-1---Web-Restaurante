@@ -1,9 +1,9 @@
-import Inicio from "./views/Inicio";
+import Contactenos from "./views/Contactenos";
 
 function App() {
   return (
     <>
-      <Inicio />
+      <Contactenos />
     </>
   );
 }

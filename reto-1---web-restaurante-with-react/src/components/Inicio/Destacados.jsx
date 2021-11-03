@@ -1,8 +1,8 @@
 import React from "react";
-import hamburguesa from "../../assets/images/hamburguesa.jpg";
-import hamburguesa2 from "../../assets/images/hamburguesa2.jpg";
-import hamburguesa3 from "../../assets/images/hamburguesa3.jpg";
-import hamburguesa4 from "../../assets/images/hamburguesa4.jpg";
+// import hamburguesa from "../../assets/images/hamburguesa.jpg";
+// import hamburguesa2 from "../../assets/images/hamburguesa2.jpg";
+// import hamburguesa3 from "../../assets/images/hamburguesa3.jpg";
+// import hamburguesa4 from "../../assets/images/hamburguesa4.jpg";
 
 const Destacados = () => {
   return (
@@ -19,7 +19,11 @@ const Destacados = () => {
             <div className="col-lg-3 text-center">
               <div className="card border-0 bg-light mb-2">
                 <div className="card-body">
-                  <img src={hamburguesa} className="img-fluid" alt="" />
+                  <img
+                    src="./assets/images/hamburguesa.jpg"
+                    className="img-fluid"
+                    alt=""
+                  />
                 </div>
               </div>
               <h6>Comida Rapida</h6>
@@ -28,7 +32,11 @@ const Destacados = () => {
             <div className="col-lg-3 text-center">
               <div className="card border-0 bg-light mb-2">
                 <div className="card-body">
-                  <img src={hamburguesa2} className="img-fluid" alt="" />
+                  <img
+                    src="./assets/images/hamburguesa2.jpg"
+                    className="img-fluid"
+                    alt=""
+                  />
                 </div>
               </div>
               <h6>Comida Rapida</h6>
@@ -37,7 +45,11 @@ const Destacados = () => {
             <div className="col-lg-3 text-center">
               <div className="card border-0 bg-light mb-2">
                 <div className="card-body">
-                  <img src={hamburguesa3} className="img-fluid" alt="" />
+                  <img
+                    src="./assets/images/hamburguesa3.jpg"
+                    className="img-fluid"
+                    alt=""
+                  />
                 </div>
               </div>
               <h6>Comida Rapida</h6>
@@ -46,7 +58,11 @@ const Destacados = () => {
             <div className="col-lg-3 text-center">
               <div className="card border-0 bg-light mb-2">
                 <div className="card-body">
-                  <img src={hamburguesa4} className="img-fluid" alt="" />
+                  <img
+                    src="./assets/images/hamburguesa4.jpg"
+                    className="img-fluid"
+                    alt=""
+                  />
                 </div>
               </div>
               <h6>Comida Rapida</h6>
