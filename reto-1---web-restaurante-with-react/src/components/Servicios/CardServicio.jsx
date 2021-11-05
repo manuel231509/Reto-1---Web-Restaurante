@@ -1,5 +1,5 @@
 import React from "react";
-import DatosServicios from "./DatosServicios";
+import DatosServicios from "../../consts json/DatosServicios.json";
 
 const CardServicio = () => {
   return (

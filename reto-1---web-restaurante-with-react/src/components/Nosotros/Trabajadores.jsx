@@ -1,5 +1,5 @@
 import React from "react";
-import DatosTrabajadores from "./DatosTrabajadores.json";
+import DatosTrabajadores from "../../consts json/DatosTrabajadores.json";
 
 const Trabajadores = () => {
   console.log("Está acá");
@@ -25,13 +25,6 @@ const Trabajadores = () => {
             );
           })}
         </div>
-        {/* <div className="row">
-          <div className="trabajador d-flex flex-column col-lg-4 col-md-12 col-sm-12">
-            <img src="./img/chef-1.jpg" alt="chef1" />
-            <h3>Ricardo Amador</h3>
-            <h6>Chef de temporada</h6>
-          </div>
-        </div> */}
       </section>
     </>
   );
