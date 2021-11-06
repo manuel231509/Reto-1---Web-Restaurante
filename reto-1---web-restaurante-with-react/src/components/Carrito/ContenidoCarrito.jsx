@@ -5,20 +5,17 @@ import SinPlatillos from "./SinPlatillos";
 
 const ContenidoCarrito = ({ obtenerTotalCarrito }) => {
   const { platillos } = useContext(CarritoContext);
-  if (platillos.length === 0) {
-    console.log("No hay platillos");
+  console.log("ContenidoCarrito");
+  if (platillos.length !== 0) {
+    console.log("No hay platillos");   
+  
     return (
       <>
-        <SinPlatillos />
+        <CardPlatillo obtenerTotalCarrito={obtenerTotalCarrito} />
       </>
     );
   }
-
-  return (
-    <>
-      <CardPlatillo obtenerTotalCarrito={obtenerTotalCarrito} />
-    </>
-  );
+  return null;
 };
 
 export default ContenidoCarrito;

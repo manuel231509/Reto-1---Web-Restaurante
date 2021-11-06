@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { eliminarPlatilloByIdLocalStorage } from "../../localStorage/LocalStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,9 +11,17 @@ import {
 import CarritoContext from "../../contexts/CarritoContext";
 
 const CardPlatillo = ({ obtenerTotalCarrito }) => {
+  console.log("CardPlatillo");
   const [inputCantidad, setInputCantidad] = useState({});
 
   const { platillos, handleRemoveItem } = useContext(CarritoContext);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    console.log("CardPlatillo useEffect");
+    console.log(total);
+    obtenerTotalCarrito(total);
+  }, []);
 
   const handleInputsChange = (e, platillo) => {
     const { value, name } = e.target;
@@ -28,15 +36,16 @@ const CardPlatillo = ({ obtenerTotalCarrito }) => {
       ...inputCantidad,
       [name]: { value: valor },
     });
-    obtenerTotalCarrito(platillo.valor.split("$")[1], platillo.cantidad);
   };
 
   const inicializarCarrito = (cantidad, name, platillo) => {
     console.log("************************* INICIO INIACIALIZARCARRITO");
     console.log("inicializarCarrito");
+    console.log(cantidad);
     if (inputCantidad[name]?.value === undefined) {
       cargarInputs(cantidad, name, platillo);
       console.log(platillo.valor.split("$")[1]);
+      setTotal(total + parseInt(platillo.valor.split("$")[1]) * cantidad);
     }
     console.log("************************* FIN INIACIALIZARCARRITO");
   };

@@ -1,19 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import CarritoContext from "../../contexts/CarritoContext";
 import ContenidoCarrito from "./ContenidoCarrito";
 import ModalCarrito from "./ModalCarrito";
+import SinPlatillos from "./SinPlatillos";
 
 const ExteriorCarrito = () => {
   const { platillos } = useContext(CarritoContext);
   const [totalCarrito, setTotalCarrito] = useState(0);
 
-  const obtenerTotalCarrito = (valor, cantidad) => {
+  const obtenerTotalCarrito = (valor) => {
     console.log("--------------- INICIO DE OBTENERTOTALCARRITO");
 
-    console.log("ObtenerTotalPlatillo");
-    const total = totalCarrito + valor * cantidad;
-    console.log(total);
-    setTotalCarrito(totalCarrito + valor * cantidad);
+    console.log(totalCarrito);
+    setTotalCarrito(valor);
+    console.log(totalCarrito);
+
     console.log("--------------- FIN DE OBTENERTOTALCARRITO");
   };
 
@@ -41,6 +42,7 @@ const ExteriorCarrito = () => {
                 {/* {props.children} */}
               </div>
             </div>
+            <SinPlatillos />
             <div
               id="col_pagar-ahora"
               className={`col-lg-4 col-md-12 d-flex align-items-center mb-5 ${
