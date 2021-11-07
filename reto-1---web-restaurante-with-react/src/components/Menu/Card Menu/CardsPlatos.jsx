@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import PlatoContext from "../../../contexts/PlatoContext";
+import PlatoContext from "../../../contexts/Menu/PlatoContext";
+
 import CardPlato from "./CardPlato";
 
 const CardsPlatos = () => {
 	const { listMenu } = useContext(PlatoContext);
-
 	return (
 		<>
 			<div className="row card-hijo">

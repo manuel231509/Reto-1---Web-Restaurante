@@ -7,7 +7,7 @@ import ComponentEtiquetaFontAwesomeIcon from "../FontAwesome/EtiquetaFontAwesome
 const EtiquetaA = (props) => {
 	const { a_CallComponentBool, a_className, a_href, a_role } =
 		props.objectArray;
-		
+
 	if (a_CallComponentBool === true) {
 		return (
 			<a className={a_className} href={a_href} role={a_role}>

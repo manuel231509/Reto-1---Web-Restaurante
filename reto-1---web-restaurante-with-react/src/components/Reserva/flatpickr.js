@@ -1,7 +1,8 @@
+import { Spanish } from "flatpickr/dist/l10n/es.js";
 const config_fecha = {
 	dateFormat: "d-m-Y",
 	minDate: "today",
-	locale: "es",
+	locale: Spanish,
 };
 
 const config_hora = {

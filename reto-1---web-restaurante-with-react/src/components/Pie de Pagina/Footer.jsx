@@ -8,120 +8,11 @@ import ComponentEtiquetaA from "../Creacion de Etiquetas HTML/EtiquetaA";
 import ComponentEtiquetaP from "../Creacion de Etiquetas HTML/EtiquetaP";
 import ComponentEtiquetaImg from "../Creacion de Etiquetas HTML/EtiquetaImg";
 import ComponentEtiquetaLi from "../Creacion de Etiquetas HTML/EtiquetaLi";
+import objectRedesSociales from "../../consts json/Pie de Pagina/objectRedesSociales.json";
+import objectsUl from "../../consts json/Pie de Pagina/objectsUl.json";
+import arrayDescripcionContactoRest from "../../consts json/Pie de Pagina/arrayDescripcionContactoRest.json";
 
 const Footer = forwardRef((props, refFooter) => {
-	const objectRedesSociales = [
-		{
-			a_CallComponentBool: true,
-			a_className: "btn btn-outline-light btn-floating m-3 mt-4",
-			a_href: "#!",
-			a_role: "button",
-			fontAwesomeIcon_CallComponentBool: true,
-			fontAwesomeIcon_className: "fab",
-			fontAwesomeIcon_icon: faFacebookF,
-			fontAwesomeIcon_style: "",
-			img_CallComponentBool: false,
-			p_CallComponentBool: false,
-			p_texto: "",
-		},
-		{
-			a_CallComponentBool: true,
-			a_className: "btn btn-outline-light btn-floating m-3 mt-4",
-			a_href: "#!",
-			a_role: "button",
-			fontAwesomeIcon_CallComponentBool: true,
-			fontAwesomeIcon_className: "fab",
-			fontAwesomeIcon_icon: faTwitter,
-			fontAwesomeIcon_style: "",
-			img_CallComponentBool: false,
-			p_CallComponentBool: false,
-			p_texto: "",
-		},
-		{
-			a_CallComponentBool: true,
-			a_className: "btn btn-outline-light btn-floating m-3 mt-4",
-			a_href: "#!",
-			a_role: "button",
-			fontAwesomeIcon_CallComponentBool: true,
-			fontAwesomeIcon_className: "fab",
-			fontAwesomeIcon_icon: faYoutube,
-			fontAwesomeIcon_style: "",
-			img_CallComponentBool: false,
-			p_CallComponentBool: false,
-			p_texto: "",
-		},
-	];
-
-	const objectsUl = {
-		datos: {
-			ul_className: "me-auto text-right",
-			ul_style: { paddingLeft: 10, paddingRight: 10 },
-			li: [
-				{
-					li_CallComponentBool: true,
-					li_className: "nav-item active",
-					li_type: "button",
-					li_style: { display: "inline-block" },
-					a_CallComponentBool: true,
-					a_className: "nav-link",
-					a_href: "mapa.html",
-					a_role: "button",
-					p_CallComponentBool: true,
-					p_texto: "MAPA DEL SITIO",
-					fontAwesomeIcon_CallComponentBool: false,
-					img_CallComponentBool: false,
-				},
-				{
-					li_CallComponentBool: true,
-					li_className: "nav-item active",
-					li_type: "button",
-					li_style: { display: "inline-block" },
-					a_CallComponentBool: true,
-					a_className: "nav-link",
-					a_href: "contactenos.html",
-					a_role: "button",
-					p_CallComponentBool: true,
-					p_texto: "CONTACTENOS",
-					fontAwesomeIcon_CallComponentBool: false,
-					img_CallComponentBool: false,
-				},
-				{
-					li_CallComponentBool: true,
-					li_className: "nav-item active",
-					li_type: "button",
-					li_style: { display: "inline-block" },
-					a_CallComponentBool: true,
-					a_className: "nav-link",
-					a_href: "/reserva",
-					a_role: "button",
-					p_CallComponentBool: true,
-					p_texto: "RESERVAS",
-					fontAwesomeIcon_CallComponentBool: false,
-					img_CallComponentBool: false,
-				},
-			],
-		},
-	};
-
-	const arrayDescripcionContactoRest = [
-		{
-			p_CallComponentBool: true,
-			p_texto: "Restaurante Sal y Salsa Ltda.",
-		},
-		{
-			p_CallComponentBool: true,
-			p_texto: "Calle 19 No. 7 - 30, Bogota",
-		},
-		{
-			p_CallComponentBool: true,
-			p_texto: "reservas@salysalsa.com",
-		},
-		{
-			p_CallComponentBool: true,
-			p_texto: "31232525321",
-		},
-	];
-
 	return (
 		<>
 			<footer
@@ -133,8 +24,15 @@ const Footer = forwardRef((props, refFooter) => {
 				<div className="pb-2">
 					{/* Section: Social media */}
 					<section className="mb-2">
-						{objectRedesSociales.map((objecto, index) => {
-							return <ComponentEtiquetaA key={index} objectArray={objecto} />;
+						{objectRedesSociales.map((objeto, index) => {
+							if (objeto.fontAwesomeIcon_icon === "faFacebookF") {
+								objeto["fontAwesomeIcon_icon"] = faFacebookF;
+							} else if (objeto.fontAwesomeIcon_icon === "faTwitter") {
+								objeto["fontAwesomeIcon_icon"] = faTwitter;
+							} else if (objeto.fontAwesomeIcon_icon === "faYoutube") {
+								objeto["fontAwesomeIcon_icon"] = faYoutube;
+							}
+							return <ComponentEtiquetaA key={index} objectArray={objeto} />;
 						})}
 					</section>
 					{/* Section: Social media */}

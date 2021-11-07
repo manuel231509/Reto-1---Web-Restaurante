@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
-
-import PlatoContext from "../../../contexts/PlatoContext";
+import PlatoContext from "../../../contexts/Menu/PlatoContext";
 
 import RowCantidad from "./RowCantidad";
 
-const CardPlato = ({ plato }) => {
+const CardPlato = ({ plato, objeto }) => {
 	const { selectedDish } = useContext(PlatoContext);
 
 	return (
@@ -46,7 +45,9 @@ const CardPlato = ({ plato }) => {
 					<div className="card-body card-body-carrito mt-lg-1 mt-md-1 mt-sm-1">
 						<div className="row">
 							<div className="col-cantidad col-lg-12 col-md-12">
-								<p htmlFor={`input_cantidad_${plato.idPlato}`}>CANTIDAD</p>
+								<p>
+									<label htmlFor={`cantidad_${plato.idPlato}`}>CANTIDAD</label>
+								</p>
 							</div>
 						</div>
 						<RowCantidad plato={plato} />

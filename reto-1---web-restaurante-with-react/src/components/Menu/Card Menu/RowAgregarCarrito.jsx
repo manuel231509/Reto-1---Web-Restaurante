@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { agregarPlatoCarrito } from "../AgregarPlatoCarrito";
 import EtiquetaFontAwesomeIcon from "../../FontAwesome/EtiquetaFontAwesomeIcon";
+import CantidadContext from "../../../contexts/Inputs/InputsContext";
 
-const RowAgregarCarrito = ({ plato, inputs }) => {
+const RowAgregarCarrito = ({ plato }) => {
+	const { inputs } = useContext(CantidadContext);
 	return (
 		<>
 			<div className="row">
@@ -13,11 +15,12 @@ const RowAgregarCarrito = ({ plato, inputs }) => {
 							id={"btn-agregar-carrito-" + plato.idPlato}
 							type="button"
 							className="btn formulario__btn-agregar-carrito"
-							onClick={() => {
+							onClick={(e) => {
+								e.preventDefault();
 								Object.assign(plato, {
-									cantidad: inputs[`input_cantidad_${plato.idPlato}`]?.valor,
+									cantidad: inputs[`cantidad_${plato.idPlato}`]?.valor,
 								});
-								const nombreInput = `input_cantidad_${plato.idPlato}`;
+								const nombreInput = `cantidad_${plato.idPlato}`;
 								const campoValido = inputs[nombreInput]?.campoValido;
 								agregarPlatoCarrito(plato, campoValido);
 							}}

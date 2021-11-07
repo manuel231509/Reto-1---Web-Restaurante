@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import initialPlatos from "../consts json/Menu/listadoMenu.json";
+import initialPlatos from "../../consts json/Menu/listadoMenu.json";
 import PlatoContext from "./PlatoContext";
 
 const PlatoProvider = ({ children }) => {

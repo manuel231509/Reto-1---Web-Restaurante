@@ -2,11 +2,10 @@ import React from "react";
 import CardsPlatos from "../components/Menu/Card Menu/CardsPlatos";
 import ModalDescripcionProducto from "../components/Menu/Modal Descripcion/ModalDescripcionProducto";
 
-import PlatoProvider from "../contexts/PlatoProvider";
+import PlatoProvider from "../contexts/Menu/PlatoProvider";
 import "../components/Menu/Styles/estilos-menu.css";
 
 const Menu = () => {
-	console.log("Menu");
 
 	return (
 		<>

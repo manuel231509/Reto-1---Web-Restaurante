@@ -2,99 +2,116 @@ import {
 	faCheckCircle,
 	faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
+import React, { useContext } from "react";
+import CantidadContext from "../../contexts/Inputs/InputsContext";
 import EtiquetaFontAwesomeIcon from "../FontAwesome/EtiquetaFontAwesomeIcon";
+import { handleInputsChange } from "../Inputs/ValidacionCampos";
 
-const EtiquetaInput = ({
-	objecto,
-	inputs,
-	inicializarInputs,
-	cargarInputs,
-	handleInputsChange,
-}) => {
-	if (objecto.input_CallComponentBool) {
+const Label = ({ objeto }) => {
+	if (objeto.label_CallComponentBool) {
+		return (
+			<label
+				htmlFor={`${objeto.labelHtmlFor}_${objeto.id}`}
+				className={objeto.labelClassName}
+			>
+				{objeto.labelText}
+			</label>
+		);
+	}
+	return null;
+};
+
+const EtiquetaInput = ({ objeto }) => {
+	const { inputs, cargarCampos, campoValido } = useContext(CantidadContext);
+
+	const inicializarInputs = (valorInicial, nombreInput, cargarInputs) => {
+		if (inputs[nombreInput]?.valor === undefined) {
+			cargarInputs(
+				valorInicial,
+				nombreInput,
+				valorInicial !== "" ? true : false,
+				{
+					error: false,
+					error1: false,
+				}
+			);
+		}
+	};
+
+	if (objeto.input_CallComponentBool) {
 		return (
 			<>
 				<div
 					className={
-						inputs[objecto.nameInput]?.error.error === false &&
-						inputs[objecto.nameInput]?.error.error1 === false
-							? inputs[objecto.nameInput]?.campoValido
+						inputs[`${objeto.nameInput}_${objeto.id}`]?.error.error === false &&
+						inputs[`${objeto.nameInput}_${objeto.id}`]?.error.error1 === false
+							? inputs[`${objeto.nameInput}_${objeto.id}`]?.campoValido
 								? "formulario__grupo formulario__grupo-correcto"
 								: "formulario__grupo"
 							: "formulario__grupo formulario__grupo-incorrecto"
 					}
-					id={objecto.divIdGrupo}
+					id={objeto.divIdGrupo}
 				>
-					<label
-						htmlFor={objecto.labelHtmlFor}
-						className={objecto.labelClassName}
-					>
-						{objecto.labelText}
-					</label>
-
-					<div className={objecto.divClassNameFormularioGrupoInput}>
+					<Label objeto={objeto} />
+					<div className={objeto.divClassNameFormularioGrupoInput}>
 						<input
-							id={`${objecto.inputId}_${objecto.id}`}
-							type={objecto.inputType}
-							name={objecto.nameInput}
+							id={`${objeto.inputId}_${objeto.id}`}
+							type={objeto.inputType}
+							name={`${objeto.nameInput}_${objeto.id}`}
 							value={
-								inputs[objecto.nameInput]?.valor === undefined
+								inputs[`${objeto.nameInput}_${objeto.id}`]?.valor === undefined
 									? inicializarInputs(
-											objecto.valorInicial,
-											objecto.nameInput /* `input_cantidad_${plato.idPlato}` */,
-											cargarInputs
+											objeto.valorInicial,
+											`${objeto.nameInput}_${objeto.id}`,
+											cargarCampos
 									  )
-									: inputs[objecto.nameInput].valor
+									: inputs[`${objeto.nameInput}_${objeto.id}`]?.valor
 							}
-							onChange={(e) => handleInputsChange(e, cargarInputs)}
+							onChange={(e) => handleInputsChange(e, cargarCampos, campoValido)}
+							onBlur={(e) => handleInputsChange(e, cargarCampos, campoValido)}
 							className={
-								inputs[
-									objecto.nameInput /* `input_cantidad_${plato.idPlato}` */
-								]?.campoValido
-									? `${objecto.inputClassName} formulario__input-check`
-									: objecto.inputClassName
+								inputs[`${objeto.nameInput}_${objeto.id}`]?.campoValido
+									? `${objeto.inputClassName} formulario__input-check`
+									: objeto.inputClassName
 							}
-							placeholder={objecto.inputPlaceHolder}
+							placeholder={objeto.inputPlaceHolder}
 							required
 						/>
 
-						<EtiquetaFontAwesomeIcon
-							objectArray={{
-								fontAwesomeIcon_CallComponentBool: true,
-								fontAwesomeIcon_className:
-									"d-flex align-items-center formulario__validacion-estado fas",
-								fontAwesomeIcon_icon: inputs[
-									objecto.nameInput /* `input_cantidad_${plato.idPlato}` */
-								]?.campoValido
-									? faCheckCircle
-									: faTimesCircle,
-							}}
-						/>
+						<i className="d-flex align-items-center formulario__validacion-estado">
+							<EtiquetaFontAwesomeIcon
+								objectArray={{
+									fontAwesomeIcon_CallComponentBool:
+										objeto.fontAwesomeIcon_CallComponentBool,
+									fontAwesomeIcon_className: objeto.fontAwesomeIcon_className,
+									fontAwesomeIcon_icon: inputs[
+										`${objeto.nameInput}_${objeto.id}`
+									]?.campoValido
+										? faCheckCircle
+										: faTimesCircle,
+								}}
+							/>
+						</i>
 					</div>
 					<p
 						className={
-							!inputs[objecto.nameInput /* `input_cantidad_${plato.idPlato}` */]
-								?.saber &&
-							inputs[objecto.nameInput /* `input_cantidad_${plato.idPlato}` */]
-								?.error?.error1
+							!inputs[`${objeto.nameInput}_${objeto.id}`]?.saber &&
+							inputs[`${objeto.nameInput}_${objeto.id}`]?.error?.error1
 								? "invalid-feedback formulario__input-error1-activo"
 								: "invalid-feedback formulario__input-error1"
 						}
 					>
-						{objecto.pFormularioInputError1Texto}
+						{objeto.pFormularioInputError1Texto}
 					</p>
 					<p
 						className={
-							!inputs[objecto.nameInput /* `input_cantidad_${plato.idPlato}` */]
-								?.saber &&
-							inputs[objecto.nameInput /* `input_cantidad_${plato.idPlato}` */]
-								?.error?.error
+							!inputs[`${objeto.nameInput}_${objeto.id}`]?.saber &&
+							inputs[`${objeto.nameInput}_${objeto.id}`]?.error?.error
 								? "invalid-feedback formulario__input-error-activo"
 								: "invalid-feedback formulario__input-error"
 						}
 					>
-						{objecto.pFormularioInputErrorTexto}
+						{objeto.pFormularioInputErrorTexto}
 					</p>
 				</div>
 			</>

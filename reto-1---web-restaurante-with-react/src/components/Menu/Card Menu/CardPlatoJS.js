@@ -1,6 +1,5 @@
-
-const minus = (idPlato, inputs, cargarInputs) => {
-	const nombreInput = `input_cantidad_${idPlato}`;
+const minus = (idPlato, inputs, cargarCampos) => {
+	const nombreInput = `cantidad_${idPlato}`;
 
 	const cantidad_input = inputs[nombreInput]?.valor;
 
@@ -8,21 +7,21 @@ const minus = (idPlato, inputs, cargarInputs) => {
 		if (cantidad_input !== "") {
 			const rest = parseInt(cantidad_input) - 1;
 			if (rest >= 1) {
-				cargarInputs(rest, nombreInput, true, {
+				cargarCampos(rest, nombreInput, true, {
 					error: false,
 					error1: false,
 				});
 			}
 		}
 	} else {
-		cargarInputs(1, nombreInput, true, {
+		cargarCampos(1, nombreInput, true, {
 			error: false,
 			error1: false,
 		});
 	}
 };
 const plus = (idPlato, inputs, cargarInputs) => {
-	const nombreInput = `input_cantidad_${idPlato}`;
+	const nombreInput = `cantidad_${idPlato}`;
 
 	const cantidad_input = inputs[nombreInput]?.valor;
 
@@ -35,6 +34,11 @@ const plus = (idPlato, inputs, cargarInputs) => {
 					error1: false,
 				});
 			}
+		} else {
+			cargarInputs(1, nombreInput, true, {
+				error: false,
+				error1: false,
+			});
 		}
 	} else {
 		cargarInputs(1, nombreInput, true, {

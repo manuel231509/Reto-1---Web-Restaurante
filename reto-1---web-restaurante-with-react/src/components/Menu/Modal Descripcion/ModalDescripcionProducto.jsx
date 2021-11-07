@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import PlatoContext from "../../../contexts/PlatoContext";
+import PlatoContext from "../../../contexts/Menu/PlatoContext";
+
 // import PropTypes from "prop-types";
 import EtiquetaP from "../../Creacion de Etiquetas HTML/EtiquetaP";
 
-const ModalDescripcionProducto = () => {;
+const ModalDescripcionProducto = () => {
 	const { platoSeleccionado } = useContext(PlatoContext);
 	return (
 		<>

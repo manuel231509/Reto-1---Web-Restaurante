@@ -9,7 +9,8 @@ const EtiquetaFontAwesomeIcon = (props) => {
 		fontAwesomeIcon_icon,
 		fontAwesomeIcon_style,
 	} = props.objectArray;
-	if (fontAwesomeIcon_CallComponentBool === true) {
+	if (fontAwesomeIcon_CallComponentBool) {
+
 		return (
 			<FontAwesomeIcon
 				className={fontAwesomeIcon_className}

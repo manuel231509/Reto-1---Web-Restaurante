@@ -1,12 +1,11 @@
-import { sweetAlert } from "./SweetAlert";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-
-const MySwal = withReactContent(Swal);
+import {
+	sweetAlert,
+	sweetAlertMenuAgregarCarrito,
+} from "../../sweetAlert/SweetAlert";
 
 const agregarPlatoCarrito = (plato, campoValido) => {
 	if (campoValido) {
-		sweetAlert(
+		sweetAlertMenuAgregarCarrito(
 			"¿DESEAS AGREGAR EL PLATO AL CARRITO?",
 			true,
 			false,
@@ -14,18 +13,17 @@ const agregarPlatoCarrito = (plato, campoValido) => {
 			"NO",
 			"SE AGREGO EL PLATO AL CARRITO CORRECTAMENTE...",
 			"NO SE AGREGO EL PLATO AL CARRITO...",
-			plato,
-			MySwal
+			plato
 		);
 	} else {
-		MySwal.fire({
-			position: "center",
-			icon: "error",
-			title: "ERROR",
-			text: "NO SE HA PDIDO AGREGAR, POR FAVOR VERIFICA LA CANTIDAD QUE SEA CORRECTA",
-			showConfirmButton: false,
-			timer: 2000,
-		});
+		sweetAlert(
+			"center",
+			"error",
+			"ERROR",
+			"NO SE HA PDIDO AGREGAR, POR FAVOR VERIFICA LA CANTIDAD QUE SEA CORRECTA",
+			false,
+			2000
+		);
 	}
 };
 

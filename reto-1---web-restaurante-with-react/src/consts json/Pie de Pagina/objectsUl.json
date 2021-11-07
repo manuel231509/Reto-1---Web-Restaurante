@@ -1,0 +1,50 @@
+{
+	"datos": {
+		"ul_className": "me-auto text-right",
+		"ul_style": { "paddingLeft": 10, "paddingRight": 10 },
+		"li": [
+			{
+				"li_CallComponentBool": true,
+				"li_className": "nav-item active",
+				"li_type": "button",
+				"li_style": { "display": "inline-block" },
+				"a_CallComponentBool": true,
+				"a_className": "nav-link",
+				"a_href": "mapa.html",
+				"a_role": "button",
+				"p_CallComponentBool": true,
+				"p_texto": "MAPA DEL SITIO",
+				"fontAwesomeIcon_CallComponentBool": false,
+				"img_CallComponentBool": false
+			},
+			{
+				"li_CallComponentBool": true,
+				"li_className": "nav-item active",
+				"li_type": "button",
+				"li_style": { "display": "inline-block" },
+				"a_CallComponentBool": true,
+				"a_className": "nav-link",
+				"a_href": "contactenos.html",
+				"a_role": "button",
+				"p_CallComponentBool": true,
+				"p_texto": "CONTACTENOS",
+				"fontAwesomeIcon_CallComponentBool": false,
+				"img_CallComponentBool": false
+			},
+			{
+				"li_CallComponentBool": true,
+				"li_className": "nav-item active",
+				"li_type": "button",
+				"li_style": { "display": "inline-block" },
+				"a_CallComponentBool": true,
+				"a_className": "nav-link",
+				"a_href": "/reserva",
+				"a_role": "button",
+				"p_CallComponentBool": true,
+				"p_texto": "RESERVAS",
+				"fontAwesomeIcon_CallComponentBool": false,
+				"img_CallComponentBool": false
+			}
+		]
+	}
+}

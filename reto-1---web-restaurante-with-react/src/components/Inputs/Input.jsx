@@ -1,91 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 
 import EtiquetaInput from "../Creacion de Etiquetas HTML/EtiquetaInput";
 import EtiquetaSelect from "../Creacion de Etiquetas HTML/EtiquetaSelect";
-import { handleInputsChange } from "./ValidacionCampos";
-const Input = ({ objecto }) => {
-	const [inputs, setInputs] = useState({});
+import EtiquetaFlatPickr from "../Creacion de Etiquetas HTML/EtiquetaFlatPickr";
+import EtiquetaTextArea from "../Creacion de Etiquetas HTML/EtiquetaTextArea";
+import EtiquetaCheckBox from "../Creacion de Etiquetas HTML/EtiquetaCheckBox";
 
-	const cargarInputs = (valorInicial, name, validacionCampo, error) => {
-		console.log("");
-		console.log(
-			"------------....................,,,,,,,,,, INICIO cargarInputs"
-		);
-		console.log("CargarInputs");
-		console.log("valorInicial");
-		console.log(valorInicial);
-		console.log("Name");
-		console.log(name);
-		console.log("ValidacionCampo");
-		console.log(validacionCampo);
-		console.log("Error");
-		console.log(error);
-		setInputs({
-			...inputs,
-			[name]: {
-				valor: valorInicial,
-				campoValido: validacionCampo,
-				error: error,
-			},
-		});
-		console.log("inputs");
-		console.log(inputs);
-		console.log("------------....................,,,,,,,,,, FIN cargarInputs");
-		console.log("");
-	};
-	const inicializarInputs = (valorInicial, nombreInput, cargarInputs) => {
-		console.log("");
-		console.log(`""""""""""""""""""""""""""""""" INICIO inicializarInputs`);
-		console.log("INICIALIZANDO");
-		console.log("inputs");
-		console.log(inputs);
-		console.log(inputs[nombreInput]?.valor);
-		console.log(inputs[nombreInput]);
-		console.log("ValorIncial");
-		console.log(valorInicial);
-		if (inputs[nombreInput]?.valor === undefined) {
-			console.log("No existe");
-			cargarInputs(valorInicial, nombreInput, false, {
-				error: false,
-				error1: false,
-			});
-		} /* else {
-			console.log("Si ya existe");
-			console.log("inputs[nombreInput]?.valor");
-			console.log(inputs[nombreInput].valor);
-			console.log("valorInicial");
-			console.log(valorInicial);
-			if (valorInicial !== "") {
-				console.log("Es diferente de vacio");
-			} */
-		// cargarInputs(valorInicial, nombreInput, false, {
-		// 	error: false,
-		// 	error1: false,
-		// });
-		// }
-		console.log("despues");
-		console.log("inputs");
-		console.log(inputs);
-		console.log(`""""""""""""""""""""""""""""""" FIN inicializarInputs`);
-		console.log("");
-	};
+const saberCampo = (objeto) => {
+	if (objeto.input_CallComponentBool) {
+		return <EtiquetaInput objeto={objeto} />;
+	} else if (objeto.select_CallComponentBool) {
+		return <EtiquetaSelect objeto={objeto} />;
+	} else if (objeto.flatPickr_CallComponentBool) {
+		return <EtiquetaFlatPickr objeto={objeto} />;
+	} else if (objeto.textArea_CallComponentBool) {
+		return <EtiquetaTextArea objeto={objeto} />;
+	} else if (objeto.checkBox_CallComponentBool) {
+		return <EtiquetaCheckBox objeto={objeto} />;
+	}
+	return null;
+};
+
+const Input = ({ objeto}) => {
 	return (
 		<>
-			<div className={objecto.divClassNameCol}>
-				<EtiquetaInput
-					objecto={objecto}
-					inputs={inputs}
-					inicializarInputs={inicializarInputs}
-					cargarInputs={cargarInputs}
-					handleInputsChange={handleInputsChange}
-				/>
-				<EtiquetaSelect
-					objecto={objecto}
-					inputs={inputs}
-					inicializarInputs={inicializarInputs}
-					cargarInputs={cargarInputs}
-					handleInputsChange={handleInputsChange}
-				/>
+			<div className={objeto.divClassNameCol}>
+				{saberCampo(objeto)}
 			</div>
 		</>
 	);

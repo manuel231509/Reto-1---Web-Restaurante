@@ -1,0 +1,41 @@
+[
+	{
+		"a_CallComponentBool": true,
+		"a_className": "d-flex justify-content-center btn btn-outline-light btn-floating a-width mt-2",
+		"a_href": "#!",
+		"a_role": "button",
+		"fontAwesomeIcon_CallComponentBool": true,
+		"fontAwesomeIcon_className": "fab",
+		"fontAwesomeIcon_icon": "faFacebookF",
+		"fontAwesomeIcon_style": "",
+		"img_CallComponentBool": false,
+		"p_CallComponentBool": false,
+		"p_texto": ""
+	},
+	{
+		"a_CallComponentBool": true,
+		"a_className": "d-flex justify-content-center btn btn-outline-light btn-floating a-width mt-3",
+		"a_href": "#!",
+		"a_role": "button",
+		"fontAwesomeIcon_CallComponentBool": true,
+		"fontAwesomeIcon_className": "fab",
+		"fontAwesomeIcon_icon": "faTwitter",
+		"fontAwesomeIcon_style": "",
+		"img_CallComponentBool": false,
+		"p_CallComponentBool": false,
+		"p_texto": ""
+	},
+	{
+		"a_CallComponentBool": true,
+		"a_className": "d-flex justify-content-center btn btn-outline-light btn-floating a-width mt-3 mb-2",
+		"a_href": "#!",
+		"a_role": "button",
+		"fontAwesomeIcon_CallComponentBool": true,
+		"fontAwesomeIcon_className": "fab",
+		"fontAwesomeIcon_icon": "faYoutube",
+		"fontAwesomeIcon_style": "",
+		"img_CallComponentBool": false,
+		"p_CallComponentBool": false,
+		"p_texto": ""
+	}
+]

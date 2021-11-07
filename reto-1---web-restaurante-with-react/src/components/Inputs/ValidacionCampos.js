@@ -15,51 +15,40 @@ const validarCampo = (expresion, valor) => {
 		error: false,
 		error1: false,
 	};
-	// console.log(".......... INICIO");
-	// console.log("ValidarCampo");
-	// console.log("valor");
-	// console.log(valor);
-	// console.log("ESPRESION");
-	// console.log(expresion);
-	if (valor !== "") {
-		// console.log("Entro aqui es diferente de vacio");
-		// console.log("expresion.test(valor)");
-		// console.log(expresion.test(valor));
-		if (expresion !== "servicio") {
-			if (expresion.test(valor)) {
-				// console.log("DENTRO DEL IF");
-				saber = true;
+	if (expresion !== "terminos") {
+		if (valor !== "") {
+			if (
+				expresion !== "servicio" &&
+				expresion !== "fecha" &&
+				expresion !== "hora"
+			) {
+				if (expresion.test(valor)) {
+					saber = true;
+				} else {
+					saber = false;
+					error.error = true;
+				}
 			} else {
-				saber = false;
-				error.error = true;
+				saber = true;
 			}
 		} else {
-			saber = true;
+			saber = false;
+			error.error1 = true;
 		}
 	} else {
-		/* 
-		console.log("-------------s-s-----------s-s-s-s");
-		console.log("ES IGUAL A VACIOOOOOOOOOO"); */
-		saber = false;
-		error.error1 = true;
+		saber = true;
 	}
-	// console.log(".......... FIN");
 
 	return { saber, error };
 };
 
 const validarFormulario = (nameExpresion, value) => {
-	let valCampo = null; /* 
-	console.log("/////////////////////// INICIO");
-	console.log("VALIDARFORMULARIO");
-	console.log("nameExpresion");
-	console.log(nameExpresion); */
+	let valCampo = null;
 	switch (nameExpresion) {
 		case "cantidad":
 			valCampo = validarCampo(expresiones.cantidad, value);
 			break;
 		case "nombres":
-			console.log("ES NOMBRE");
 			valCampo = validarCampo(expresiones.nombres, value);
 			break;
 		case "apellidos":
@@ -80,48 +69,34 @@ const validarFormulario = (nameExpresion, value) => {
 		case "cantidadPersonas":
 			valCampo = validarCampo(expresiones.cantidadPersonas, value);
 			break;
+		case "fecha":
+			valCampo = validarCampo(nameExpresion, value);
+			break;
+		case "hora":
+			valCampo = validarCampo(nameExpresion, value);
+			break;
 		case "indicacionesEspeciales":
 			valCampo = validarCampo(expresiones.indicacionesEspeciales, value);
+			break;
+		case "terminos":
+			valCampo = validarCampo(nameExpresion, value);
 			break;
 		default:
 			break;
 	}
-	// console.log("/////////////////////// FIN");
+
 	return valCampo;
 };
 
-const handleInputsChange = (event, cargarInputs) => {
-	console.log("target.value");
-	console.log(event.target.value);
-	console.log("target.name");
-	console.log(event.target.name);
+const handleInputsChange = (event, cargarCampos, campoValido) => {
 	const { value, name } = event.target;
-	console.log("---.....--------........... INICIO HANDLEINPUTSCHANGE");
-	console.log("HANDLEINPUTSCHANGE");
-	// console.log("NAME ---------");
-	// console.log(name);
+
 	const nameExpresion = name.split("_")[0];
-	console.log("nameExpresion");
-	console.log(nameExpresion);
+
 	const valCampo = validarFormulario(nameExpresion, value);
-	// console.log("VALCAMPO .....,,,,");
-	// console.log(valCampo);
-	// console.log("valCampo.saber");
-	// console.log(valCampo.saber);
-	// console.log("valCampo.error");
-	// console.log(valCampo.error);
-	cargarInputs(value, name, valCampo.saber, valCampo.error);
-	console.log("---.....--------........... FIN HANDLEINPUTSCHANGE");
-	console.log("");
+
+	cargarCampos(value, name, valCampo.saber, valCampo.error);
+	campoValido(value, nameExpresion, valCampo.saber);
 };
 
-const inicializarInputs = (valorInicial, nombreInput, cargarInputs) => {
-	// console.log("ValorIncial");
-	// console.log(valorInicial);
-	cargarInputs(valorInicial, nombreInput, false, {
-		error: false,
-		error1: false,
-	});
-};
-
-export { handleInputsChange, inicializarInputs };
+export { handleInputsChange };

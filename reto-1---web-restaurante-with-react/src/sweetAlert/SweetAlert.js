@@ -1,5 +1,10 @@
-import { guardarSeleccionMenuLocalStorage } from "../../localStorage/LocalStorage";
-const sweetAlert = (
+import { guardarSeleccionMenuLocalStorage } from "../localStorage/LocalStorage";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
+
+const sweetAlertMenuAgregarCarrito = (
 	title,
 	showDenyButton,
 	showCancelButton,
@@ -7,8 +12,7 @@ const sweetAlert = (
 	denyButtonText,
 	mensajeSuccess,
 	mensajeInfo,
-	objeto,
-	MySwal
+	objeto
 ) => {
 	MySwal.fire({
 		icon: "question",
@@ -48,4 +52,22 @@ const sweetAlert = (
 	});
 };
 
-export { sweetAlert };
+const sweetAlert = (
+	position,
+	icon,
+	title,
+	text,
+	showConfirmButton,
+	timer
+) => {
+	MySwal.fire({
+		position: position,
+		icon: icon,
+		title: title,
+		text: text,
+		showConfirmButton: showConfirmButton,
+		timer: timer,
+	});
+};
+
+export { sweetAlertMenuAgregarCarrito, sweetAlert };
