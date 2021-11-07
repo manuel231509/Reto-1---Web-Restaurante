@@ -13,6 +13,7 @@ import {
 	faBars,
 	faHome,
 	faShoppingCart,
+	faSignInAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = forwardRef((props, refNavBar) => {
@@ -74,6 +75,10 @@ const NavBar = forwardRef((props, refNavBar) => {
 												objeto.fontAwesomeIcon_icon === "faShoppingCart"
 											) {
 												objeto["fontAwesomeIcon_icon"] = faShoppingCart;
+											} else if (
+												objeto.fontAwesomeIcon_icon === "faSignInAlt"
+											) {
+												objeto["fontAwesomeIcon_icon"] = faSignInAlt;
 											}
 											return (
 												<ComponentEtiquetaLi key={index} objectArray={objeto} />

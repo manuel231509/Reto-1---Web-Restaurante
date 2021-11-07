@@ -1,38 +1,48 @@
 import React from "react";
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route /* Link */,
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route /* Link */ } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 import Menu from "../views/Menu";
 import Reserva from "../views/Reserva";
 import Nosotros from "../views/Nosotros";
 import Servicios from "../views/Servicios";
 import Carrito from "../views/Carrito";
+import Inicio from "../views/Inicio";
+import Login from "../views/Login";
 const routes = [
 	{
-		path: "/nosotros",
-		component: Nosotros,
+		path: "/carrito",
+		component: Carrito,
 	},
 	{
 		path: "/menu",
 		component: Menu,
 	},
 	{
-		path: "/servicios",
-		component: Servicios,
-	},
-	{
 		path: "/reserva",
 		component: Reserva,
 	},
 	{
-		path: "/carrito",
-		component: Carrito,
+		path: "/servicios",
+		component: Servicios,
+	},
+	{
+		path: "/login",
+		component: Login,
+	},
+	{
+		path: "/nosotros",
+		component: Nosotros,
+	},
+	{
+		path: "/inicio",
+		component: Inicio,
+	},
+	{
+		path: "/",
+		component: Inicio,
 	},
 	/*{
-		 path: "/tacos",
+		path: "/tacos",
 		component: Tacos,
 		routes: [
 			{
@@ -46,10 +56,10 @@ const routes = [
 		],
 	},*/
 ];
-const router = () => {
+const Router = () => {
 	return (
 		<>
-			<Router>
+			<BrowserRouter>
 				<Layout>
 					<Switch>
 						{routes.map((route, i) => (
@@ -57,7 +67,7 @@ const router = () => {
 						))}
 					</Switch>
 				</Layout>
-			</Router>
+			</BrowserRouter>
 		</>
 	);
 };
@@ -106,4 +116,4 @@ function Cart() {
 	return <h3>Cart</h3>;
 } */
 
-export default router;
+export default Router;

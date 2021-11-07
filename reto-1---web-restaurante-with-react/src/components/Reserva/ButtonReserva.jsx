@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import CantidadContext from "../../contexts/Inputs/InputsContext";
-import { sendMailReserva } from "../../emailJS/EmailJS";
+import { sendMailReserva } from "../../EmailJS/EmailJS";
 import { saberCamposVerdadero } from "./Reserva";
 
 const ButtonReserva = () => {

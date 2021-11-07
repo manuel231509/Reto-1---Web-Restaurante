@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import CarritoContext from "../../contexts/CarritoContext";
-import { sendMailCarrito } from "../../emailJS/EmailJS";
+import { sendMailCarrito } from "../../EmailJS/EmailJS";
 
 const ModalCarrito = ({ totalCarrito }) => {
 	const initialInputModalCarrito = {
