@@ -92,7 +92,7 @@ const CardPlatillo = ({ obtenerTotalCarrito }) => {
 										className="card-title text-center mb-3"
 										style={{ color: "#5f2018", fontFamily: "fantasy" }}
 									>
-										{platillo.nombre}
+										{platillo.titulo}
 									</h2>
 									<div className="text-start text-justify">
 										<p className="card-text lh-6">

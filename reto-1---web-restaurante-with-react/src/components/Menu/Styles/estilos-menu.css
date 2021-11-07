@@ -1,14 +1,14 @@
-.card-principal {
+.card-menu .card-principal {
 	margin: 0%;
 	padding: 0%;
 	max-width: 100%;
 	z-index: -2;
 }
-.card {
+.card-menu {
 	background-color: inherit;
 }
 
-.card-principal > .card {
+.card-menu .card-principal > .card {
 	margin: 20px;
 	border-radius: 2px;
 	box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
@@ -16,13 +16,13 @@
 	-moz-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
 }
 
-.card-title {
+.card-menu .card-title {
 	font-size: 3.5rem;
 	color: #682828;
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.card-hijo > .card:hover {
+.card-menu .card-hijo > .card:hover {
 	margin: 20px;
 	border-radius: 2px;
 	box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.75);
@@ -30,32 +30,32 @@
 	-moz-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.75);
 }
 
-.card-principal > .card > .card-body {
+.card-menu .card-principal > .card > .card-body {
 	padding-left: 50px;
 	padding-right: 50px;
 }
 
-#redes-sociales-flotante {
+.card-menu #redes-sociales-flotante {
 	z-index: -100;
 }
 
-.modal-footer {
+.card-menu .modal-footer {
 	height: 65px;
 	margin: 0% !important;
 	flex-wrap: inherit;
 	padding: 0% !important;
 	justify-content: inherit;
 }
-.modal-footer > .row {
+.card-menu .modal-footer > .row {
 	width: 100%;
 	height: 100%;
 }
 
-.modal-footer > a {
+.card-menu .modal-footer > a {
 	margin-right: 25px;
 }
-.modal-footer > .row > .div-precio,
-.modal-footer > .row > .div-contactanos {
+.card-menu .modal-footer > .row > .div-precio,
+.card-menu .modal-footer > .row > .div-contactanos {
 	display: flex;
 	align-items: center;
 }
