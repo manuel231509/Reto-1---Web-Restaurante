@@ -74,11 +74,11 @@ const sendMailCarrito = (
 	console.log(message);
 
 	const tempParams = {
-		from_name: "SAL&SALSA - RESTAURANTE + RUMBA + EVENTO",
 		to_name: campos.to_name,
 		correo: campos.correo,
 		message: message,
 		cc: campos.correo,
+		from_name: "SAL&SALSA - RESTAURANTE + RUMBA + EVENTO",
 	};
 	console.log(platillos);
 
