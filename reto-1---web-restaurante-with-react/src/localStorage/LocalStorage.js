@@ -31,7 +31,7 @@ const guardarSeleccionMenuLocalStorage = (platillo, nameItem) => {
 };
 
 const eliminarPlatilloByIdLocalStorage = (platillo, nameItem) => {
-	let platilloLS = obtenerPlatillosLocalStorage();
+	let platilloLS = obtenerPlatillosLocalStorage(nameItem);
 
 	platilloLS.forEach((platillos, index) => {
 		if (saberPlatilloExistente(platillos, platillo)) {

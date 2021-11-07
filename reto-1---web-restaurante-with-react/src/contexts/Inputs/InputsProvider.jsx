@@ -35,6 +35,12 @@ const CantidadProvider = ({ children }) => {
 		setValido({});
 	};
 
+	const [totalCarrito, setTotalCarrito] = useState(0);
+
+	const actualizarTotalCarrito = (valor) => {
+		setTotalCarrito(valor);
+	};
+
 	const data = {
 		inputs,
 		cargarCampos,
@@ -42,6 +48,8 @@ const CantidadProvider = ({ children }) => {
 		valido,
 		campoValido,
 		reiniciarCampoValido,
+		totalCarrito,
+		actualizarTotalCarrito,
 	};
 	return (
 		<CantidadContext.Provider value={data}>{children}</CantidadContext.Provider>

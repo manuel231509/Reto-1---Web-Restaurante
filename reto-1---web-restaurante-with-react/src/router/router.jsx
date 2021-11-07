@@ -7,14 +7,29 @@ import {
 import Layout from "../components/Layout/Layout";
 import Menu from "../views/Menu";
 import Reserva from "../views/Reserva";
+import Nosotros from "../views/Nosotros";
+import Servicios from "../views/Servicios";
+import Carrito from "../views/Carrito";
 const routes = [
+	{
+		path: "/nosotros",
+		component: Nosotros,
+	},
 	{
 		path: "/menu",
 		component: Menu,
 	},
 	{
+		path: "/servicios",
+		component: Servicios,
+	},
+	{
 		path: "/reserva",
 		component: Reserva,
+	},
+	{
+		path: "/carrito",
+		component: Carrito,
 	},
 	/*{
 		 path: "/tacos",

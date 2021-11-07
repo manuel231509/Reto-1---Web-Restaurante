@@ -1,0 +1,37 @@
+.boton-contacto span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.boton-contacto span:after {
+	content: "\00bb";
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.boton-contacto:hover span {
+	padding-right: 25px;
+}
+
+.boton-contacto:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+.img-fluid {
+	z-index: 1;
+}
+
+.card-servicios img {
+	width: 30rem !important;
+	height: 30rem !important;
+}
+
+.card-servicios {
+	height: 900px;
+}

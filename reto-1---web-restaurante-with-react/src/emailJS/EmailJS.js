@@ -1,5 +1,6 @@
 import emailjs from "emailjs-com";
 import { sweetAlert } from "../sweetAlert/SweetAlert";
+import { removerItemLocalStorage } from "../localStorage/LocalStorage";
 
 const sendMailReserva = (valido, reiniciarCampos, reiniciarCampoValido) => {
 	const tempParams = {
@@ -62,4 +63,46 @@ const sendMail = async (
 	return res;
 };
 
-export { sendMailReserva };
+const sendMailCarrito = (
+	campos,
+	message,
+	platillos,
+	handleRemoveAllItems,
+	initicializarInput
+) => {
+	console.log(campos);
+	console.log(message);
+
+	const tempParams = {
+		from_name: "SAL&SALSA - RESTAURANTE + RUMBA + EVENTO",
+		to_name: campos.to_name,
+		correo: campos.correo,
+		message: message,
+		cc: campos.correo,
+	};
+	console.log(platillos);
+
+	emailjs
+		.send(
+			"service_2sk9bcd",
+			"template_1npjc4n",
+			tempParams,
+			"user_fQNx4MRlCaB3m9PGBDeOj"
+		)
+		.then((res) => {
+			console.log("success", res.status);
+			sweetAlert(
+				"center",
+				"success",
+				"",
+				"SE ENVIO EL CORREO CON EXITO",
+				false,
+				2000
+			);
+			removerItemLocalStorage("platillos");
+			handleRemoveAllItems();
+			initicializarInput();
+		});
+};
+
+export { sendMailReserva, sendMailCarrito };

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nombre": "Alfonso Torres",
+    "ocupacion": "Chef Pastelero",
+    "imagen": "./assets/images/personal1@2x.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Miriam Pinto",
+    "ocupacion": "Ejecutiva",
+    "imagen": "./assets/images/personal2@2x.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Magaly Nowacky",
+    "ocupacion": "Administradora",
+    "imagen": "./assets/images/personal3@2x.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Ricardo Amador",
+    "ocupacion": "Chef de temporada",
+    "imagen": "./assets/images/chef-1.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Bruno Martinez",
+    "ocupacion": "Chef pastelero",
+    "imagen": "./assets/images/chef-2.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Pedro Parques",
+    "ocupacion": "Chef estrella",
+    "imagen": "./assets/images/chef-3.jpg"
+  }
+]
