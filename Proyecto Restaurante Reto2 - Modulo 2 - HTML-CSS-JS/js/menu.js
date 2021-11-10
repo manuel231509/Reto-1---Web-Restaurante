@@ -310,7 +310,11 @@ const obtenerPlatillosLocalStorage = () => {
 		divRow.classList.add("row", "mb-3", "card-hijo");
 
 		idCardBody.appendChild(divRow);
+		console.log("i");
+		console.log(i);
 		while (cont < 3 && i < tamaño) {
+			console.log("dentro del while: i = " + i);
+			console.log(i);
 			agregandoListadoMenu(i, divRow);
 			i++;
 			cont++;

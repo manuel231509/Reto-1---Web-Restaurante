@@ -6,7 +6,7 @@
 		const altNavBar = navbar.clientHeight;
 		let scrollY = window.scrollY;
 		const footPos = footer.getBoundingClientRect().y;
-		const navbarPos = navbar.getBoundingClientRect().y;
+		
 		if (footPos < 590 - 20) {
 			document
 				.getElementById("redes-sociales-flotante")

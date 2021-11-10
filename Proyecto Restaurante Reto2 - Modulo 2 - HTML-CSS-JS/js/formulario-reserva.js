@@ -445,7 +445,7 @@ formulario.addEventListener("submit", (e) => {
 				data.classList.remove("formulario__input-check");
 			});
 
-			/* sendMail(campos); */
+			// sendMail(campos);
 
 			campos = {
 				nombres: {
