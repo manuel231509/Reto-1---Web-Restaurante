@@ -1,3 +1,5 @@
+import { modificarCantidadPlatilloByIdlocalStorage } from "../../../localStorage/LocalStorage";
+
 const minus = (
 	plato,
 	inputs,
@@ -18,6 +20,11 @@ const minus = (
 					error1: false,
 				});
 				if (nameComponente === "Carrito") {
+					modificarCantidadPlatilloByIdlocalStorage(
+						plato.idPlato,
+						rest,
+						"platillos"
+					);
 					actualizarTotalCarrito((total) => total - plato.valor.split("$")[1]);
 				}
 			}
@@ -48,6 +55,12 @@ const plus = (
 					error1: false,
 				});
 				if (nameComponente === "Carrito") {
+					modificarCantidadPlatilloByIdlocalStorage(
+						plato.idPlato,
+						suma,
+						"platillos"
+					);
+
 					actualizarTotalCarrito(
 						(total) => total + parseInt(plato.valor.split("$")[1])
 					);

@@ -30,6 +30,18 @@ const guardarSeleccionMenuLocalStorage = (platillo, nameItem) => {
 	}
 };
 
+const modificarCantidadPlatilloByIdlocalStorage = (idPlatillo, cantidad, nameItem) => {
+	let platilloLS = obtenerPlatillosLocalStorage(nameItem);
+
+	let platillo = platilloLS.find((platillo) => {
+		return platillo.idPlato === idPlatillo;
+	});
+
+	platillo.cantidad = cantidad;
+
+	localStorage.setItem("platillos", JSON.stringify(platilloLS));
+};
+
 const eliminarPlatilloByIdLocalStorage = (platillo, nameItem) => {
 	let platilloLS = obtenerPlatillosLocalStorage(nameItem);
 
@@ -54,6 +66,7 @@ export {
 	obtenerPlatillosLocalStorage,
 	leerLocalStorage,
 	saberPlatilloExistente,
+	modificarCantidadPlatilloByIdlocalStorage,
 	eliminarPlatilloByIdLocalStorage,
 	removerItemLocalStorage,
 	vaciarLocalStorage,
