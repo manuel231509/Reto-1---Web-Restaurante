@@ -1,6 +1,6 @@
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import React, { useContext } from "react";
-import CarritoContext from "../../contexts/CarritoContext";
+import CarritoContext from "../../contexts/Carrito/CarritoContext";
 import InputsContext from "../../contexts/Inputs/InputsContext";
 import { eliminarPlatilloByIdLocalStorage } from "../../localStorage/LocalStorage";
 import { sweetAlertBtnEliminarPlatillo } from "../../sweetAlert/SweetAlert";

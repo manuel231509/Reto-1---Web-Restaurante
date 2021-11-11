@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { obtenerPlatillosLocalStorage } from "../localStorage/LocalStorage";
+import { obtenerPlatillosLocalStorage } from "../../localStorage/LocalStorage";
 import CarritoContext from "./CarritoContext";
 
 const CarritoProvider = ({ children }) => {
