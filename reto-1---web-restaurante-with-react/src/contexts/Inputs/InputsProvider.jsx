@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import CantidadContext from "./InputsContext";
+import InputsContext from "./InputsContext";
 
-const CantidadProvider = ({ children }) => {
+const InputsProvider = ({ children }) => {
 	const [inputs, setInputs] = useState({});
 
 	const cargarCampos = (valor, name, validacionCampo, error) => {
@@ -52,8 +52,8 @@ const CantidadProvider = ({ children }) => {
 		actualizarTotalCarrito,
 	};
 	return (
-		<CantidadContext.Provider value={data}>{children}</CantidadContext.Provider>
+		<InputsContext.Provider value={data}>{children}</InputsContext.Provider>
 	);
 };
 
-export default CantidadProvider;
+export default InputsProvider;

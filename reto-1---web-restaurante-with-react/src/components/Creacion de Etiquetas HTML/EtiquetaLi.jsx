@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ComponentEtiquetaA from "./EtiquetaA";
+import EtiquetaLink from "./EtiquetaLink";
 
 const EtiquetaLi = (props) => {
 	const { li_CallComponentBool, li_className, li_type, li_style } =
@@ -10,6 +11,7 @@ const EtiquetaLi = (props) => {
 			<>
 				<li className={li_className} type={li_type} style={li_style}>
 					<ComponentEtiquetaA objectArray={props.objectArray} />
+					<EtiquetaLink objectArray={props.objectArray} />
 				</li>
 			</>
 		);

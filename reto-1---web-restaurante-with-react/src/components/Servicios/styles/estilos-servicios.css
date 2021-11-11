@@ -1,11 +1,11 @@
-.boton-contacto span {
+.boton-contacto p {
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
 	transition: 0.5s;
 }
 
-.boton-contacto span:after {
+.boton-contacto p:after {
 	content: "\00bb";
 	position: absolute;
 	opacity: 0;
@@ -14,11 +14,11 @@
 	transition: 0.5s;
 }
 
-.boton-contacto:hover span {
+.boton-contacto:hover p {
 	padding-right: 25px;
 }
 
-.boton-contacto:hover span:after {
+.boton-contacto:hover p:after {
 	opacity: 1;
 	right: 0;
 }

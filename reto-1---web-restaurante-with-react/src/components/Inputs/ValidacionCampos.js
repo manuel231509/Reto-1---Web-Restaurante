@@ -89,7 +89,7 @@ const validarFormulario = (nameExpresion, value) => {
 };
 
 const handleInputsChange = (event, cargarCampos, campoValido) => {
-	const { value, name } = event.target;
+	const { value, name } = event;
 
 	const nameExpresion = name.split("_")[0];
 

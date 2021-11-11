@@ -26,17 +26,8 @@
 	text-align: center;
 }
 
-.carrito-card #card-body > .row > .col-minus-input-plus > .row > .col-minus {
-	margin-right: -8px;
-}
 .carrito-card #card-body > .row > .col-minus-input-plus > .row > .col-plus {
-	margin-left: 30px;
-}
-
-.carrito-card #card-body > .row > .col-minus-input-plus > .row > .col-minus,
-.carrito-card #card-body > .row > .col-minus-input-plus > .row > .col-plus {
-	padding: 0%;
-	width: 21%;
+	margin-left: -24px;
 }
 
 .carrito-card #card-body > .row > .col-minus-input-plus > .row {

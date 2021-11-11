@@ -45,7 +45,10 @@ const NavBar = forwardRef((props, refNavBar) => {
 							</div>
 							<div className="col-lg-8 col-md-12 mb-md-0 div-item">
 								<button
-									onClick={ariaExpanded}
+									onClick={(e) => {
+										e.preventDefault();
+										ariaExpanded();
+									}}
 									className={
 										expandedAria ? "navbar-toggler" : "navbar-toggler collapsed"
 									}

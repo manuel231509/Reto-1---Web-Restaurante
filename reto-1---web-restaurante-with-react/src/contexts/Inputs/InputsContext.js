@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const CantidadContext = createContext();
+const InputsContext = createContext();
 
-export default CantidadContext;
+export default InputsContext;

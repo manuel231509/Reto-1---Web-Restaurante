@@ -239,6 +239,9 @@
 .card-principal-reserva .formulario__grupo-incorrecto .formulario__label {
 	color: #bb2929;
 }
+.card-principal-reserva .formulario__grupo-correcto .formulario__label {
+	color: #3ed45e;
+}
 
 .card-principal-reserva
 	.formulario__grupo-incorrecto
@@ -247,9 +250,16 @@
 	opacity: 1;
 }
 
+.card-principal-reserva .formulario__grupo-correcto .formulario__input,
+.card-principal-reserva .formulario__grupo-correcto .formulario__textarea,
+.card-principal-reserva .formulario__grupo-correcto .formulario__checkbox {
+	border: 2px solid #8ec79a;
+}
+
 .card-principal-reserva .formulario__grupo-incorrecto .formulario__input,
-.card-principal-reserva .formulario__grupo-incorrecto .formulario__textarea {
-	border: 3px solid #bb2929;
+.card-principal-reserva .formulario__grupo-incorrecto .formulario__textarea,
+.card-principal-reserva .formulario__grupo-incorrecto .formulario__checkbox {
+	border: 2px solid #bb2929;
 }
 
 .card-principal-reserva .formulario__input-check {

@@ -119,8 +119,11 @@
 	> .fas {
 	font-size: 15px;
 }
-
-.formulario__input-cantidad {
+.card-body-carrito ::placeholder {
+	text-align: center;
+	font-size: 15px;
+}
+.card-body-carrito .formulario__input-cantidad {
 	width: 150px;
 	background: #ffff;
 	border: 1px solid;
@@ -217,10 +220,10 @@
 }
 
 .formulario__grupo-correcto .formulario__input-cantidad {
-	border: 2px solid #1ed12d;
+	border: 2px solid #8ec79a;
 }
 .formulario__grupo-incorrecto .formulario__input-cantidad {
-	border: 3px solid #bb2929;
+	border: 2px solid #bb2929;
 }
 
 .toast-top-center {

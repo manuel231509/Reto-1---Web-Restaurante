@@ -1,86 +1,60 @@
 import React, { useContext } from "react";
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import EtiquetaFontAwesomeIcon from "../../FontAwesome/EtiquetaFontAwesomeIcon";
-import { minus, plus } from "./CardPlatoJS";
+
 import RowAgregarCarrito from "./RowAgregarCarrito";
-
 import Input from "../../Inputs/Input";
-
-import CantidadContext from "../../../contexts/Inputs/InputsContext";
-import CantidadProvider from "../../../contexts/Inputs/InputsProvider";
 import DatosInputMenuCantidad from "../../../consts json/Menu/DatosInputMenuCantidad.json";
+import ColumnaMinus from "./ColumnaMinus";
+import ColumnaPlus from "./ColumnaPlus";
+import InputsContext from "../../../contexts/Inputs/InputsContext";
 
-const Row = ({ plato }) => {
-	const { inputs, cargarCampos } = useContext(CantidadContext);
-	const objeto = DatosInputMenuCantidad;
+const Cantidad = ({ plato, objeto }) => {
+	const inputContext = useContext(InputsContext);
+
 	Object.assign(objeto, { id: plato.idPlato });
+
 	return (
 		<>
 			<div className="row">
 				<div className="col-minus-input-plus col-lg-12 col-md-12">
 					<div className="row">
-						<div className="col-minus col-lg-4 col-md-4 col-sm-4">
-							<button
-								id={"btn_minus-" + plato.idPlato}
-								type="button"
-								className="btn"
-								onClick={(e) => {
-									e.preventDefault();
-									minus(plato.idPlato, inputs, cargarCampos);
-								}}
-							>
-								<EtiquetaFontAwesomeIcon
-									objectArray={{
-										fontAwesomeIcon_CallComponentBool: true,
-										fontAwesomeIcon_className: "fas",
-										fontAwesomeIcon_icon: faMinus,
-									}}
-								/>
-							</button>
-						</div>
+						<ColumnaMinus
+							plato={plato}
+							objeto={objeto}
+							inputContext={inputContext}
+						/>
 						<form
 							id={"formulario_menu-" + plato.idPlato}
 							className="formulario_menu"
 							noValidate
 						>
-							<Input key={plato.idPlato} objeto={objeto} />
+							<Input
+								key={plato.idPlato}
+								objeto={objeto}
+								valorInicial={plato.cantidad}
+							/>
 						</form>
-						<div className="col-plus col-lg-4 col-md-4 col-sm-4">
-							<button
-								id={"btn_plus-" + plato.idPlato}
-								type="button"
-								className="btn"
-								onClick={(e) => {
-									e.preventDefault();
-									plus(plato.idPlato, inputs, cargarCampos);
-								}}
-							>
-								<EtiquetaFontAwesomeIcon
-									objectArray={{
-										fontAwesomeIcon_CallComponentBool: true,
-										fontAwesomeIcon_className: "fas",
-										fontAwesomeIcon_icon: faPlus,
-									}}
-								/>
-							</button>
-						</div>
+						<ColumnaPlus
+							plato={plato}
+							objeto={objeto}
+							inputContext={inputContext}
+						/>
 					</div>
 				</div>
 			</div>
-
-			<RowAgregarCarrito plato={plato} inputs={inputs} />
 		</>
 	);
 };
 
 const RowCantidad = ({ plato }) => {
+	const objeto = DatosInputMenuCantidad;
+
 	return (
 		<>
-			<CantidadProvider>
-				<Row plato={plato} />
-			</CantidadProvider>
+			<Cantidad plato={plato} objeto={objeto} />
+			<RowAgregarCarrito plato={plato} />
 		</>
 	);
 };
 
+export { Cantidad };
 export default RowCantidad;

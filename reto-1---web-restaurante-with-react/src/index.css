@@ -34,57 +34,12 @@
 	font-weight: 700;
 }
 
-/* SECCION MAIN */
-/* 
-.main h1 {
-	font-size: 4rem;
-	font-weight: 700;
-	color: white;
-}
-.main {
-	background: url(../img/menu.jpg);
-	background-size: cover;
-	height: 100vh;
-	background-position: 50% 50%;
-	width: 100%;
-} */
-/* .btn1 {
-	height: 45px;
-	width: 35%;
-	border: none;
-	outline: none;
-	background-color: rgb(248, 26, 92);
-	color: white;
-	font-weight: 700;
-	border-radius: 60px;
-}
-.btn1:hover {
-	background-color: rgb(138, 48, 75);
-	transition: 0.5s;
-}
-h1 {
-	font-weight: 700;
-} */
-
 .card:hover {
 	box-shadow: -3px -2px 25px -5px rgba(0, 0, 0, 0.75);
 	-webkit-box-shadow: -3px -2px 25px -5px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: -3px -2px 25px -5px rgba(0, 0, 0, 0.75);
 	transition: 1s;
 }
-
-/* ACERCA  */
-
-/* .acerca {
-	background: Linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-		url(../img/plato.jpg) no-repeat;
-	background-size: cover;
-	height: 80vh;
-	width: 100%;
-}
-.acerca h1 {
-	font-family: "Lobster", cursive;
-} */
 
 .fas {
 	font-size: 1.5rem;
@@ -105,10 +60,10 @@ h1 {
 .img-logo {
 	width: 25%;
 }
-.img-logo:hover {
+/* .img-logo:hover {
 	width: 30%;
 	background-color: #ae434d;
-}
+} */
 .img-logo_footer {
 	margin: 0%;
 	margin-top: 20px;
@@ -126,6 +81,12 @@ h1 {
 	box-shadow: none;
 	background-color: #ae434d;
 }
+
+.nav-link {
+	display: flex;
+	justify-content: flex-start;
+}
+
 .nav-link,
 .nav-link:hover,
 .nav-link:focus {
@@ -148,9 +109,14 @@ h1 {
 	margin: 0;
 	margin-top: 0px;
 }
-.nav-item:hover {
+.nav-item:hover,
+.nav-item:active {
 	font-size: 18px;
-	background-color: #ae434d;
+	background-color: #e35d6a !important;
+}
+.active {
+	font-size: 18px;
+	background-color: #58151c;
 }
 .nav-item:focus-within {
 	font-size: 18px;

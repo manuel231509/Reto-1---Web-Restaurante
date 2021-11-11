@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
+import CantidadProvider from "../../../contexts/Inputs/InputsProvider";
 import PlatoContext from "../../../contexts/Menu/PlatoContext";
 
 import RowCantidad from "./RowCantidad";
 
-const CardPlato = ({ plato, objeto }) => {
+const CardPlato = ({ plato }) => {
 	const { selectedDish } = useContext(PlatoContext);
-
+	Object.assign(plato, {cantidad: 1})
 	return (
 		<>
 			<div
@@ -50,7 +51,9 @@ const CardPlato = ({ plato, objeto }) => {
 								</p>
 							</div>
 						</div>
+						<CantidadProvider>
 						<RowCantidad plato={plato} />
+						</CantidadProvider>
 					</div>
 				</div>
 			</div>

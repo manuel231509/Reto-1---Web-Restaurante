@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import EtiquetaInput from "../Creacion de Etiquetas HTML/EtiquetaInput";
 import EtiquetaSelect from "../Creacion de Etiquetas HTML/EtiquetaSelect";
@@ -6,9 +6,9 @@ import EtiquetaFlatPickr from "../Creacion de Etiquetas HTML/EtiquetaFlatPickr";
 import EtiquetaTextArea from "../Creacion de Etiquetas HTML/EtiquetaTextArea";
 import EtiquetaCheckBox from "../Creacion de Etiquetas HTML/EtiquetaCheckBox";
 
-const saberCampo = (objeto) => {
+const saberCampo = (objeto, valorInicial) => {
 	if (objeto.input_CallComponentBool) {
-		return <EtiquetaInput objeto={objeto} />;
+		return <EtiquetaInput objeto={objeto} valorInicial={valorInicial} />;
 	} else if (objeto.select_CallComponentBool) {
 		return <EtiquetaSelect objeto={objeto} />;
 	} else if (objeto.flatPickr_CallComponentBool) {
@@ -21,14 +21,14 @@ const saberCampo = (objeto) => {
 	return null;
 };
 
-const Input = ({ objeto}) => {
+const Input = ({ objeto, valorInicial }) => {
 	return (
 		<>
 			<div className={objeto.divClassNameCol}>
-				{saberCampo(objeto)}
+				{saberCampo(objeto, valorInicial)}
 			</div>
 		</>
 	);
 };
 
-export default Input;
+export default memo(Input);

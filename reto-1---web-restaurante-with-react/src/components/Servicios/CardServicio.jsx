@@ -1,7 +1,12 @@
+import { faCalendarPlus } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import DatosServicios from "../../consts json/Servicios/DatosServicios.json";
-
+import DatosEtiquetaLinkReserva from "../../consts json/Servicios/DatosEtiquetaLinkReserva.json";
+import EtiquetaLink from "../Creacion de Etiquetas HTML/EtiquetaLink";
 const CardServicio = () => {
+	if (DatosEtiquetaLinkReserva.fontAwesomeIcon_icon === "faCalendarPlus") {
+		DatosEtiquetaLinkReserva["fontAwesomeIcon_icon"] = faCalendarPlus;
+	}
 	return (
 		<>
 			<div className="row">
@@ -27,15 +32,7 @@ const CardServicio = () => {
 									>
 										{servicio.descripcion}
 									</p>
-									<a
-										href="/reserva"
-										className="btn btn-lg boton-contacto"
-										style={{ backgroundColor: "rgb(255, 217, 0)" }}
-										type="button"
-									>
-										<i className="fas fa-calendar-plus" />
-										<span>¡Reserva ya!</span>
-									</a>
+									<EtiquetaLink objectArray={DatosEtiquetaLinkReserva} />
 								</div>
 							</div>
 						</div>

@@ -1,5 +1,11 @@
-const minus = (idPlato, inputs, cargarCampos) => {
-	const nombreInput = `cantidad_${idPlato}`;
+const minus = (
+	plato,
+	inputs,
+	cargarCampos,
+	actualizarTotalCarrito,
+	nameComponente
+) => {
+	const nombreInput = `cantidad_${plato.idPlato}`;
 
 	const cantidad_input = inputs[nombreInput]?.valor;
 
@@ -11,6 +17,9 @@ const minus = (idPlato, inputs, cargarCampos) => {
 					error: false,
 					error1: false,
 				});
+				if (nameComponente === "Carrito") {
+					actualizarTotalCarrito((total) => total - plato.valor.split("$")[1]);
+				}
 			}
 		}
 	} else {
@@ -20,9 +29,14 @@ const minus = (idPlato, inputs, cargarCampos) => {
 		});
 	}
 };
-const plus = (idPlato, inputs, cargarInputs) => {
-	const nombreInput = `cantidad_${idPlato}`;
-
+const plus = (
+	plato,
+	inputs,
+	cargarInputs,
+	actualizarTotalCarrito,
+	nameComponente
+) => {
+	const nombreInput = `cantidad_${plato.idPlato}`;
 	const cantidad_input = inputs[nombreInput]?.valor;
 
 	if (cantidad_input !== undefined) {
@@ -33,6 +47,11 @@ const plus = (idPlato, inputs, cargarInputs) => {
 					error: false,
 					error1: false,
 				});
+				if (nameComponente === "Carrito") {
+					actualizarTotalCarrito(
+						(total) => total + parseInt(plato.valor.split("$")[1])
+					);
+				}
 			}
 		} else {
 			cargarInputs(1, nombreInput, true, {

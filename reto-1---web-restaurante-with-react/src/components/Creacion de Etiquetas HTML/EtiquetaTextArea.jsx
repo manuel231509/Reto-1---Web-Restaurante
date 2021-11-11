@@ -10,27 +10,21 @@ import { handleInputsChange } from "../Inputs/ValidacionCampos";
 const EtiquetaTextArea = ({ objeto }) => {
 	const { inputs, cargarCampos, campoValido } = useContext(CantidadContext);
 
-	const inicializarTextArea = (valorInicial, nombreInput) => {
-		if (inputs[nombreInput]?.valor === undefined) {
-			cargarCampos(valorInicial, nombreInput, false, {
-				error: false,
-				error1: false,
-			});
-		}
-	};
 	if (objeto.textArea_CallComponentBool) {
 		return (
 			<>
 				<div
 					className={
-						inputs[`${objeto.nameTextArea}_${objeto.id}`]?.error.error ===
-							false &&
-						inputs[`${objeto.nameTextArea}_${objeto.id}`]?.error.error1 ===
-							false
-							? inputs[`${objeto.nameTextArea}_${objeto.id}`]?.campoValido
-								? "formulario__grupo formulario__grupo-correcto"
-								: "formulario__grupo"
-							: "formulario__grupo formulario__grupo-incorrecto"
+						inputs[`${objeto.nameTextArea}_${objeto.id}`]?.valor !== undefined
+							? inputs[`${objeto.nameTextArea}_${objeto.id}`]?.error.error ===
+									false &&
+							  inputs[`${objeto.nameTextArea}_${objeto.id}`]?.error.error1 ===
+									false
+								? inputs[`${objeto.nameTextArea}_${objeto.id}`]?.campoValido
+									? "formulario__grupo formulario__grupo-correcto"
+									: "formulario__grupo"
+								: "formulario__grupo formulario__grupo-incorrecto"
+							: "formulario__grupo"
 					}
 					id={objeto.divIdGrupo}
 				>
@@ -45,17 +39,13 @@ const EtiquetaTextArea = ({ objeto }) => {
 						<textarea
 							id={`${objeto.textAreaId}_${objeto.id}`}
 							name={`${objeto.nameTextArea}_${objeto.id}`}
-							value={
-								inputs[`${objeto.nameTextArea}_${objeto.id}`]?.valor ===
-								undefined
-									? inicializarTextArea(
-											objeto.valorInicial,
-											`${objeto.nameTextArea}_${objeto.id}`
-									  )
-									: inputs[`${objeto.nameTextArea}_${objeto.id}`].valor
+							value={inputs[`${objeto.nameTextArea}_${objeto.id}`]?.valor || ""}
+							onChange={(e) =>
+								handleInputsChange(e.target, cargarCampos, campoValido)
 							}
-							onChange={(e) => handleInputsChange(e, cargarCampos, campoValido)}
-							onBlur={(e) => handleInputsChange(e, cargarCampos, campoValido)}
+							onBlur={(e) =>
+								handleInputsChange(e.target, cargarCampos, campoValido)
+							}
 							className={
 								inputs[`${objeto.nameTextArea}_${objeto.id}`]?.campoValido
 									? `${objeto.textAreaClassName} formulario__input-check`

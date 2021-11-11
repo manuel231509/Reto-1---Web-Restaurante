@@ -13,28 +13,21 @@ import CantidadContext from "../../contexts/Inputs/InputsContext";
 const EtiquetaFlatPickr = ({ objeto }) => {
 	const { inputs, cargarCampos, campoValido } = useContext(CantidadContext);
 
-	const inicializarFlatPickr = (valorInicial, nombreInput) => {
-		if (inputs[nombreInput]?.valor === undefined) {
-			cargarCampos(valorInicial, nombreInput, false, {
-				error: false,
-				error1: false,
-			});
-		}
-	};
-
 	if (objeto.flatPickr_CallComponentBool) {
 		return (
 			<>
 				<div
 					className={
-						inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.error.error ===
-							false &&
-						inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.error.error1 ===
-							false
-							? inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.campoValido
-								? "formulario__grupo formulario__grupo-correcto"
-								: "formulario__grupo"
-							: "formulario__grupo formulario__grupo-incorrecto"
+						inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.valor !== undefined
+							? inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.error.error ===
+									false &&
+							  inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.error.error1 ===
+									false
+								? inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.campoValido
+									? "formulario__grupo formulario__grupo-correcto"
+									: "formulario__grupo"
+								: "formulario__grupo formulario__grupo-incorrecto"
+							: "formulario__grupo"
 					}
 					id={objeto.divIdGrupo}
 				>
@@ -55,17 +48,11 @@ const EtiquetaFlatPickr = ({ objeto }) => {
 									: config_hora
 							}
 							value={
-								inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.valor ===
-								undefined
-									? inicializarFlatPickr(
-											objeto.valorInicial,
-											`${objeto.nameFlatPickr}_${objeto.id}`
-									  )
-									: inputs[`${objeto.nameFlatPickr}_${objeto.id}`].valor
+								inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.valor || ""
 							}
 							onBlur={(e) => {
 								e.preventDefault();
-								handleInputsChange(e, cargarCampos, campoValido);
+								handleInputsChange(e.target, cargarCampos, campoValido);
 							}}
 							className={
 								inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.campoValido
@@ -91,9 +78,12 @@ const EtiquetaFlatPickr = ({ objeto }) => {
 					</div>
 					<p
 						className={
-							!inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.saber &&
-							inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.error?.error1
-								? "invalid-feedback formulario__input-error1-activo"
+							inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.valor !==
+							undefined
+								? !inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.saber &&
+								  inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.error?.error1
+									? "invalid-feedback formulario__input-error1-activo"
+									: "invalid-feedback formulario__input-error1"
 								: "invalid-feedback formulario__input-error1"
 						}
 					>
@@ -101,10 +91,13 @@ const EtiquetaFlatPickr = ({ objeto }) => {
 					</p>
 					<p
 						className={
-							!inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.saber &&
-							inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.error?.error
-								? "invalid-feedback formulario__input-error-activo"
-								: "invalid-feedback formulario__input-error"
+							inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.valor !==
+							undefined
+								? !inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.saber &&
+								  inputs[`${objeto.nameFlatPickr}_${objeto.id}`]?.error?.error
+									? "invalid-feedback formulario__input-error-activo"
+									: "invalid-feedback formulario__input-error"
+								: "invalid-feedback formulario__input-error1"
 						}
 					>
 						{objeto.pFormularioInputErrorTexto}

@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter, Switch, Route /* Link */ } from "react-router-dom";
+import { Switch, Route, HashRouter } from "react-router-dom";
+
 import Layout from "../components/Layout/Layout";
 import Menu from "../views/Menu";
 import Reserva from "../views/Reserva";
@@ -8,37 +9,46 @@ import Servicios from "../views/Servicios";
 import Carrito from "../views/Carrito";
 import Inicio from "../views/Inicio";
 import Login from "../views/Login";
+
 const routes = [
 	{
 		path: "/carrito",
+		exact: true,
 		component: Carrito,
 	},
 	{
 		path: "/menu",
+		exact: true,
 		component: Menu,
 	},
 	{
 		path: "/reserva",
+		exact: true,
 		component: Reserva,
 	},
 	{
 		path: "/servicios",
+		exact: true,
 		component: Servicios,
 	},
 	{
 		path: "/login",
+		exact: true,
 		component: Login,
 	},
 	{
 		path: "/nosotros",
+		exact: true,
 		component: Nosotros,
 	},
 	{
 		path: "/inicio",
+		exact: true,
 		component: Inicio,
 	},
 	{
 		path: "/",
+		exact: true,
 		component: Inicio,
 	},
 	/*{
@@ -59,7 +69,7 @@ const routes = [
 const Router = () => {
 	return (
 		<>
-			<BrowserRouter>
+			<HashRouter>
 				<Layout>
 					<Switch>
 						{routes.map((route, i) => (
@@ -67,7 +77,7 @@ const Router = () => {
 						))}
 					</Switch>
 				</Layout>
-			</BrowserRouter>
+			</HashRouter>
 		</>
 	);
 };
@@ -78,7 +88,6 @@ const RouteWithSubRoutes = (route) => {
 			<Route
 				path={route.path}
 				render={(props) => (
-					// pass the sub-routes down to keep nesting
 					<route.component {...props} routes={route.routes} />
 				)}
 			/>

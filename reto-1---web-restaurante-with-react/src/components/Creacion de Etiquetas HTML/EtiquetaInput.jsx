@@ -2,8 +2,8 @@ import {
 	faCheckCircle,
 	faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import React, { useContext } from "react";
-import CantidadContext from "../../contexts/Inputs/InputsContext";
+import React, { memo, useContext, useEffect } from "react";
+import InputsContext from "../../contexts/Inputs/InputsContext";
 import EtiquetaFontAwesomeIcon from "../FontAwesome/EtiquetaFontAwesomeIcon";
 import { handleInputsChange } from "../Inputs/ValidacionCampos";
 
@@ -21,34 +21,39 @@ const Label = ({ objeto }) => {
 	return null;
 };
 
-const EtiquetaInput = ({ objeto }) => {
-	const { inputs, cargarCampos, campoValido } = useContext(CantidadContext);
+const EtiquetaInput = ({ objeto, valorInicial }) => {
+	const { inputs, cargarCampos, campoValido } = useContext(InputsContext);
+	const nameInput = `${objeto.nameInput}_${objeto.id}`;
 
-	const inicializarInputs = (valorInicial, nombreInput, cargarInputs) => {
-		if (inputs[nombreInput]?.valor === undefined) {
-			cargarInputs(
-				valorInicial,
-				nombreInput,
-				valorInicial !== "" ? true : false,
-				{
+	console.log("ETIQUETA INPUT ---- ", objeto);
+	useEffect(() => {
+		if (
+			objeto.nameComponente === "Carrito" ||
+			objeto.nameComponente === "Menu"
+		) {
+			if (inputs[nameInput]?.valor === undefined) {
+				cargarCampos(valorInicial, nameInput, true, {
 					error: false,
 					error1: false,
-				}
-			);
+				});
+			}
 		}
-	};
-
+	}, [objeto.nameComponente, cargarCampos, inputs, nameInput, valorInicial]);
 	if (objeto.input_CallComponentBool) {
 		return (
 			<>
 				<div
 					className={
-						inputs[`${objeto.nameInput}_${objeto.id}`]?.error.error === false &&
-						inputs[`${objeto.nameInput}_${objeto.id}`]?.error.error1 === false
-							? inputs[`${objeto.nameInput}_${objeto.id}`]?.campoValido
-								? "formulario__grupo formulario__grupo-correcto"
-								: "formulario__grupo"
-							: "formulario__grupo formulario__grupo-incorrecto"
+						inputs[`${objeto.nameInput}_${objeto.id}`]?.valor !== undefined
+							? inputs[`${objeto.nameInput}_${objeto.id}`]?.error.error ===
+									false &&
+							  inputs[`${objeto.nameInput}_${objeto.id}`]?.error.error1 ===
+									false
+								? inputs[`${objeto.nameInput}_${objeto.id}`]?.campoValido
+									? "formulario__grupo formulario__grupo-correcto"
+									: "formulario__grupo"
+								: "formulario__grupo formulario__grupo-incorrecto"
+							: "formulario__grupo"
 					}
 					id={objeto.divIdGrupo}
 				>
@@ -58,23 +63,22 @@ const EtiquetaInput = ({ objeto }) => {
 							id={`${objeto.inputId}_${objeto.id}`}
 							type={objeto.inputType}
 							name={`${objeto.nameInput}_${objeto.id}`}
-							value={
-								inputs[`${objeto.nameInput}_${objeto.id}`]?.valor === undefined
-									? inicializarInputs(
-											objeto.valorInicial,
-											`${objeto.nameInput}_${objeto.id}`,
-											cargarCampos
-									  )
-									: inputs[`${objeto.nameInput}_${objeto.id}`]?.valor
-							}
-							onChange={(e) => handleInputsChange(e, cargarCampos, campoValido)}
-							onBlur={(e) => handleInputsChange(e, cargarCampos, campoValido)}
+							value={inputs[`${objeto.nameInput}_${objeto.id}`]?.valor || ""}
+							onChange={(e) => {
+								e.preventDefault();
+								handleInputsChange(e.target, cargarCampos, campoValido);
+							}}
+							onBlur={(e) => {
+								e.preventDefault();
+								handleInputsChange(e.target, cargarCampos, campoValido);
+							}}
 							className={
 								inputs[`${objeto.nameInput}_${objeto.id}`]?.campoValido
 									? `${objeto.inputClassName} formulario__input-check`
 									: objeto.inputClassName
 							}
 							placeholder={objeto.inputPlaceHolder}
+							disabled={objeto.inputDisabled}
 							required
 						/>
 
@@ -120,4 +124,4 @@ const EtiquetaInput = ({ objeto }) => {
 	return <></>;
 };
 
-export default EtiquetaInput;
+export default memo(EtiquetaInput);

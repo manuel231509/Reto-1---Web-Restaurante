@@ -10,27 +10,21 @@ import { handleInputsChange } from "../Inputs/ValidacionCampos";
 const EtiquetaSelect = ({ objeto }) => {
 	const { inputs, cargarCampos, campoValido } = useContext(CantidadContext);
 
-	const inicializarSelect = (valorInicial, nombreInput) => {
-		if (inputs[nombreInput]?.valor === undefined) {
-			cargarCampos(valorInicial, nombreInput, false, {
-				error: false,
-				error1: false,
-			});
-		}
-	};
-
 	if (objeto.select_CallComponentBool) {
 		return (
 			<>
 				<div
 					className={
-						inputs[`${objeto.nameSelect}_${objeto.id}`]?.error.error ===
-							false &&
-						inputs[`${objeto.nameSelect}_${objeto.id}`]?.error.error1 === false
-							? inputs[`${objeto.nameSelect}_${objeto.id}`]?.campoValido
-								? "formulario__grupo formulario__grupo-correcto"
-								: "formulario__grupo"
-							: "formulario__grupo formulario__grupo-incorrecto"
+						inputs[`${objeto.nameSelect}_${objeto.id}`]?.valor !== undefined
+							? inputs[`${objeto.nameSelect}_${objeto.id}`]?.error.error ===
+									false &&
+							  inputs[`${objeto.nameSelect}_${objeto.id}`]?.error.error1 ===
+									false
+								? inputs[`${objeto.nameSelect}_${objeto.id}`]?.campoValido
+									? "formulario__grupo formulario__grupo-correcto"
+									: "formulario__grupo"
+								: "formulario__grupo formulario__grupo-incorrecto"
+							: "formulario__grupo"
 					}
 					id={objeto.divIdGrupo}
 				>
@@ -45,16 +39,13 @@ const EtiquetaSelect = ({ objeto }) => {
 						<select
 							id={objeto.selectId}
 							name={`${objeto.nameSelect}_${objeto.id}`}
-							value={
-								inputs[`${objeto.nameSelect}_${objeto.id}`]?.valor === undefined
-									? inicializarSelect(
-											objeto.valorInicial,
-											`${objeto.nameSelect}_${objeto.id}`
-									  )
-									: inputs[`${objeto.nameSelect}_${objeto.id}`].valor
+							value={inputs[`${objeto.nameSelect}_${objeto.id}`]?.valor || ""}
+							onChange={(e) =>
+								handleInputsChange(e.target, cargarCampos, campoValido)
 							}
-							onChange={(e) => handleInputsChange(e, cargarCampos, campoValido)}
-							onBlur={(e) => handleInputsChange(e, cargarCampos, campoValido)}
+							onBlur={(e) =>
+								handleInputsChange(e.target, cargarCampos, campoValido)
+							}
 							className={
 								inputs[`${objeto.nameSelect}_${objeto.id}`]?.campoValido
 									? `${objeto.selectClassName} formulario__input-check`

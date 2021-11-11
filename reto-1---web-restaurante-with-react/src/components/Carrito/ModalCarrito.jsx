@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import CarritoContext from "../../contexts/CarritoContext";
 import { sendMailCarrito } from "../../EmailJS/EmailJS";
 
-const ModalCarrito = ({ totalCarrito }) => {
+const ModalCarrito = (/* totalCarrito */) => {
 	const initialInputModalCarrito = {
 		to_name: "",
 		correo: "",
@@ -113,7 +113,8 @@ const ModalCarrito = ({ totalCarrito }) => {
 									className="btn btn-primary text-uppercase"
 									onClick={(e) => {
 										e.preventDefault();
-										const message = `SE REALIZÓ LA COMPRA DE LOS PLATILLOS, EL TOTAL DEL PEDIDO ES DE: ${totalCarrito}`;
+										const message =
+											"SE REALIZÓ LA COMPRA DE LOS PLATILLOS, EL TOTAL DEL PEDIDO ES DE: /* totalCarrito */";
 										Swal.fire({
 											title: "¿Deseas continuar con el pedido?",
 											showDenyButton: true,

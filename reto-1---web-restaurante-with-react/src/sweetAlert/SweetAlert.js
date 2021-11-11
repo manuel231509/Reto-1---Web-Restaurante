@@ -52,14 +52,43 @@ const sweetAlertMenuAgregarCarrito = (
 	});
 };
 
-const sweetAlert = (
-	position,
-	icon,
-	title,
-	text,
-	showConfirmButton,
-	timer
+const sweetAlertBtnEliminarPlatillo = (
+	eliminarPlatilloByIdLocalStorage,
+	handleRemoveItem,
+	platillo,
+	actualizarTotalCarrito
 ) => {
+	MySwal.fire({
+		icon: "question",
+		title: "¿DESEAS ELIMINAR ESTE PLATO DEL CARRITO?",
+		showDenyButton: true,
+		showConfirmButton: false,
+		showCancelButton: true,
+		denyButtonText: `Eliminar`,
+	}).then((result) => {
+		if (result.isDenied) {
+			eliminarPlatilloByIdLocalStorage(platillo, "platillos");
+			handleRemoveItem(platillo.index);
+			const valorTotal = platillo.valor.split("$")[1] * platillo.cantidad;
+			actualizarTotalCarrito((total) => total - valorTotal);
+			Swal.fire({
+				icon: "success",
+				title: "EL PLATO FUE ELIMINADO CON EXITO",
+				showConfirmButton: false,
+				timer: 1100,
+			});
+		} else {
+			MySwal.fire({
+				icon: "error",
+				title: "EL PLATO NO FUE ELIMINADO",
+				showConfirmButton: false,
+				timer: 1100,
+			});
+		}
+	});
+};
+
+const sweetAlert = (position, icon, title, text, showConfirmButton, timer) => {
 	MySwal.fire({
 		position: position,
 		icon: icon,
@@ -70,4 +99,8 @@ const sweetAlert = (
 	});
 };
 
-export { sweetAlertMenuAgregarCarrito, sweetAlert };
+export {
+	sweetAlertMenuAgregarCarrito,
+	sweetAlert,
+	sweetAlertBtnEliminarPlatillo,
+};
