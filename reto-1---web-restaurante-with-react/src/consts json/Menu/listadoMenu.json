@@ -1,66 +1,56 @@
 [
 	{
 		"titulo": "EXAMPLE",
-		"descripcion":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
+		"descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
 		"valor": "$20000",
 		"urlImagen": "./assets/images/menu1.jpg"
 	},
 	{
 		"titulo": "EXAMPLE 1",
-		"descripcion":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
+		"descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
 		"valor": "$25000",
-		"urlImagen":
-			"./assets/images/menu2_grilles-chicken-steak-with-teriyaki-sauce.jpg"
+		"urlImagen": "./assets/images/menu2_grilles-chicken-steak-with-teriyaki-sauce.jpg"
 	},
 	{
 		"titulo": "EXAMPLE 2",
-		"descripcion":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
+		"descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
 		"valor": "$30000",
 		"urlImagen": "./assets/images/menu3_lamb-steak-pieces-with-sauces-grill.jpg"
 	},
 	{
 		"titulo": "EXAMPLE 3",
-		"descripcion":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
+		"descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
 		"valor": "$35000",
 		"urlImagen": "./assets/images/hamburguesa.png"
 	},
 	{
 		"titulo": "EXAMPLE 4",
-		"descripcion":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
+		"descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
 		"valor": "$40000",
 		"urlImagen": "./assets/images/1.jpg"
 	},
 	{
 		"titulo": "EXAMPLE 5",
-		"descripcion":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
+		"descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
 		"valor": "$45000",
 		"urlImagen": "./assets/images/2.jpg"
 	},
 	{
 		"titulo": "EXAMPLE 6",
-		"descripcion":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
+		"descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
 		"valor": "$45000",
 		"urlImagen": "./assets/images/3.jpg"
 	},
 	{
 		"titulo": "EXAMPLE 7",
-		"descripcion":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
+		"descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
 		"valor": "$50000",
-		"urlImagen": "./assets/images/reuniones.jpg"
+		"urlImagen": "./assets/images/menu4_celebraciones.jpg"
 	},
 	{
 		"titulo": "EXAMPLE 8",
-		"descripcion":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
+		"descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quo architecto cumque eligendi nisi voluptatum doloribus quidem autem, quibusdam molestias quis deserunt vitae non facere nobis! Est in, id temporibus consequuntur vel, vitae architecto nemo at voluptate itaque reprehenderit similique earum aperiam ipsa ratione. Consectetur distinctio dolor odit minima mollitia tempore nobis laudantium id debitis ullam et itaque, dolorum explicabo.",
 		"valor": "$55000",
-		"urlImagen": "./assets/images/celebraciones.jpg"
+		"urlImagen": "./assets/images/menu5_reuniones.jpg"
 	}
 ]
