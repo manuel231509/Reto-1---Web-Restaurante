@@ -1,0 +1,46 @@
+[
+	{
+		"imgSrc": "./assets/images/testimonio.jpg",
+		"imgAlt": "testimonio",
+		"spanDescripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sint nesciunt ad itaque aperiam expedita officiis incidunt minus facere, molestias quisquam impedit inventore.",
+		"user": "Random User",
+		"divCarouselItem": {
+			"className": "carousel-item active"
+		},
+		"carouselIndicactors": {
+			"type": "button",
+			"data-bs-target": "#carouselDarkVariant",
+			"className": "active",
+			"aria-current": "true",
+			"aria-label": "Slide 1"
+		}
+	},
+	{
+		"imgSrc": "./assets/images/testimonio2.jpg",
+		"imgAlt": "testimonio2",
+		"spanDescripcion": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+		"user": "Random User",
+		"divCarouselItem": {
+			"className": "carousel-item"
+		},
+		"carouselIndicactors": {
+			"type": "button",
+			"data-bs-target": "#carouselDarkVariant",
+			"aria-label": "Slide 1"
+		}
+	},
+	{
+		"imgSrc": "./assets/images/testimonio3.jpg",
+		"imgAlt": "testimonio3",
+		"spanDescripcion": "At vero eos et accusamus et iusto odio dignissimos qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint amet dolore.",
+		"user": "Random User",
+		"divCarouselItem": {
+			"className": "carousel-item"
+		},
+		"carouselIndicactors": {
+			"type": "button",
+			"data-bs-target": "#carouselDarkVariant",
+			"aria-label": "Slide 1"
+		}
+	}
+]
