@@ -42,7 +42,8 @@ const ColumnaValorUnitarioBtnDelete = ({ platillo }) => {
 							type="button"
 							className="btn btn-danger boton-carrito-eliminar"
 							style={{ height: "3rem", width: "3rem" }}
-							onClick={() => {
+							onClick={(e) => {
+								e.preventDefault();
 								sweetAlertBtnEliminarPlatillo(
 									eliminarPlatilloByIdLocalStorage,
 									handleRemoveItem,
