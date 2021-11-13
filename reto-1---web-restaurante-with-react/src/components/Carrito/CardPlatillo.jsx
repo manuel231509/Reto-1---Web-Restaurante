@@ -14,6 +14,7 @@ const CardPlatillo = ({ platillo }) => {
 	const actualizarTotal = () => {
 		actualizarTotalCarrito((total) => total + valorTotal);
 	};
+	
 	useEffect(() => {
 		actualizarTotal();
 	}, []);
@@ -27,16 +28,24 @@ const CardPlatillo = ({ platillo }) => {
 				}}
 			>
 				<div className="row">
-					<div className="col-lg-4 col-md-12 col-sm-12	p-0	d-flex align-items-center	flex-column">
+					<div className="col-lg-4 col-md-12 col-sm-12	p-0	d-flex justify-content-center align-items-center	flex-column">
 						<div
 							className="card-body"
-							style={{ maxHeight: "100%", padding: "0%" }}
+							style={{
+								maxHeight: "90%",
+								maxWidth: "95%",
+								padding: "0%",
+							}}
 						>
 							<img
 								src={platillo.urlImagen}
 								alt="foto-producto-carrito"
 								className="imagen-carrito"
-								style={{ width: "100%", height: "100%" }}
+								style={{
+									width: "100%",
+									height: "100%",
+									objectFit: "cover",
+								}}
 							/>
 						</div>
 					</div>
