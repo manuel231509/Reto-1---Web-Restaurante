@@ -1,18 +1,20 @@
-import React, { useContext } from "react";
-import CarritoContext from "../../contexts/Carrito/CarritoContext";
+import React, { useContext, useEffect, useRef } from "react";
+import ColPagarAhoraContext from "../../contexts/Carrito/ColPagarAhoraContext";
 import InputsContext from "../../contexts/Inputs/InputsContext";
 
 const ColumnaPagarAhora = () => {
-	const { platillos } = useContext(CarritoContext);
 	const { totalCarrito } = useContext(InputsContext);
-
+	const refColPagarAhora = useRef();
+	const { handleChangeColPagarAhora } = useContext(ColPagarAhoraContext);
+	useEffect(() => {
+		handleChangeColPagarAhora(refColPagarAhora.current);
+	}, [handleChangeColPagarAhora]);
 	return (
 		<>
 			<div
 				id="col_pagar-ahora"
-				className={`col-lg-4 col-md-12 d-flex align-items-center mb-5 ${
-					platillos.length === 0 ? "d-none" : ""
-				}`}
+				ref={refColPagarAhora}
+				className={`col-lg-4 col-md-12 d-flex align-items-center mb-5 d-none`}
 				style={{ marginTop: 0 }}
 			>
 				<div className="card-body">

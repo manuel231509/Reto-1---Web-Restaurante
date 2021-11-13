@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react";
+import React, { memo, useContext, useEffect, useRef, useState } from "react";
 import {
 	faFacebookF,
 	faTwitter,
@@ -15,14 +15,20 @@ import {
 	faShoppingCart,
 	faSignInAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import NavBarContext from "../../contexts/NavBar/NavBarContext";
 
-const NavBar = forwardRef((props, refNavBar) => {
+const NavBar = () => {
+	const refNavBar = useRef();
+
 	const [expandedAria, setExpandedAria] = useState(false);
-
+	const { handleChangeNavBar } = useContext(NavBarContext);
 	const ariaExpanded = () => {
 		const valor = !expandedAria;
 		setExpandedAria(valor);
 	};
+	useEffect(() => {
+		handleChangeNavBar(refNavBar.current);
+	}, [handleChangeNavBar]);
 	return (
 		<>
 			<nav id="menu" ref={refNavBar} className="navbar-expand-lg bg-red-600">
@@ -114,6 +120,6 @@ const NavBar = forwardRef((props, refNavBar) => {
 			</nav>
 		</>
 	);
-});
+};
 
-export default NavBar;
+export default memo(NavBar);

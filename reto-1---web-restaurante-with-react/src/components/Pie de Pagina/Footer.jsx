@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { memo, useContext, useEffect, useRef } from "react";
 import {
 	faFacebookF,
 	faTwitter,
@@ -11,8 +11,16 @@ import ComponentEtiquetaLi from "../Creacion de Etiquetas HTML/EtiquetaLi";
 import objectRedesSociales from "../../consts json/Pie de Pagina/objectRedesSociales.json";
 import objectsUl from "../../consts json/Pie de Pagina/objectsUl.json";
 import arrayDescripcionContactoRest from "../../consts json/Pie de Pagina/arrayDescripcionContactoRest.json";
+import FooterContext from "../../contexts/Footer/FooterContext";
 
-const Footer = forwardRef((props, refFooter) => {
+const Footer = () => {
+	const refFooter = useRef();
+
+	const { handleChangeFooter } = useContext(FooterContext);
+
+	useEffect(() => {
+		handleChangeFooter(refFooter.current);
+	}, [handleChangeFooter]);
 	return (
 		<>
 			<footer
@@ -148,6 +156,6 @@ const Footer = forwardRef((props, refFooter) => {
 			</footer>
 		</>
 	);
-});
+};
 
-export default Footer;
+export default memo(Footer);
