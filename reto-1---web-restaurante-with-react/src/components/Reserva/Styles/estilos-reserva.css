@@ -14,15 +14,14 @@
 	-moz-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
 }
 
-.card-principal-reserva > .card:hover {
-	margin: 20px;
+.reserva .card:hover {
 	border-radius: 2px;
 	box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
 }
 
-.card-principal-reserva > .reserva {
+.reserva {
 	padding: 0%;
 	margin: 0%;
 	background-color: initial;
@@ -44,7 +43,7 @@
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.card-principal-reserva .card-title {
+.card-title {
 	font-size: 3.5rem;
 	color: #682828;
 	font-family: Georgia, "Times New Roman", Times, serif;

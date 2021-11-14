@@ -25,7 +25,7 @@ const CardPlato = ({ plato }) => {
 						}}
 					>
 						<img
-							className="card-img-top img-fluid"
+							className="card-img-top"
 							src={plato.urlImagen}
 							alt={plato.titulo}
 							width="300"

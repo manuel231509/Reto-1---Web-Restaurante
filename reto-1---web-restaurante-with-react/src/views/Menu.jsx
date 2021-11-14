@@ -4,13 +4,14 @@ import ModalDescripcionProducto from "../components/Menu/Modal Descripcion/Modal
 
 import PlatoProvider from "../contexts/Menu/PlatoProvider";
 import "../components/Menu/Styles/estilos-menu.css";
+import EtiquetaFontAwesomeIcon from "../components/FontAwesome/EtiquetaFontAwesomeIcon";
 
 const Menu = () => {
 	return (
 		<>
 			<PlatoProvider>
 				{/* <!-- Menu --> */}
-				<div className="container card-principal card-principal-menu">
+				<div className="container card-principal-menu">
 					<div className="card mt-4">
 						<div id="card-body" className="card-body">
 							<div className="d-flex flex-column">
@@ -19,7 +20,15 @@ const Menu = () => {
 									className="btn btn-primary justify-content-center mb-3"
 									type="button"
 								>
-									<i className="fas fa-file-download me-3" />
+									<EtiquetaFontAwesomeIcon
+										objectArray={{
+											fontAwesomeIcon_CallComponentBool: true,
+											atributosFontAwesomeIcon: {
+												className: "fas me-3",
+											},
+											fontAwesomeIcon_icon: "faFileDownload",
+										}}
+									/>
 									DESCARGAR EL MENÚ
 								</button>
 							</div>

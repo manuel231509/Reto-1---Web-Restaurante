@@ -1,11 +1,18 @@
-.boton-contacto p {
+.card-servicios .boton-contacto p {
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
 	transition: 0.5s;
 }
 
-.boton-contacto p:after {
+.card-servicios:hover {
+	border-radius: 2px;
+	box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.75);
+}
+
+.card-servicios .boton-contacto p:after {
 	content: "\00bb";
 	position: absolute;
 	opacity: 0;
@@ -14,16 +21,16 @@
 	transition: 0.5s;
 }
 
-.boton-contacto:hover p {
+.card-servicios .boton-contacto:hover p {
 	padding-right: 25px;
 }
 
-.boton-contacto:hover p:after {
+.card-servicios .boton-contacto:hover p:after {
 	opacity: 1;
 	right: 0;
 }
 
-.img-fluid {
+.card-servicios .img-fluid {
 	z-index: 1;
 }
 
