@@ -6,12 +6,11 @@ import PlatoProvider from "../contexts/Menu/PlatoProvider";
 import "../components/Menu/Styles/estilos-menu.css";
 
 const Menu = () => {
-
 	return (
 		<>
 			<PlatoProvider>
 				{/* <!-- Menu --> */}
-				<div className="container card-principal">
+				<div className="container card-principal card-principal-menu">
 					<div className="card mt-4">
 						<div id="card-body" className="card-body">
 							<div className="d-flex flex-column">

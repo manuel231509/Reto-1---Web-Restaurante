@@ -2,7 +2,6 @@ import React from "react";
 import DatosTrabajadores from "../../consts json/Nosotros/DatosTrabajadores.json";
 
 const Trabajadores = () => {
-	console.log("Está acá");
 	return (
 		<>
 			<section className="trabajadores bg-danger bg-gradient py-5">

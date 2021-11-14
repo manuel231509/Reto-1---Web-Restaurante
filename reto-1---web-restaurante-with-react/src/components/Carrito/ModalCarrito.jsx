@@ -20,9 +20,6 @@ const ModalCarrito = (/* totalCarrito */) => {
 	};
 
 	const cargarInputModalCarrito = (name, value) => {
-		console.log("CargarInputModalCarrito");
-		console.log(name);
-		console.log(value);
 		setInputModalCarrito({
 			...inputModalCarrito,
 			[name]: value,

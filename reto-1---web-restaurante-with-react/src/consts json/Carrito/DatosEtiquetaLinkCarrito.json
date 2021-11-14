@@ -1,10 +1,15 @@
 {
 	"link_CallComponentBool": true,
-	"link_className": "btn btn-lg p-3 fs-3 fw-bold",
-	"link_to": "/menu",
-	"link_role": "button",
-	"link_style": { "backgroundColor": "#fd7e14", "color": "#ffffff" },
+	"atributosLink": {
+		"className": "btn btn-lg p-3 fs-3 fw-bold",
+		"to": "/menu",
+		"role": "button",
+		"style": { "backgroundColor": "#fd7e14", "color": "#ffffff" }
+	},
+
 	"p_CallComponentBool": true,
+	"atributosP": {},
 	"p_texto": "SEGUIR COMPRANDO",
+
 	"fontAwesomeIcon_CallComponentBool": false
 }

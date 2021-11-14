@@ -14,7 +14,7 @@
 	-moz-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
 }
 
-.card-principal-reserva:hover {
+.card-principal-reserva > .card:hover {
 	margin: 20px;
 	border-radius: 2px;
 	box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
@@ -22,13 +22,13 @@
 	-moz-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.5);
 }
 
-.reserva {
+.card-principal-reserva > .reserva {
 	padding: 0%;
 	margin: 0%;
 	background-color: initial;
 }
 
-.reserva > .card {
+.card-principal-reserva .reserva > .card {
 	padding: 0%;
 	margin: 0%;
 	/*width: 60%;*/
@@ -272,18 +272,18 @@
 
 /* ----- -----  Mediaqueries ----- ----- */
 @media (min-width: 0px) {
-	.reserva > .card {
+	.card-principal-reserva .reserva > .card {
 		width: 100%;
 		background-color: inherit;
 	}
-	.card-principal-reserva .card-body {
+	.card-principal-reserva .card-principal-reserva .card-body {
 		background: none;
 		padding-left: 25px;
 		padding-right: 25px;
 	}
 }
 @media (min-width: 576px) {
-	.reserva > .card {
+	.card-principal-reserva .reserva > .card {
 		width: 89%;
 		background: #f3f2f2;
 	}
@@ -293,7 +293,7 @@
 	}
 }
 @media (min-width: 768px) {
-	.reserva > .card {
+	.card-principal-reserva .reserva > .card {
 		width: 80%;
 	}
 	.card-principal-reserva .card-body {
@@ -303,7 +303,7 @@
 }
 
 @media (min-width: 992px) {
-	.reserva > .card {
+	.card-principal-reserva .reserva > .card {
 		width: 65%;
 	}
 	.card-principal-reserva .card-body {

@@ -1,21 +1,31 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+const iconsFas = require("@fortawesome/free-solid-svg-icons");
+const iconsFab = require("@fortawesome/free-brands-svg-icons");
 const EtiquetaFontAwesomeIcon = (props) => {
 	const {
 		fontAwesomeIcon_CallComponentBool,
-		fontAwesomeIcon_className,
+		atributosFontAwesomeIcon,
 		fontAwesomeIcon_icon,
-		fontAwesomeIcon_style,
 	} = props.objectArray;
 	if (fontAwesomeIcon_CallComponentBool) {
+		let clasNameFasFab = "";
+		if (atributosFontAwesomeIcon.className.indexOf("fas") >= 0) {
+			clasNameFasFab = "fas";
+		}
+		if (atributosFontAwesomeIcon.className.indexOf("fab") >= 0) {
+			clasNameFasFab = "fab";
+		}
 
 		return (
 			<FontAwesomeIcon
-				className={fontAwesomeIcon_className}
-				icon={fontAwesomeIcon_icon}
-				style={fontAwesomeIcon_style}
+				{...atributosFontAwesomeIcon}
+				icon={
+					clasNameFasFab === "fas"
+						? iconsFas[fontAwesomeIcon_icon]
+						: iconsFab[fontAwesomeIcon_icon]
+				}
 			/>
 		);
 	}
@@ -26,4 +36,4 @@ EtiquetaFontAwesomeIcon.propTypes = {
 	objectArray: PropTypes.object,
 };
 
-export default EtiquetaFontAwesomeIcon;
+export default memo(EtiquetaFontAwesomeIcon);

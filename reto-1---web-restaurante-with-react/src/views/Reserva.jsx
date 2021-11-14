@@ -26,10 +26,7 @@ const Card = () => {
 											Object.assign(objeto, { id: index });
 											return <Input key={index} objeto={objeto} />;
 										})}
-										<ButtonReserva
-										// reiniciarCamposReserva={reiniciarCamposReserva}
-										/* camposReserva={camposReserva} */
-										/>
+										<ButtonReserva />
 									</form>
 								</div>
 							</div>

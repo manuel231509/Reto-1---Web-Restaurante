@@ -44,9 +44,6 @@
 .fas {
 	font-size: 1.5rem;
 }
-.fab {
-	font-size: 1.5rem;
-}
 
 .btn2 {
 	height: 46px;
@@ -114,10 +111,10 @@
 	font-size: 18px;
 	background-color: #e35d6a !important;
 }
-.active {
+/* .active {
 	font-size: 18px;
 	background-color: #58151c;
-}
+} */
 .nav-item:focus-within {
 	font-size: 18px;
 	background-color: #e35d6a;
@@ -171,10 +168,20 @@ p {
 	font-size: 19px;
 }
 
+.bsScrollHeight {
+	--bs-scroll-height: 300px;
+}
+.nav-link-logo {
+	width: 25%;
+	height: 100%;
+	margin: 0%;
+	margin-left: 4rem;
+}
+
 @media (min-width: 0px) {
 	.redes-sociales {
 		opacity: 0.8;
-		margin-top: 115px;
+		margin-top: 250px;
 		width: 45px;
 	}
 	.a-width {
@@ -185,7 +192,13 @@ p {
 		font-size: 10px;
 	}
 	.img-logo {
-		width: 18%;
+		width: 6rem;
+	}
+	.nav-link-logo {
+		width: 25%;
+		height: 100%;
+		margin: 0%;
+		margin-left: 9rem;
 	}
 }
 
@@ -193,7 +206,7 @@ p {
 	.redes-sociales {
 		z-index: 100 !important;
 		opacity: 0.8;
-		margin-top: 115px;
+		margin-top: 250px;
 		width: 45px;
 	}
 	.a-width {
@@ -204,31 +217,54 @@ p {
 		font-size: 10px;
 	}
 	.img-logo {
-		width: 17%;
+		width: 6rem;
+	}
+	.nav-link-logo {
+		width: 25%;
+		height: 100%;
+		margin: 0%;
+		margin-left: 13.5rem;
 	}
 }
 @media (min-width: 768px) {
 	.redes-sociales {
-		margin-top: 100px;
+		margin-top: 250px;
 	}
 	.img-logo {
-		width: 13%;
+		width: 6rem;
+	}
+	.nav-link-logo {
+		width: 25%;
+		height: 100%;
+		margin: 0%;
+		margin-left: 17.5rem;
 	}
 }
 
 @media (min-width: 992px) {
 	.redes-sociales {
-		margin-top: 125px;
+		margin-top: 250px;
 	}
 	.img-logo {
-		width: 40%;
+		width: 7rem;
+	}
+	.nav-link-logo {
+		width: 25%;
+		height: 100%;
+		margin: 0%;
+		margin-left: 1rem;
 	}
 }
 @media (min-width: 1200px) {
 	.redes-sociales {
-		margin-top: 110px;
+		margin-top: 250px;
 	}
 	.img-logo {
-		width: 35%;
+		width: 8rem;
+	}
+	.nav-link-logo {
+		width: 25%;
+		height: 100%;
+		margin: 0%;
 	}
 }

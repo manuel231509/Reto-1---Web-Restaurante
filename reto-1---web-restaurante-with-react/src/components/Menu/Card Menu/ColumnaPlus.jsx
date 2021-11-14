@@ -1,4 +1,3 @@
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import EtiquetaFontAwesomeIcon from "../../FontAwesome/EtiquetaFontAwesomeIcon";
 import { plus } from "./CardPlatoJS";
@@ -26,8 +25,10 @@ const ColumnaPlus = ({ plato, objeto, inputContext }) => {
 					<EtiquetaFontAwesomeIcon
 						objectArray={{
 							fontAwesomeIcon_CallComponentBool: true,
-							fontAwesomeIcon_className: "fas",
-							fontAwesomeIcon_icon: faPlus,
+							atributosFontAwesomeIcon: {
+								className: "fas",
+							},
+							fontAwesomeIcon_icon: "faPlus",
 						}}
 					/>
 				</button>

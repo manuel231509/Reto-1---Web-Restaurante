@@ -6,7 +6,7 @@ import MenuRedesSocialesFlotante from "../Barra de Navegacion/Efecto Fixed Top a
 import NavBar from "../Barra de Navegacion/NavBar";
 import Footer from "../Pie de Pagina/Footer";
 
-const Layout = (props) => {
+const Layout = ({ children }) => {
 	console.log("Layout");
 	return (
 		<>
@@ -14,7 +14,7 @@ const Layout = (props) => {
 				<FooterProvider>
 					<ColPagarAhoraProvider>
 						<NavBar />
-						{props.children}
+						{children}
 						<Footer />
 						<MenuRedesSocialesFlotante />
 					</ColPagarAhoraProvider>

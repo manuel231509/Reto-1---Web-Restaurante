@@ -4,12 +4,11 @@ import ComponentEtiquetaA from "./EtiquetaA";
 import EtiquetaLink from "./EtiquetaLink";
 
 const EtiquetaLi = (props) => {
-	const { li_CallComponentBool, li_className, li_type, li_style } =
-		props.objectArray;
+	const { li_CallComponentBool, atributosLi } = props.objectArray;
 	if (li_CallComponentBool === true) {
 		return (
 			<>
-				<li className={li_className} type={li_type} style={li_style}>
+				<li {...atributosLi}>
 					<ComponentEtiquetaA objectArray={props.objectArray} />
 					<EtiquetaLink objectArray={props.objectArray} />
 				</li>

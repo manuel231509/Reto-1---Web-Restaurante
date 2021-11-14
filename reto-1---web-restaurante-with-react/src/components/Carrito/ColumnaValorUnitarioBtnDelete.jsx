@@ -1,4 +1,3 @@
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import React, { useContext } from "react";
 import CarritoContext from "../../contexts/Carrito/CarritoContext";
 import InputsContext from "../../contexts/Inputs/InputsContext";
@@ -55,8 +54,10 @@ const ColumnaValorUnitarioBtnDelete = ({ platillo }) => {
 							<EtiquetaFontAwesomeIcon
 								objectArray={{
 									fontAwesomeIcon_CallComponentBool: true,
-									fontAwesomeIcon_className: "fas",
-									fontAwesomeIcon_icon: faTrashAlt,
+									atributosFontAwesomeIcon: {
+										className: "fas",
+									},
+									fontAwesomeIcon_icon: "faTrashAlt",
 								}}
 							/>
 						</button>

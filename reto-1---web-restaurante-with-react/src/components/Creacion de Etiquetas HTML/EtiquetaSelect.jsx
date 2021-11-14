@@ -1,7 +1,4 @@
-import {
-	faCheckCircle,
-	faTimesCircle,
-} from "@fortawesome/free-solid-svg-icons";
+
 import React, { useContext } from "react";
 import CantidadContext from "../../contexts/Inputs/InputsContext";
 import EtiquetaFontAwesomeIcon from "../FontAwesome/EtiquetaFontAwesomeIcon";
@@ -68,12 +65,14 @@ const EtiquetaSelect = ({ objeto }) => {
 							<EtiquetaFontAwesomeIcon
 								objectArray={{
 									fontAwesomeIcon_CallComponentBool: true,
-									fontAwesomeIcon_className: "fas",
+									atributosFontAwesomeIcon: {
+										className: "fas",
+									},
 									fontAwesomeIcon_icon: inputs[
 										`${objeto.nameSelect}_${objeto.id}` /* `input_cantidad_${plato.idPlato}` */
 									]?.campoValido
-										? faCheckCircle
-										: faTimesCircle,
+										? "faCheckCircle"
+										: "faTimesCircle",
 								}}
 							/>
 						</i>

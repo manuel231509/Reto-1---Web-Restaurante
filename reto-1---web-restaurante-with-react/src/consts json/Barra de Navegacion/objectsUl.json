@@ -1,173 +1,239 @@
 {
 	"imgLogo": {
-		"ul_className": "navbar-nav",
 		"li": [
 			{
-				"li_CallComponentBool": true,
-				"li_className": "nav-item",
-				"li_type": "button",
-				"li_style": {},
-				"link_CallComponentBool": true,
-				"link_className": "nav-link d-flex align-items-center justify-content-center",
-				"link_to": "/inicio",
-				"link_role": "button",
-				"link_style": {
-					"width": "100%",
-					"height": "100%",
-					"margin": "0%"
+				"atributosUl": {
+					"className": "navbar-nav"
 				},
+
+				"li_CallComponentBool": true,
+				"atributosLi": {
+					"className": "nav-item",
+					"type": "button"
+				},
+
+				"link_CallComponentBool": true,
+				"atributosLink": {
+					"className": "nav-link d-flex align-items-center justify-content-center nav-link-logo",
+					"to": "/inicio",
+					"role": "button"
+				},
+
 				"img_CallComponentBool": true,
-				"img_className": "img-logo",
-				"img_src": "./assets/images/logo@2x.png",
-				"img_alt": "Logo del restaurante",
-				"p_CallComponentBool": false
+				"atributosImg": {
+					"className": "img-logo",
+					"src": "./assets/images/logo@2x.png"
+				},
+				"img_Alt": "Logo del restaurante",
+
+				"p_CallComponentBool": false,
+				"fontAwesomeIcon_CallComponentBool": false
 			}
 		]
 	},
+	"fontAwesomeIcon": {
+		"fontAwesomeIcon_CallComponentBool": true,
+		"atributosFontAwesomeIcon": {
+			"className": "fas",
+			"style": { "color": "aliceblue" }
+		},
+		"fontAwesomeIcon_icon": "faBars"
+	},
 	"datos": {
-		"ul_className": "navbar-nav me-auto justify-content-end mb-lg-0",
+		"atributosUl": {
+			"className": "navbar-nav me-auto mb-lg-0 navbar-nav-scroll bsScrollHeight"
+		},
 		"li": [
 			{
 				"img_CallComponentBool": false,
+
 				"li_CallComponentBool": true,
-				"li_className": "d-flex align-items-start nav-item",
-				"li_type": "button",
-				"li_style": {},
-				"link_CallComponentBool": true,
-				"link_className": "nav-link",
-				"link_to": "/inicio",
-				"link_role": "button",
-				"link_style": {
-					"width": "100%",
-					"height": "100%",
-					"margin": "0%"
+				"atributosLi": {
+					"className": "nav-item d-flex align-items-start",
+					"type": "button"
 				},
+
+				"link_CallComponentBool": true,
+				"atributosLink": {
+					"className": "nav-link",
+					"to": "/inicio",
+					"role": "button",
+					"style": {
+						"width": "100%",
+						"height": "100%",
+						"margin": "0%"
+					}
+				},
+
 				"p_CallComponentBool": true,
+				"atributosP": {},
 				"p_texto": "INICIO",
+
 				"fontAwesomeIcon_CallComponentBool": true,
-				"fontAwesomeIcon_className": "fas",
-				"fontAwesomeIcon_icon": "faHome",
-				"fontAwesomeIcon_style": { "fontSize": 20, "marginRight": 10 }
+				"atributosFontAwesomeIcon": {
+					"className": "fas",
+					"style": { "fontSize": 20, "marginRight": 10 }
+				},
+				"fontAwesomeIcon_icon": "faHome"
 			},
 			{
 				"li_CallComponentBool": true,
-				"li_className": "d-flex align-items-start nav-item",
-				"li_type": "button",
-				"li_style": {},
-				"link_CallComponentBool": true,
-				"link_className": "nav-link",
-				"link_to": "/nosotros",
-				"link_role": "button",
-				"link_style": {
-					"width": "100%",
-					"height": "100%",
-					"margin": "0%"
+				"atributosLi": {
+					"className": "nav-item d-flex align-items-start",
+					"type": "button"
 				},
+
+				"link_CallComponentBool": true,
+				"atributosLink": {
+					"className": "nav-link",
+					"to": "/nosotros",
+					"role": "button",
+					"style": {
+						"width": "100%",
+						"height": "100%",
+						"margin": "0%"
+					}
+				},
+
 				"p_CallComponentBool": true,
+				"atributosP": {},
 				"p_texto": "QUIENES SOMOS",
+
 				"fontAwesomeIcon_CallComponentBool": false,
 				"img_CallComponentBool": false
 			},
 			{
 				"li_CallComponentBool": true,
-				"li_className": "d-flex align-items-start nav-item",
-				"li_type": "button",
-				"li_style": {},
-				"link_CallComponentBool": true,
-				"link_className": "nav-link",
-				"link_to": "/menu",
-				"link_role": "button",
-				"link_style": {
-					"width": "100%",
-					"height": "100%",
-					"margin": "0%"
+				"atributosLi": {
+					"className": "nav-item d-flex align-items-start",
+					"type": "button"
 				},
+
+				"link_CallComponentBool": true,
+				"atributosLink": {
+					"className": "nav-link",
+					"to": "/menu",
+					"role": "button",
+					"style": {
+						"width": "100%",
+						"height": "100%",
+						"margin": "0%"
+					}
+				},
+
 				"p_CallComponentBool": true,
+				"atributosP": {},
 				"p_texto": "MENU",
-				"fontAwesomeIcon_className": "",
+
 				"fontAwesomeIcon_CallComponentBool": false,
 				"img_CallComponentBool": false
 			},
 			{
 				"li_CallComponentBool": true,
-				"li_className": "d-flex align-items-start nav-item",
-				"li_type": "button",
-				"li_style": {},
-				"link_CallComponentBool": true,
-				"link_className": "nav-link",
-				"link_to": "/servicios",
-				"link_role": "button",
-				"link_style": {
-					"width": "100%",
-					"height": "100%",
-					"margin": "0%"
+				"atributosLi": {
+					"className": "nav-item d-flex align-items-start",
+					"type": "button"
 				},
+
+				"link_CallComponentBool": true,
+				"atributosLink": {
+					"className": "nav-link",
+					"to": "/servicios",
+					"role": "button",
+					"style": {
+						"width": "100%",
+						"height": "100%",
+						"margin": "0%"
+					}
+				},
+
 				"p_CallComponentBool": true,
+				"atributosP": {},
 				"p_texto": "SERVICIOS",
+
 				"img_CallComponentBool": false,
 				"fontAwesomeIcon_CallComponentBool": false
 			},
 			{
 				"li_CallComponentBool": true,
-				"li_className": "d-flex align-items-start nav-item",
-				"li_type": "button",
-				"li_style": {},
-				"link_CallComponentBool": true,
-				"link_className": "nav-link",
-				"link_to": "/reserva",
-				"link_role": "button",
-				"link_style": {
-					"width": "100%",
-					"height": "100%",
-					"margin": "0%"
+				"atributosLi": {
+					"className": "nav-item d-flex align-items-start",
+					"type": "button"
 				},
+
+				"link_CallComponentBool": true,
+				"atributosLink": {
+					"className": "nav-link",
+					"to": "/reserva",
+					"role": "button",
+					"style": {
+						"width": "100%",
+						"height": "100%",
+						"margin": "0%"
+					}
+				},
+
 				"p_CallComponentBool": true,
+				"atributosP": {},
 				"p_texto": "RESERVAS",
+
 				"img_CallComponentBool": false,
 				"fontAwesomeIcon_CallComponentBool": false
 			},
 			{
 				"li_CallComponentBool": true,
-				"li_className": "d-flex align-items-start nav-item",
-				"li_type": "button",
-				"li_style": {},
-				"link_CallComponentBool": true,
-				"link_className": "nav-link",
-				"link_to": "/carrito",
-				"link_role": "button",
-				"link_style": {
-					"width": "100%",
-					"height": "100%",
-					"margin": "0%"
+				"atributosLi": {
+					"className": "nav-item d-flex align-items-start",
+					"type": "button"
 				},
-				"p_CallComponentBool": true,
-				"p_nombre": "",
+
+				"link_CallComponentBool": true,
+				"atributosLink": {
+					"className": "nav-link",
+					"to": "/carrito",
+					"role": "button",
+					"style": {
+						"width": "100%",
+						"height": "100%",
+						"margin": "0%"
+					}
+				},
+
 				"fontAwesomeIcon_CallComponentBool": true,
-				"fontAwesomeIcon_className": "fas icon-carrito",
+				"atributosFontAwesomeIcon": {
+					"className": "fas icon-carrito"
+				},
 				"fontAwesomeIcon_icon": "faShoppingCart",
-				"fontAwesomeIcon_style": "",
+
+				"p_CallComponentBool": false,
 				"img_CallComponentBool": false
 			},
 			{
 				"li_CallComponentBool": true,
-				"li_className": "d-flex align-items-start nav-item",
-				"li_type": "button",
-				"li_style": {},
-				"link_CallComponentBool": true,
-				"link_className": "nav-link",
-				"link_to": "/login",
-				"link_role": "button",
-				"link_style": {
-					"width": "100%",
-					"height": "100%",
-					"margin": "0%"
+				"atributosLi": {
+					"className": "nav-item d-flex align-items-start",
+					"type": "button"
 				},
-				"p_CallComponentBool": true,
-				"p_nombre": "",
+
+				"link_CallComponentBool": true,
+				"atributosLink": {
+					"className": "nav-link",
+					"to": "/login",
+					"role": "button",
+					"style": {
+						"width": "100%",
+						"height": "100%",
+						"margin": "0%"
+					}
+				},
+
 				"fontAwesomeIcon_CallComponentBool": true,
-				"fontAwesomeIcon_className": "fas icon-carrito",
+				"atributosFontAwesomeIcon": {
+					"className": "fas icon-carrito"
+				},
 				"fontAwesomeIcon_icon": "faSignInAlt",
-				"fontAwesomeIcon_style": "",
+
+				"p_CallComponentBool": false,
 				"img_CallComponentBool": false
 			}
 		]

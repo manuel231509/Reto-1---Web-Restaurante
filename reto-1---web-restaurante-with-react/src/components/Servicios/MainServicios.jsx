@@ -32,12 +32,7 @@ const MainServicios = (props) => {
             </p>
           </div>
           <div
-            className="
-      d-flex
-      flex-column
-      col-lg-6 col-md-12 col-sm-12 col-xs-12
-      mt-md-2 mt-sm-2 mt-xs-5
-    "
+            className="d-flex flex-column col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-md-2 mt-sm-2 mt-xs-5"
           >
             <p className="fs-5" style={{ textAlign: "justify" }}>
               Maecenas hendrerit ut ligula eu vehicula. In dictum tortor in

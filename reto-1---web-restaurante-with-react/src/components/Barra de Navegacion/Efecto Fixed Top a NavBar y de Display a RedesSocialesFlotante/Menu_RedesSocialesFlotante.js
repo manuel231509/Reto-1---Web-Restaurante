@@ -7,9 +7,7 @@ const MenuRedesSocialesFlotante = () => {
 	const { navBar } = useContext(NavBarContext);
 	const { footer } = useContext(FooterContext);
 	const { colPagarAhora } = useContext(ColPagarAhoraContext);
-	console.log("MenuRedesSocialesFlotante");
-	console.log("Navbar -- ", navBar);
-	console.log("Footer -- ", footer);
+	
 	const State = useRef({
 		navBarCurrent: null,
 		footerCurrent: null,
@@ -89,6 +87,7 @@ const MenuRedesSocialesFlotante = () => {
 	const eventListenerScroll = () => {
 		window.addEventListener("scroll", changeNavBarFooter);
 	};
+
 	return null;
 };
 

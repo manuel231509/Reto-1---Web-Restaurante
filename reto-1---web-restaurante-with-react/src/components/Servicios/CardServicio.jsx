@@ -1,12 +1,8 @@
-import { faCalendarPlus } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import DatosServicios from "../../consts json/Servicios/DatosServicios.json";
 import DatosEtiquetaLinkReserva from "../../consts json/Servicios/DatosEtiquetaLinkReserva.json";
 import EtiquetaLink from "../Creacion de Etiquetas HTML/EtiquetaLink";
 const CardServicio = () => {
-	if (DatosEtiquetaLinkReserva.fontAwesomeIcon_icon === "faCalendarPlus") {
-		DatosEtiquetaLinkReserva["fontAwesomeIcon_icon"] = faCalendarPlus;
-	}
 	return (
 		<>
 			<div className="row">
@@ -16,7 +12,7 @@ const CardServicio = () => {
 							<div className="card card-servicios">
 								<img
 									src={servicio.imagen}
-									className="card-img-top img-fluid p-4 mx-auto my-auto"
+									className="card-img-top p-4 mx-auto my-auto img-fluid"
 									alt={servicio.nombre}
 								/>
 								<div className="card-body">

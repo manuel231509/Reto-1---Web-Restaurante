@@ -1,7 +1,3 @@
-import {
-	faCheckCircle,
-	faTimesCircle,
-} from "@fortawesome/free-solid-svg-icons";
 import React, { useContext } from "react";
 import EtiquetaFontAwesomeIcon from "../FontAwesome/EtiquetaFontAwesomeIcon";
 import Flatpickr from "react-flatpickr";
@@ -66,12 +62,14 @@ const EtiquetaFlatPickr = ({ objeto }) => {
 							<EtiquetaFontAwesomeIcon
 								objectArray={{
 									fontAwesomeIcon_CallComponentBool: true,
-									fontAwesomeIcon_className: "fas",
+									atributosFontAwesomeIcon: {
+										className: "fas",
+									},
 									fontAwesomeIcon_icon: inputs[
 										`${objeto.nameFlatPickr}_${objeto.id}`
 									]?.campoValido
-										? faCheckCircle
-										: faTimesCircle,
+										? "faCheckCircle"
+										: "faTimesCircle",
 								}}
 							/>
 						</i>

@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { agregarPlatoCarrito } from "../AgregarPlatoCarrito";
 import EtiquetaFontAwesomeIcon from "../../FontAwesome/EtiquetaFontAwesomeIcon";
 import CantidadContext from "../../../contexts/Inputs/InputsContext";
@@ -28,8 +27,10 @@ const RowAgregarCarrito = ({ plato }) => {
 							<EtiquetaFontAwesomeIcon
 								objectArray={{
 									fontAwesomeIcon_CallComponentBool: true,
-									fontAwesomeIcon_className: "fas",
-									fontAwesomeIcon_icon: faShoppingCart,
+									atributosFontAwesomeIcon: {
+										className: "fas",
+									},
+									fontAwesomeIcon_icon: "faShoppingCart",
 								}}
 							/>
 							<p>AÑADIR AL CARRITO</p>

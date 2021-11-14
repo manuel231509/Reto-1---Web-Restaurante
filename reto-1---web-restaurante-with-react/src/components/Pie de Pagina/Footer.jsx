@@ -1,9 +1,4 @@
 import React, { memo, useContext, useEffect, useRef } from "react";
-import {
-	faFacebookF,
-	faTwitter,
-	faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
 import ComponentEtiquetaA from "../Creacion de Etiquetas HTML/EtiquetaA";
 import ComponentEtiquetaP from "../Creacion de Etiquetas HTML/EtiquetaP";
 import ComponentEtiquetaImg from "../Creacion de Etiquetas HTML/EtiquetaImg";
@@ -33,13 +28,6 @@ const Footer = () => {
 					{/* Section: Social media */}
 					<section className="mb-2">
 						{objectRedesSociales.map((objeto, index) => {
-							if (objeto.fontAwesomeIcon_icon === "faFacebookF") {
-								objeto["fontAwesomeIcon_icon"] = faFacebookF;
-							} else if (objeto.fontAwesomeIcon_icon === "faTwitter") {
-								objeto["fontAwesomeIcon_icon"] = faTwitter;
-							} else if (objeto.fontAwesomeIcon_icon === "faYoutube") {
-								objeto["fontAwesomeIcon_icon"] = faYoutube;
-							}
 							return <ComponentEtiquetaA key={index} objectArray={objeto} />;
 						})}
 					</section>
@@ -57,6 +45,7 @@ const Footer = () => {
 						<ComponentEtiquetaP
 							objectArray={{
 								p_CallComponentBool: true,
+								atributosP: {},
 								p_texto: `
 										Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
 										distinctio earum repellat quaerat voluptatibus placeat nam,
@@ -84,9 +73,11 @@ const Footer = () => {
 									<ComponentEtiquetaImg
 										objectArray={{
 											img_CallComponentBool: true,
-											img_className: "img-logo_footer",
-											img_src: "./assets/images/logo@2x.png",
-											img_alt: "Logo del restaurante",
+											atributosImg: {
+												className: "img-logo_footer",
+												src: "./assets/images/logo@2x.png",
+												alt: "Logo del restaurante",
+											},
 										}}
 									/>
 								</picture>

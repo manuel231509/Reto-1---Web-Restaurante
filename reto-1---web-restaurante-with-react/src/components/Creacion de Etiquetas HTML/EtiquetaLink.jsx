@@ -5,22 +5,12 @@ import EtiquetaImg from "../Creacion de Etiquetas HTML/EtiquetaImg";
 import EtiquetaP from "../Creacion de Etiquetas HTML/EtiquetaP";
 
 const EtiquetaLink = (props) => {
-	const {
-		link_CallComponentBool,
-		link_className,
-		link_to,
-		link_role,
-		link_style,
-	} = props.objectArray;
+	const { link_CallComponentBool, atributosLink } = props.objectArray;
 
 	if (link_CallComponentBool === true) {
 		return (
 			<>
-				<Link
-					className={link_className}
-					link_role={link_role}
-					to={link_to}
-					style={link_style}
+				<Link {...atributosLink}
 				>
 					<EtiquetaFontAwesomeIcon objectArray={props.objectArray} />
 					<EtiquetaImg objectArray={props.objectArray} />

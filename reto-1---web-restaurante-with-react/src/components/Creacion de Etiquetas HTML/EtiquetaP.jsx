@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const EtiquetaP = (props) => {
-	const { p_CallComponentBool, p_texto } = props.objectArray;
+	const { p_CallComponentBool, atributosP, p_texto } = props.objectArray;
 	if (p_CallComponentBool === true) {
-		return <p>{p_texto}</p>;
+		return <p {...atributosP}>{p_texto}</p>;
 	}
 	return null;
 };

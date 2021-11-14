@@ -6,7 +6,7 @@ import RowCantidad from "./RowCantidad";
 
 const CardPlato = ({ plato }) => {
 	const { selectedDish } = useContext(PlatoContext);
-	Object.assign(plato, {cantidad: 1})
+	Object.assign(plato, { cantidad: 1 });
 	return (
 		<>
 			<div
@@ -25,7 +25,7 @@ const CardPlato = ({ plato }) => {
 						}}
 					>
 						<img
-							className="card-img-top"
+							className="card-img-top img-fluid"
 							src={plato.urlImagen}
 							alt={plato.titulo}
 							width="300"
@@ -52,7 +52,7 @@ const CardPlato = ({ plato }) => {
 							</div>
 						</div>
 						<CantidadProvider>
-						<RowCantidad plato={plato} />
+							<RowCantidad plato={plato} />
 						</CantidadProvider>
 					</div>
 				</div>

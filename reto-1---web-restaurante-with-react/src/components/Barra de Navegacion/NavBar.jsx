@@ -1,121 +1,61 @@
-import React, { memo, useContext, useEffect, useRef, useState } from "react";
-import {
-	faFacebookF,
-	faTwitter,
-	faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
+import React, { memo, useContext, useEffect, useRef } from "react";
 import ComponentEtiquetaLi from "../Creacion de Etiquetas HTML/EtiquetaLi";
 import ComponentEtiquetaA from "../Creacion de Etiquetas HTML/EtiquetaA";
 import FontAwsomeIcon from "../FontAwesome/EtiquetaFontAwesomeIcon";
 import objectsUl from "../../consts json/Barra de Navegacion/objectsUl.json";
 import objectRedesSociales from "../../consts json/Barra de Navegacion/objectRedesSociales.json";
-import {
-	faBars,
-	faHome,
-	faShoppingCart,
-	faSignInAlt,
-} from "@fortawesome/free-solid-svg-icons";
 import NavBarContext from "../../contexts/NavBar/NavBarContext";
+import EtiquetaLink from "../Creacion de Etiquetas HTML/EtiquetaLink";
 
 const NavBar = () => {
 	const refNavBar = useRef();
 
-	const [expandedAria, setExpandedAria] = useState(false);
 	const { handleChangeNavBar } = useContext(NavBarContext);
-	const ariaExpanded = () => {
-		const valor = !expandedAria;
-		setExpandedAria(valor);
-	};
 	useEffect(() => {
 		handleChangeNavBar(refNavBar.current);
 	}, [handleChangeNavBar]);
 	return (
 		<>
-			<nav id="menu" ref={refNavBar} className="navbar-expand-lg bg-red-600">
+			<nav
+				id="menu"
+				ref={refNavBar}
+				className="navbar navbar-expand-lg  bg-red-600"
+			>
 				<div className="container-fluid">
-					<section className="pt-1 pb-1">
-						<div className="row">
-							<div className="d-flex col-lg-4 col-md-12 mb-md-0">
-								<ul className={objectsUl.imgLogo.ul_className}>
-									<h1>
-										{objectsUl.imgLogo.li.map((imgLogoLi, index) => {
-											return (
-												<ComponentEtiquetaLi
-													key={index}
-													objectArray={imgLogoLi}
-												/>
-											);
-										})}
-									</h1>
-								</ul>
-							</div>
-							<div className="col-lg-8 col-md-12 mb-md-0 div-item">
-								<button
-									onClick={(e) => {
-										e.preventDefault();
-										ariaExpanded();
-									}}
-									className={
-										expandedAria ? "navbar-toggler" : "navbar-toggler collapsed"
-									}
-									type="button"
-								>
-									<FontAwsomeIcon
-										objectArray={{
-											fontAwesomeIcon_CallComponentBool: true,
-											fontAwesomeIcon_className: "fas",
-											fontAwesomeIcon_icon: faBars,
-										}}
-									/>
-								</button>
-								<div
-									className={
-										!expandedAria
-											? "navbar-collapse collapse"
-											: "navbar-collapse collapse show"
-									}
-									id="navbarSupportedContent"
-								>
-									<ul className={objectsUl.datos.ul_className}>
-										{objectsUl.datos.li.map((objeto, index) => {
-											if (objeto.fontAwesomeIcon_icon === "faHome") {
-												objeto["fontAwesomeIcon_icon"] = faHome;
-											} else if (
-												objeto.fontAwesomeIcon_icon === "faShoppingCart"
-											) {
-												objeto["fontAwesomeIcon_icon"] = faShoppingCart;
-											} else if (
-												objeto.fontAwesomeIcon_icon === "faSignInAlt"
-											) {
-												objeto["fontAwesomeIcon_icon"] = faSignInAlt;
-											}
-											return (
-												<ComponentEtiquetaLi key={index} objectArray={objeto} />
-											);
-										})}
-									</ul>
-								</div>
-							</div>
-						</div>
-					</section>
-					<div
-						id="redes-sociales-flotante"
-						className="d-flex justify-content-end"
-						style={{ zIndex: 1 }}
+					{objectsUl.imgLogo.li.map((imgLogoLi, index) => {
+						return <EtiquetaLink key={index} objectArray={imgLogoLi} />;
+					})}
+					<button
+						className="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarScroll"
+						aria-controls="navbarScroll"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
 					>
-						<section className="d-flex flex-column bg-red-800 redes-sociales">
-							{objectRedesSociales.map((objeto, index) => {
-								if (objeto.fontAwesomeIcon_icon === "faFacebookF") {
-									objeto["fontAwesomeIcon_icon"] = faFacebookF;
-								} else if (objeto.fontAwesomeIcon_icon === "faTwitter") {
-									objeto["fontAwesomeIcon_icon"] = faTwitter;
-								} else if (objeto.fontAwesomeIcon_icon === "faYoutube") {
-									objeto["fontAwesomeIcon_icon"] = faYoutube;
-								}
-								return <ComponentEtiquetaA key={index} objectArray={objeto} />;
+						<FontAwsomeIcon objectArray={objectsUl.fontAwesomeIcon} />
+					</button>
+					<div className="collapse navbar-collapse" id="navbarScroll">
+						<ul {...objectsUl.datos.atributosUl}>
+							{objectsUl.datos.li.map((objeto, index) => {
+								Object.assign(objeto.atributosLink, { id: `li_${index}` });
+								return <ComponentEtiquetaLi key={index} objectArray={objeto} />;
 							})}
-						</section>
+						</ul>
 					</div>
+				</div>
+
+				<div
+					id="redes-sociales-flotante"
+					className="d-flex justify-content-end"
+					style={{ zIndex: 1 }}
+				>
+					<section className="d-flex flex-column bg-red-800 redes-sociales">
+						{objectRedesSociales.map((objeto, index) => {
+							return <ComponentEtiquetaA key={index} objectArray={objeto} />;
+						})}
+					</section>
 				</div>
 			</nav>
 		</>
