@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   align-self: center;
   align-items: center;
+  justify-content: center;
 }
 
 .trabajador {
